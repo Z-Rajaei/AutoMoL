@@ -8,6 +8,7 @@ persistence API (save / load) for the three AutoMol components.
 import logging
 import os
 
+import dill
 import torch
 import yaml
 
@@ -100,6 +101,8 @@ class AutoModelLearnerBase:
         """Persist the trained solver together with the configurations that produced it."""
         self._require_trained()
         os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+        # dill is required because AutoGL solvers contain non-picklable
+        # objects (locally-defined lambdas) for the standard pickle module.
         torch.save(
             {
                 "component": type(self).__name__,
@@ -109,13 +112,16 @@ class AutoModelLearnerBase:
                 "metrics": self.metrics,
             },
             path,
+            pickle_module=dill,
         )
         logger.info("Trained %s saved to %s", type(self).__name__, path)
 
     @classmethod
     def load(cls, path, map_location=None):
         """Reload a component saved with :meth:`save` for inference or re-evaluation."""
-        payload = torch.load(path, map_location=map_location, weights_only=False)
+        payload = torch.load(
+            path, map_location=map_location, weights_only=False, pickle_module=dill
+        )
         if payload.get("component") != cls.__name__:
             raise ValueError(
                 f"{path} contains a {payload.get('component')}, not a {cls.__name__}"
