@@ -1,0 +1,3748 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "query",
+        "nsURI": "http:///org/eclipse/datatools/modelbase/sql/xml/query/SQLXMLQueryModel.ecore",
+        "nsPrefix": "org.eclipse.datatools.modelbase.sql.xml.query"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The documentation for this model is adapted from \"Information technology -- Database languages -- SQL, Part 14: XML-Related Specifications (SQL/XML)\" WG3:WLG-010preview H2-2005-xxx, FDIS ISO/IEC 9075-14:2005 (E) draft published May, 2005.\r\n"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionConcat",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value which is the concatenation of a list of XML values.  See ISO SQL/XML sec. 6.11."
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "concatContentList",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//XMLValueFunctionConcatContentItem",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionConcatContentItem/valueFunctionConcat"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunction",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//ValueExpressionFunction"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "10",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Specifies a function that yields a value of type XML.  See ISO SQL/XML sec. 6.9."
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLNamespaceDeclarationPrefix",
+        "eSuperTypes": "#//XMLNamespaceDeclarationItem"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "prefix",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLNamespaceDeclarationDefault",
+        "eSuperTypes": "#//XMLNamespaceDeclarationItem"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "noDefault",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLAttributeDeclarationItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "attributesDecl",
+        "lowerBound": "1",
+        "eType": "#//XMLAttributesDeclaration",
+        "transient": "true",
+        "eOpposite": "#//XMLAttributesDeclaration/attributeDeclItem"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionElement",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML element with a given element name, list of XML attributes, and list of content values.  See ISO SQL/XML sec. 6.13."
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "elementName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "namespacesDecl",
+        "eType": "#//XMLNamespacesDeclaration",
+        "containment": "true",
+        "eOpposite": "#//XMLNamespacesDeclaration/valueFunctionElement"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "attributesDecl",
+        "eType": "#//XMLAttributesDeclaration",
+        "containment": "true",
+        "eOpposite": "#//XMLAttributesDeclaration/valueFunctionElement"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "elementContentList",
+        "eType": "#//XMLValueFunctionElementContentList",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionElementContentList/valueFunctionElement"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLNamespaceDeclarationItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "uri",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "namespacesDecl",
+        "lowerBound": "1",
+        "eType": "#//XMLNamespacesDeclaration",
+        "transient": "true",
+        "eOpposite": "#//XMLNamespacesDeclaration/namespaceDecltemList"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionElementContentItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "elementContentList",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionElementContentList",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionElementContentList/elementContentListChildren"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionForest",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "34",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value containing a sequence of XML elements.  See ISO SQL/XML sec. 6.14."
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nullHandlingOption",
+        "eType": "#//XMLNullHandlingType"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "forestContentList",
+        "upperBound": "-1",
+        "eType": "#//XMLValueFunctionForestContentItem",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionForestContentItem/valueFunctionForest"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "namespacesDecl",
+        "eType": "#//XMLNamespacesDeclaration",
+        "containment": "true",
+        "eOpposite": "#//XMLNamespacesDeclaration/valueFunctionForest"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionComment",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML comment value from a string expression.  See ISO SQL/XML sec. 6.10."
+      }
+    },
+    {
+      "id": "42",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "commentContent",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionCommentContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionCommentContent/valueFunctionComment"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionDocument",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "46",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML document node from an XML value expression.  See ISO SQL/XML sec. 6.12."
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "documentContent",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionDocumentContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionDocumentContent/valueFunctionDocument"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionParse",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "51",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value by performing a non-validating parse of a given string expression.  See ISO SQL/XML sec. 6.15."
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "contentOption",
+        "eType": "#//XMLContentType"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "whitespaceHandlingOption",
+        "eType": "#//XMLWhitespaceHandlingType"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parseContent",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionParseContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionParseContent/valueFunctionParse"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionPI",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "57",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value consisting of an XML processing instruction based on the given string expression.  See ISO SQL/XML sec. 6.16."
+      }
+    },
+    {
+      "id": "58",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "targetName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "PIContent",
+        "eType": "#//XMLValueFunctionPIContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionPIContent/valueFunctionPI"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionQuery",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "63",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value as the result of evaluating a given XQuery expression.  See ISO SQL/XML sec. 6.17."
+      }
+    },
+    {
+      "id": "64",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "emptyHandlingOption",
+        "eType": "#//XMLEmptyHandlingType"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryExpr",
+        "lowerBound": "1",
+        "eType": "#//XMLQueryExpression",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryExpression/valueFunctionQuery"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryArgList",
+        "eType": "#//XMLQueryArgumentList",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryArgumentList/valueFunctionQuery"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "queryReturning",
+        "eType": "#//XMLValueFunctionQueryReturning",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionQueryReturning/valueFunctionQuery"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionText",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "70",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value consisting of a XML text element from a given string expression.  See ISO SQL/XML sec. 6.18."
+      }
+    },
+    {
+      "id": "71",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "textContent",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionTextContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionTextContent/valueFunctionText"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidate",
+        "eSuperTypes": "#//XMLValueFunction"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "75",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generates an XML value by performing a parse of an XML  expression according to a given XML schema.  See ISO SQL/XML sec. 6.19."
+      }
+    },
+    {
+      "id": "76",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "contentOption",
+        "eType": "#//XMLContentType2"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateContent",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidateContent",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionValidateContent/valueFunctionValidate"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateAccordingTo",
+        "eType": "#//XMLValueFunctionValidateAccordingTo",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionValidateAccordingTo/valueFunctionValidate"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueExpressionCast",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//ValueExpressionCast"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "81",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Specifies a data conversion whose source or target is a value expressoin with an XML datatype.  See ISO SQL/XML sec. 6.5.  The <XML cast operand>is handled by the valueExpr relationship of the ValueExpressionCast.  <XML target operand> (which is a datatype) is handled by the datatype attribute of QueryValueeExpression.  The <null specification> is  handled by the ValueExpressionNullValue subtype of QueryValueExpression.\r\n"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "passingMechanism",
+        "eType": "#//XMLPassingType"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLPassingType"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "85",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents the possible values for the XML passing mechanism clause.  A value of NONE indicates that the passing mechanism clause should be omitted."
+      }
+    },
+    {
+      "id": "86",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "BY_REF"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "BY_VALUE",
+        "value": "1"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLPredicate",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//Predicate"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "91",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An XMLPredicate specifies a condition involving an XML value expression that can be evaluated to return true or false.  See ISO SQL/XML sec. 8.1.\r\n"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLPredicateContent",
+        "eSuperTypes": "#//XMLPredicate"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "94",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Tests whether or not a given XML value represents an XML document.  See ISO SQL/XML sec. 8.2.\r\n\r\nNote:  the elaboration of this element is TBD"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLPredicateDocument",
+        "eSuperTypes": "#//XMLPredicate"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "97",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Tests whether or not a given XML value represents an XML document which contains exactly one XML element, zero or more XML comments, and zero or more XML processing instructions.  See ISO SQL/XML sec. 8.3.\r\n\r\nNote: the elaboration of this element is TBD."
+      }
+    },
+    {
+      "id": "98",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLPredicateExists",
+        "eSuperTypes": "#//XMLPredicate"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "100",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Tests whether or not a given XQuery expression represents an non-empty sequence.  See ISO SQL/XML sec. 8.4."
+      }
+    },
+    {
+      "id": "101",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryExpr",
+        "lowerBound": "1",
+        "eType": "#//XMLQueryExpression",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryExpression/predicateExists"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryArgList",
+        "eType": "#//XMLQueryArgumentList",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryArgumentList/predicateExists"
+      }
+    },
+    {
+      "id": "103",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLPredicateValid",
+        "eSuperTypes": "#//XMLPredicate"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "105",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Tests whether or not a given XML value is valid according to a registered XML schema.  See ISO SQL/XML sec. 8.5.\r\n\r\nNote: the elaboration of this element is TBD."
+      }
+    },
+    {
+      "id": "106",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLQueryExpression",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "108",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents an XQuery expression.  The content of this element is a literal string which specifies an XML Query.  See ISO SQL/XML sec. 6.17."
+      }
+    },
+    {
+      "id": "109",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "xqueryExprContent",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "predicateExists",
+        "lowerBound": "1",
+        "eType": "#//XMLPredicateExists",
+        "transient": "true",
+        "eOpposite": "#//XMLPredicateExists/xqueryExpr"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionQuery",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionQuery",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionQuery/xqueryExpr"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLQueryArgumentList",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "113",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "114",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents an XML Query argument list.  See ISO SQL/XML sec. 6.17.  <note>The list is modelled as an explicit object rather than just as a list of XMLQueryArgument objects attached to the parent so that the list as whole can have an optional passing mechanism clause.</note>"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "passingMechanism",
+        "eType": "#//XMLPassingType"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "predicateExists",
+        "lowerBound": "1",
+        "eType": "#//XMLPredicateExists",
+        "transient": "true",
+        "eOpposite": "#//XMLPredicateExists/xqueryArgList"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryArgListChildren",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//XMLQueryArgumentItem",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryArgumentItem/xqueryArgList"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionQuery",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionQuery",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionQuery/xqueryArgList"
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableFunction",
+        "lowerBound": "1",
+        "eType": "#//XMLTableFunction",
+        "transient": "true",
+        "eOpposite": "#//XMLTableFunction/xqueryArgList"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLQueryArgumentItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "122",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents a single XML Query Argument within an XML Query Argument list.  The name attribute, if used, indicates that  this argument is an XML Query variable.  The attached value expression must resolve to an XML datatype.  See ISO SQL/XML sec. 6.17."
+      }
+    },
+    {
+      "id": "123",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "passingMechanism",
+        "eType": "#//XMLPassingType"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryArgList",
+        "lowerBound": "1",
+        "eType": "#//XMLQueryArgumentList",
+        "transient": "true",
+        "eOpposite": "#//XMLQueryArgumentList/xqueryArgListChildren"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "126",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLSerializeFunction",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//ValueExpressionFunction"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "contentOption",
+        "eType": "#//XMLContentType"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "serializeVersion",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "declarationOption",
+        "eType": "#//XMLDeclarationType"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "serializeTarget",
+        "lowerBound": "1",
+        "eType": "#//XMLSerializeFunctionTarget",
+        "containment": "true",
+        "eOpposite": "#//XMLSerializeFunctionTarget/serializeFunction"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "serializeEncoding",
+        "eType": "#//XMLSerializeFunctionEncoding",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLContentType"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CONTENT"
+      }
+    },
+    {
+      "id": "134",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "DOCUMENT",
+        "value": "1"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLSerializeFunctionTarget",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "serializeFunction",
+        "lowerBound": "1",
+        "eType": "#//XMLSerializeFunction",
+        "transient": "true",
+        "eOpposite": "#//XMLSerializeFunction/serializeTarget"
+      }
+    },
+    {
+      "id": "138",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "139",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLDeclarationType"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "EXCLUDING_XMLDECLARATION"
+      }
+    },
+    {
+      "id": "141",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "INCLUDING_XMLDECLARATION",
+        "value": "1"
+      }
+    },
+    {
+      "id": "142",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "143",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLAggregateFunction",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//ValueExpressionFunction"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "145",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Specifies a value computed from a collection of rows.  See ISO SQL/XML sec. 11.2.  The <XML value expression> clause is handled by the parameterList relationship in ValueExpressionFunction, but is restricted to a single element in this case."
+      }
+    },
+    {
+      "id": "146",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sortSpecList",
+        "upperBound": "-1",
+        "eType": "#//XMLAggregateSortSpecification",
+        "containment": "true",
+        "eOpposite": "#//XMLAggregateSortSpecification/aggregateFunction"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLReturningType"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "RETURNING_CONTENT"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "RETURNING_SEQUENCE",
+        "value": "1"
+      }
+    },
+    {
+      "id": "151",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionConcatContentItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "153",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "154",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents an XML value expression within an XMLCONCAT function.  See ISO SQL/XML sec. 6.11.  Contains a value expression which must resolve to an XML datatype.\r\n"
+      }
+    },
+    {
+      "id": "155",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionConcat",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionConcat",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionConcat/concatContentList"
+      }
+    },
+    {
+      "id": "156",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "157",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionCommentContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "158",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "159",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents the <string value expression> within an <XML comment> function.  See ISO SQL/XML sec. 6.10.  Contains a value expression which must resolve to an string datatype."
+      }
+    },
+    {
+      "id": "160",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionComment",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionComment",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionComment/commentContent"
+      }
+    },
+    {
+      "id": "161",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "162",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionDocumentContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "163",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "164",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Represents an <XML value expression> within an <XML document> function.  See ISO SQL/XML sec. 6.12.  The value expression contained by this element must resolve to an XML datatype.\r\n"
+      }
+    },
+    {
+      "id": "165",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionDocument",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionDocument",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionDocument/documentContent"
+      }
+    },
+    {
+      "id": "166",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "167",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLAggregateSortSpecification",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "168",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "169",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Specifies an ordering within the values returned by the aggregation function.  See ISO SQL/XML sec. 11.2."
+      }
+    },
+    {
+      "id": "170",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "aggregateFunction",
+        "lowerBound": "1",
+        "eType": "#//XMLAggregateFunction",
+        "transient": "true",
+        "eOpposite": "#//XMLAggregateFunction/sortSpecList"
+      }
+    },
+    {
+      "id": "171",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "orderBySpec",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//OrderBySpecification",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "172",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLNullHandlingType"
+      }
+    },
+    {
+      "id": "173",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "ABSENT_ON_NULL"
+      }
+    },
+    {
+      "id": "174",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "EMPTY_ON_NULL",
+        "value": "1"
+      }
+    },
+    {
+      "id": "175",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NIL_ON_NO_CONTENT",
+        "value": "2"
+      }
+    },
+    {
+      "id": "176",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NIL_ON_NULL",
+        "value": "3"
+      }
+    },
+    {
+      "id": "177",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NULL_ON_NULL",
+        "value": "4"
+      }
+    },
+    {
+      "id": "178",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "5"
+      }
+    },
+    {
+      "id": "179",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionForestContentItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "180",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionForest",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionForest",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionForest/forestContentList"
+      }
+    },
+    {
+      "id": "181",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "182",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionParseContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "183",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionParse",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionParse",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionParse/parseContent"
+      }
+    },
+    {
+      "id": "184",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "185",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLWhitespaceHandlingType"
+      }
+    },
+    {
+      "id": "186",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "PRESERE_WHITESPACE"
+      }
+    },
+    {
+      "id": "187",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "STRIP_WHITESPACE",
+        "value": "1"
+      }
+    },
+    {
+      "id": "188",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "189",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionPIContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "190",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionPI",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionPI",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionPI/PIContent"
+      }
+    },
+    {
+      "id": "191",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "192",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLEmptyHandlingType"
+      }
+    },
+    {
+      "id": "193",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "EMPTY_ON_EMPTY"
+      }
+    },
+    {
+      "id": "194",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NULL_ON_EMPTY",
+        "value": "1"
+      }
+    },
+    {
+      "id": "195",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "196",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLTableFunction",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//TableFunction"
+      }
+    },
+    {
+      "id": "197",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tableRowPattern",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "198",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xqueryArgList",
+        "eType": "#//XMLQueryArgumentList",
+        "containment": "true",
+        "eOpposite": "#//XMLQueryArgumentList/tableFunction"
+      }
+    },
+    {
+      "id": "199",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columnDefList",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//XMLTableColumnDefinitionItem",
+        "containment": "true",
+        "eOpposite": "#//XMLTableColumnDefinitionItem/tableFunction"
+      }
+    },
+    {
+      "id": "200",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "namespacesDecl",
+        "eType": "#//XMLNamespacesDeclaration",
+        "containment": "true",
+        "eOpposite": "#//XMLNamespacesDeclaration/tableFunction"
+      }
+    },
+    {
+      "id": "201",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionTextContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "202",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionText",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionText",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionText/textContent"
+      }
+    },
+    {
+      "id": "203",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "204",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateContent",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "205",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionValidate",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidate",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionValidate/validateContent"
+      }
+    },
+    {
+      "id": "206",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "207",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "XMLContentType2"
+      }
+    },
+    {
+      "id": "208",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CONTENT"
+      }
+    },
+    {
+      "id": "209",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "DOCUMENT",
+        "value": "1"
+      }
+    },
+    {
+      "id": "210",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "SEQUENCE",
+        "value": "2"
+      }
+    },
+    {
+      "id": "211",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NONE",
+        "value": "3"
+      }
+    },
+    {
+      "id": "212",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLTableColumnDefinitionItem",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "213",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableFunction",
+        "lowerBound": "1",
+        "eType": "#//XMLTableFunction",
+        "transient": "true",
+        "eOpposite": "#//XMLTableFunction/columnDefList"
+      }
+    },
+    {
+      "id": "214",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLTableColumnDefinitionRegular",
+        "eSuperTypes": "#//XMLTableColumnDefinitionItem"
+      }
+    },
+    {
+      "id": "215",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dataType",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql/model/sqlmodel.ecore#//datatypes/DataType",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "216",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "passingOption",
+        "eType": "#//XMLPassingType"
+      }
+    },
+    {
+      "id": "217",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tableColumnPattern",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "218",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columnDefinitionDefault",
+        "eType": "#//XMLTableColumnDefinitionDefault",
+        "containment": "true",
+        "eOpposite": "#//XMLTableColumnDefinitionDefault/columnDefinitionRegular"
+      }
+    },
+    {
+      "id": "219",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLTableColumnDefinitionOrdinality",
+        "eSuperTypes": "#//XMLTableColumnDefinitionItem"
+      }
+    },
+    {
+      "id": "220",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateAccordingTo",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "221",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionValidate",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidate",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionValidate/validateAccordingTo"
+      }
+    },
+    {
+      "id": "222",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateElement",
+        "eType": "#//XMLValueFunctionValidateElement",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionValidateElement/validateAccordingTo"
+      }
+    },
+    {
+      "id": "223",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateAccordingToURI",
+        "eSuperTypes": "#//XMLValueFunctionValidateAccordingTo"
+      }
+    },
+    {
+      "id": "224",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "noNamespace",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "225",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "targetNamespaceURI",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "226",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "schemaLocationURI",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "227",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateAccordingToIdentifier",
+        "eSuperTypes": "#//XMLValueFunctionValidateAccordingTo"
+      }
+    },
+    {
+      "id": "228",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "schemaName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "229",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "registeredXMLSchemaName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "230",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateElementName",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "231",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateElement",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidateElement",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionValidateElement/validateElementName"
+      }
+    },
+    {
+      "id": "232",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateElementNamespace",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "233",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "noNamespace",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "234",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "namespaceURI",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "235",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateElement",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidateElement",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionValidateElement/validateElementNamespace"
+      }
+    },
+    {
+      "id": "236",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLNamespacesDeclaration",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "237",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "namespaceDecltemList",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//XMLNamespaceDeclarationItem",
+        "containment": "true",
+        "eOpposite": "#//XMLNamespaceDeclarationItem/namespacesDecl"
+      }
+    },
+    {
+      "id": "238",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionElement",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionElement",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionElement/namespacesDecl"
+      }
+    },
+    {
+      "id": "239",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionForest",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionForest",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionForest/namespacesDecl"
+      }
+    },
+    {
+      "id": "240",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableFunction",
+        "lowerBound": "1",
+        "eType": "#//XMLTableFunction",
+        "transient": "true",
+        "eOpposite": "#//XMLTableFunction/namespacesDecl"
+      }
+    },
+    {
+      "id": "241",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLAttributesDeclaration"
+      }
+    },
+    {
+      "id": "242",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionElement",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionElement",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionElement/attributesDecl"
+      }
+    },
+    {
+      "id": "243",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "attributeDeclItem",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//XMLAttributeDeclarationItem",
+        "containment": "true",
+        "eOpposite": "#//XMLAttributeDeclarationItem/attributesDecl"
+      }
+    },
+    {
+      "id": "244",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionElementContentList",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "245",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nullHandlingOption",
+        "eType": "#//XMLNullHandlingType"
+      }
+    },
+    {
+      "id": "246",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionElement",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionElement",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionElement/elementContentList"
+      }
+    },
+    {
+      "id": "247",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "elementContentListChildren",
+        "upperBound": "-1",
+        "eType": "#//XMLValueFunctionElementContentItem",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionElementContentItem/elementContentList"
+      }
+    },
+    {
+      "id": "248",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionQueryReturning",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "249",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "returningOption",
+        "eType": "#//XMLReturningType"
+      }
+    },
+    {
+      "id": "250",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "passingOption",
+        "eType": "#//XMLPassingType"
+      }
+    },
+    {
+      "id": "251",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueFunctionQuery",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionQuery",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionQuery/queryReturning"
+      }
+    },
+    {
+      "id": "252",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLValueFunctionValidateElement",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "253",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateElementNamespace",
+        "eType": "#//XMLValueFunctionValidateElementNamespace",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionValidateElementNamespace/validateElement"
+      }
+    },
+    {
+      "id": "254",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateElementName",
+        "eType": "#//XMLValueFunctionValidateElementName",
+        "containment": "true",
+        "eOpposite": "#//XMLValueFunctionValidateElementName/validateElement"
+      }
+    },
+    {
+      "id": "255",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "validateAccordingTo",
+        "lowerBound": "1",
+        "eType": "#//XMLValueFunctionValidateAccordingTo",
+        "transient": "true",
+        "eOpposite": "#//XMLValueFunctionValidateAccordingTo/validateElement"
+      }
+    },
+    {
+      "id": "256",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLTableColumnDefinitionDefault",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression"
+      }
+    },
+    {
+      "id": "257",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "valueExpr",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//QueryValueExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "258",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columnDefinitionRegular",
+        "lowerBound": "1",
+        "eType": "#//XMLTableColumnDefinitionRegular",
+        "transient": "true",
+        "eOpposite": "#//XMLTableColumnDefinitionRegular/columnDefinitionDefault"
+      }
+    },
+    {
+      "id": "259",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLSerializeFunctionEncoding",
+        "eSuperTypes": "../../org.eclipse.datatools.modelbase.sql.query/model/SQLQueryModel.ecore#//SQLQueryObject"
+      }
+    },
+    {
+      "id": "260",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "encodingName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "18",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "44",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "49",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "55",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "61",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "68",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "73",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "79",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "83",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "89",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "92",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "95",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "98",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "103",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "106",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "112",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "120",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "126",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "132",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "136",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "139",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "143",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "148",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "152",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "157",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "162",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "167",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "172",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "179",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "182",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "185",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "189",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "192",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "196",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "201",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "204",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "207",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "212",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "214",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "219",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "220",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "223",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "227",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "230",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "232",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "236",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "241",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "244",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "248",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "252",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "256",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "259",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "details"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "18",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "32",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "39",
+      "target": "42",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "44",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "49",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "49",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "49",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "50",
+      "target": "51",
+      "type": "details"
+    },
+    {
+      "source": "55",
+      "target": "56",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "55",
+      "target": "58",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "55",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "55",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "57",
+      "type": "details"
+    },
+    {
+      "source": "61",
+      "target": "62",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "61",
+      "target": "64",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "61",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "61",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "61",
+      "target": "67",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "details"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "68",
+      "target": "71",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "68",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "details"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "73",
+      "target": "76",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "73",
+      "target": "77",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "73",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "74",
+      "target": "75",
+      "type": "details"
+    },
+    {
+      "source": "79",
+      "target": "80",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "79",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "80",
+      "target": "81",
+      "type": "details"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "83",
+      "target": "86",
+      "type": "eLiterals"
+    },
+    {
+      "source": "83",
+      "target": "87",
+      "type": "eLiterals"
+    },
+    {
+      "source": "83",
+      "target": "88",
+      "type": "eLiterals"
+    },
+    {
+      "source": "84",
+      "target": "85",
+      "type": "details"
+    },
+    {
+      "source": "89",
+      "target": "90",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "90",
+      "target": "91",
+      "type": "details"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "93",
+      "target": "94",
+      "type": "details"
+    },
+    {
+      "source": "95",
+      "target": "96",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "96",
+      "target": "97",
+      "type": "details"
+    },
+    {
+      "source": "98",
+      "target": "99",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "98",
+      "target": "101",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "98",
+      "target": "102",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "99",
+      "target": "100",
+      "type": "details"
+    },
+    {
+      "source": "103",
+      "target": "104",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "104",
+      "target": "105",
+      "type": "details"
+    },
+    {
+      "source": "106",
+      "target": "107",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "106",
+      "target": "109",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "106",
+      "target": "110",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "106",
+      "target": "111",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "107",
+      "target": "108",
+      "type": "details"
+    },
+    {
+      "source": "112",
+      "target": "113",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "112",
+      "target": "115",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "116",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "118",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "113",
+      "target": "114",
+      "type": "details"
+    },
+    {
+      "source": "120",
+      "target": "121",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "120",
+      "target": "123",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "120",
+      "target": "124",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "120",
+      "target": "125",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "121",
+      "target": "122",
+      "type": "details"
+    },
+    {
+      "source": "126",
+      "target": "127",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "126",
+      "target": "128",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "126",
+      "target": "129",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "126",
+      "target": "130",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "126",
+      "target": "131",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "eLiterals"
+    },
+    {
+      "source": "132",
+      "target": "134",
+      "type": "eLiterals"
+    },
+    {
+      "source": "132",
+      "target": "135",
+      "type": "eLiterals"
+    },
+    {
+      "source": "136",
+      "target": "137",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "136",
+      "target": "138",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "139",
+      "target": "140",
+      "type": "eLiterals"
+    },
+    {
+      "source": "139",
+      "target": "141",
+      "type": "eLiterals"
+    },
+    {
+      "source": "139",
+      "target": "142",
+      "type": "eLiterals"
+    },
+    {
+      "source": "143",
+      "target": "144",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "143",
+      "target": "146",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "147",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "144",
+      "target": "145",
+      "type": "details"
+    },
+    {
+      "source": "148",
+      "target": "149",
+      "type": "eLiterals"
+    },
+    {
+      "source": "148",
+      "target": "150",
+      "type": "eLiterals"
+    },
+    {
+      "source": "148",
+      "target": "151",
+      "type": "eLiterals"
+    },
+    {
+      "source": "152",
+      "target": "153",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "152",
+      "target": "155",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "152",
+      "target": "156",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "153",
+      "target": "154",
+      "type": "details"
+    },
+    {
+      "source": "157",
+      "target": "158",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "157",
+      "target": "160",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "157",
+      "target": "161",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "158",
+      "target": "159",
+      "type": "details"
+    },
+    {
+      "source": "162",
+      "target": "163",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "162",
+      "target": "165",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "162",
+      "target": "166",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "163",
+      "target": "164",
+      "type": "details"
+    },
+    {
+      "source": "167",
+      "target": "168",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "167",
+      "target": "170",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "167",
+      "target": "171",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "168",
+      "target": "169",
+      "type": "details"
+    },
+    {
+      "source": "172",
+      "target": "173",
+      "type": "eLiterals"
+    },
+    {
+      "source": "172",
+      "target": "174",
+      "type": "eLiterals"
+    },
+    {
+      "source": "172",
+      "target": "175",
+      "type": "eLiterals"
+    },
+    {
+      "source": "172",
+      "target": "176",
+      "type": "eLiterals"
+    },
+    {
+      "source": "172",
+      "target": "177",
+      "type": "eLiterals"
+    },
+    {
+      "source": "172",
+      "target": "178",
+      "type": "eLiterals"
+    },
+    {
+      "source": "179",
+      "target": "180",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "179",
+      "target": "181",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "182",
+      "target": "183",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "182",
+      "target": "184",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "185",
+      "target": "186",
+      "type": "eLiterals"
+    },
+    {
+      "source": "185",
+      "target": "187",
+      "type": "eLiterals"
+    },
+    {
+      "source": "185",
+      "target": "188",
+      "type": "eLiterals"
+    },
+    {
+      "source": "189",
+      "target": "190",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "189",
+      "target": "191",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "192",
+      "target": "193",
+      "type": "eLiterals"
+    },
+    {
+      "source": "192",
+      "target": "194",
+      "type": "eLiterals"
+    },
+    {
+      "source": "192",
+      "target": "195",
+      "type": "eLiterals"
+    },
+    {
+      "source": "196",
+      "target": "197",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "196",
+      "target": "198",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "196",
+      "target": "199",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "196",
+      "target": "200",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "201",
+      "target": "202",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "201",
+      "target": "203",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "204",
+      "target": "205",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "204",
+      "target": "206",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "207",
+      "target": "208",
+      "type": "eLiterals"
+    },
+    {
+      "source": "207",
+      "target": "209",
+      "type": "eLiterals"
+    },
+    {
+      "source": "207",
+      "target": "210",
+      "type": "eLiterals"
+    },
+    {
+      "source": "207",
+      "target": "211",
+      "type": "eLiterals"
+    },
+    {
+      "source": "212",
+      "target": "213",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "214",
+      "target": "215",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "214",
+      "target": "216",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "214",
+      "target": "217",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "214",
+      "target": "218",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "220",
+      "target": "221",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "220",
+      "target": "222",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "223",
+      "target": "224",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "223",
+      "target": "225",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "223",
+      "target": "226",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "227",
+      "target": "228",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "227",
+      "target": "229",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "230",
+      "target": "231",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "232",
+      "target": "233",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "232",
+      "target": "234",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "232",
+      "target": "235",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "236",
+      "target": "237",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "236",
+      "target": "238",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "236",
+      "target": "239",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "236",
+      "target": "240",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "241",
+      "target": "242",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "241",
+      "target": "243",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "244",
+      "target": "245",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "244",
+      "target": "246",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "244",
+      "target": "247",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "248",
+      "target": "249",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "248",
+      "target": "250",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "248",
+      "target": "251",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "252",
+      "target": "253",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "252",
+      "target": "254",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "252",
+      "target": "255",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "256",
+      "target": "257",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "256",
+      "target": "258",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "259",
+      "target": "260",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 261,
+    "edge_count": 260,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

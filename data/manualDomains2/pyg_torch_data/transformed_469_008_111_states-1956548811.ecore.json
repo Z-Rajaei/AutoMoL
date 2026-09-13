@@ -1,0 +1,244 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "states",
+        "nsURI": "http://xmof/states/1.0",
+        "nsPrefix": "states"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateSystem"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "states",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trace",
+        "eType": "ecore:EClass ../../org.modelexecution.fumldebug.core/model/tracemodel.ecore#//Trace",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outgoing",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/source"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incoming",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/target"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "objects",
+        "upperBound": "-1",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/outgoing"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/incoming"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "event",
+        "lowerBound": "1",
+        "eType": "#//Event",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "qualifiedName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "actionExecution",
+        "eType": "ecore:EClass ../../org.modelexecution.fumldebug.core/model/tracemodel.ecore#//ActionExecution",
+        "transient": "true"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 16,
+    "edge_count": 15,
+    "node_type_count": 3,
+    "edge_type_count": 2
+  }
+}

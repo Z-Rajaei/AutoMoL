@@ -1,0 +1,238 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "cpndefinition",
+        "nsURI": "http://cpndefinition/1.0",
+        "nsPrefix": "cpndefinition"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CPN",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//PetriNetType"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Place",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Place"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "initialMarking",
+        "eType": "#//InitialMarking",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sort",
+        "lowerBound": "1",
+        "eType": "#//Sort",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Arc",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Arc"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "expression",
+        "lowerBound": "1",
+        "eType": "#//ArcExpression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Transition"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "guard",
+        "eType": "#//Guard",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Page",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Page"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArcExpression",
+        "eSuperTypes": "#//CPNInscription"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CPNInscription",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Label"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "text",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Guard",
+        "eSuperTypes": "#//CPNInscription"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InitialMarking",
+        "eSuperTypes": "#//CPNInscription"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Sort",
+        "eSuperTypes": "#//CPNInscription"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "10",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 16,
+    "edge_count": 15,
+    "node_type_count": 3,
+    "edge_type_count": 2
+  }
+}

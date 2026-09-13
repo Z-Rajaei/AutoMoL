@@ -1,0 +1,4313 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "table",
+        "nsURI": "http://www.eclipse.org/sirius/table/1.1.0",
+        "nsPrefix": "table"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTable",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//DRepresentation #//LineContainer #//DTableElementUpdater"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//DColumn",
+        "containment": "true",
+        "eOpposite": "#//DColumn/table"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "headerColumnWidth",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "description",
+        "eType": "#//description/TableDescription"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTableElementUpdater",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eOperations",
+      "attributes": {
+        "name": "activate"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eParameters",
+      "attributes": {
+        "name": "sync",
+        "lowerBound": "1",
+        "eType": "#//DTableElementSynchronizer"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eOperations",
+      "attributes": {
+        "name": "deactivate"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTableElement",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//DRepresentationElement"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableElementMapping",
+        "eType": "#//description/TableMapping",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "12",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The mapping of the element."
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LineContainer",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//DSemanticDecorator"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "lines",
+        "upperBound": "-1",
+        "eType": "#//DLine",
+        "containment": "true",
+        "eOpposite": "#//DLine/container"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DLine",
+        "eSuperTypes": "#//LineContainer #//DTableElement #//DTableElementUpdater"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "originMapping",
+        "lowerBound": "1",
+        "eType": "#//description/LineMapping"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "visible",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "collapsed",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "cells",
+        "upperBound": "-1",
+        "eType": "#//DCell",
+        "containment": "true",
+        "eOpposite": "#//DCell/line"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "22",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "List of cells of this line. This list does not necessarily have as many cells as there are columns. Indeed, the «blank cells» are not created."
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "container",
+        "eType": "#//LineContainer",
+        "eOpposite": "#//LineContainer/lines"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "orderedCells",
+        "upperBound": "-1",
+        "eType": "#//DCell",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "26",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Same list as \"cells\" but sorted according to the order of columns."
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "currentStyle",
+        "eType": "#//DTableElementStyle",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "29",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Stores the best style of the LineMapping style updater : \n* The first conditional foreground style (with predicate expression that returns true), otherwise the default foreground style.\n* The first conditional background style (with predicate expression that returns true), otherwise the default background style."
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DCell",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//DSemanticDecorator #//DTableElement #//DTableElementUpdater"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "line",
+        "eType": "#//DLine",
+        "eOpposite": "#//DLine/cells"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "column",
+        "eType": "#//DColumn",
+        "eOpposite": "#//DColumn/cells"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "currentStyle",
+        "eType": "#//DCellStyle",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "36",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Stores the best style of the IntersectionMapping style updater and ColumnMapping style updater :\n* Foreground\n** The first conditional foreground style of the cell (with predicate expression that returns true). In this case the foregroundStyleOrigin references the intersection mapping and the defaultForegroundStyle is equal false.\n** Otherwise the first conditional foreground style of the column (with predicate expression that returns true). In this case the foregroundStyleOrigin references the column mapping and the defaultForegroundStyle is equal false.\n** Otherwise, if it exists, the default foreground style of the cell. In this case the foregroundStyleOrigin references the intersection mapping and the defaultForegroundStyle is equal true.\n** Otherwise, if the default foreground style of the column uses variable color, the default foreground style of the column. In this case the foregroundStyleOrigin references the column mapping and the defaultForegroundStyle is equal true.\n* Background\n** The first conditional background style of the cell (with predicate expression that returns true). In this case the backgroundStyleOrigin references the intersection mapping and the defaultBackgroundStyle is equal false.\n** Otherwise the first conditional background style of the column (with predicate expression that returns true). In this case the backgroundStyleOrigin references the column mapping and the defaultBackgroundStyle is equal false.\n** Otherwise, if it exists, the default background style of the cell. In this case the backgroundStyleOrigin references the intersection mapping and the defaultBackgroundStyle is equal true.\n** Otherwise, if the default background style of the column uses variable color, the default background style of the column. In this case the backgroundStyleOrigin references the column mapping and the defaultBackgroundStyle is equal true."
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "updater",
+        "eType": "#//description/CellUpdater",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "intersectionMapping",
+        "eType": "#//description/IntersectionMapping"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DCellStyle",
+        "eSuperTypes": "#//DTableElementStyle"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foregroundStyleOrigin",
+        "eType": "#//description/TableMapping"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "42",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Needed to know the origin of the foreground part of this DCellStyle to respect the style priority rules between Cell, Line and Column.\nThis TableMapping can be only an IntersectionMapping or a  ColumnMapping."
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "backgroundStyleOrigin",
+        "eType": "#//description/TableMapping"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "45",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Needed to know the origin of the background part of this DCellStyle to respect the style priority rules between Cell, Line and Column.\nThis TableMapping can be only an IntersectionMapping or a  ColumnMapping."
+      }
+    },
+    {
+      "id": "46",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DColumn",
+        "abstract": "true",
+        "eSuperTypes": "#//DTableElement"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "cells",
+        "upperBound": "-1",
+        "eType": "#//DCell",
+        "eOpposite": "#//DCell/column"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "List of cells of this column. This list does not necessarily have as many cells as there are lines. Indeed, the «blank cells» are not created."
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "originMapping",
+        "lowerBound": "1",
+        "eType": "#//description/ColumnMapping"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "table",
+        "eType": "#//DTable",
+        "eOpposite": "#//DTable/columns"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "orderedCells",
+        "upperBound": "-1",
+        "eType": "#//DCell",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "55",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Same list as a\"cells\" but sorted according to the order of lines."
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "visible",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "width",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "currentStyle",
+        "eType": "#//DTableElementStyle",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "60",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Stores the best style of the ColumnMapping style updater :\n* The best style is only the default foreground style and the default background style (and only if the color use for it is not with variable parts: ComputedColor or InterpolatedColor). \n* We can not store the result of the conditional styles (foreground and background) because the predicateExpression depend on the semantic element of each line."
+      }
+    },
+    {
+      "id": "61",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTargetColumn",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//DSemanticDecorator #//DColumn #//DTableElementUpdater"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DFeatureColumn",
+        "eSuperTypes": "#//DColumn"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "featureName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTableElementSynchronizer",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eOperations",
+      "attributes": {
+        "name": "refresh"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eParameters",
+      "attributes": {
+        "name": "cell",
+        "lowerBound": "1",
+        "eType": "#//DCell"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eOperations",
+      "attributes": {
+        "name": "refresh"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eParameters",
+      "attributes": {
+        "name": "column",
+        "lowerBound": "1",
+        "eType": "#//DColumn"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eOperations",
+      "attributes": {
+        "name": "refresh"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eParameters",
+      "attributes": {
+        "name": "line",
+        "lowerBound": "1",
+        "eType": "#//DLine"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DTableElementStyle"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelSize",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt",
+        "defaultValueLiteral": "8"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "74",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The font size."
+      }
+    },
+    {
+      "id": "75",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelFormat",
+        "eType": "ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//FontFormat",
+        "defaultValueLiteral": "normal"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "77",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The font format."
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foregroundColor",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//RGBValues",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "backgroundColor",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//RGBValues",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defaultForegroundStyle",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "82",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Determine if the foreground part of the style is computed from a conditional style or not (default style)."
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defaultBackgroundStyle",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "85",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Determine if the background part of the style is computed from a conditional style or not (default style)."
+      }
+    },
+    {
+      "id": "86",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "description",
+        "nsURI": "http://www.eclipse.org/sirius/table/description/1.1.0",
+        "nsPrefix": "description"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableDescription",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/RepresentationDescription ../../org.eclipse.sirius/model/viewpoint.ecore#//description/DocumentedElement ../../org.eclipse.sirius/model/viewpoint.ecore#//description/EndUserDocumentedElement"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "preconditionExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "89",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "90",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The precondition (Acceleo Expression)."
+      }
+    },
+    {
+      "id": "91",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "92",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "boolean"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domainClass",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/TypeName"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedRepresentationCreationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationCreationDescription",
+        "containment": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "97",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All tools of the section."
+      }
+    },
+    {
+      "id": "98",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedRepresentationCreationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationCreationDescription",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "100",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All tools of the section."
+      }
+    },
+    {
+      "id": "101",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allRepresentationCreationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationCreationDescription",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "103",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All tools of the section."
+      }
+    },
+    {
+      "id": "104",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedRepresentationNavigationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationNavigationDescription",
+        "containment": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "105",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "106",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All navigation tools."
+      }
+    },
+    {
+      "id": "107",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedRepresentationNavigationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationNavigationDescription",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "108",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "109",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All navigation tools."
+      }
+    },
+    {
+      "id": "110",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allRepresentationNavigationDescriptions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationNavigationDescription",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "112",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "All navigation tools."
+      }
+    },
+    {
+      "id": "113",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedLineMappings",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "containment": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "114",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedLineMappings",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allLineMappings",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedCreateLine",
+        "upperBound": "-1",
+        "eType": "#//description/CreateLineTool",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedCreateLine",
+        "upperBound": "-1",
+        "eType": "#//description/CreateLineTool"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allCreateLine",
+        "upperBound": "-1",
+        "eType": "#//description/CreateLineTool",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "initialHeaderColumnWidth",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "121",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The initial width of the column header (calculated if not available)."
+      }
+    },
+    {
+      "id": "122",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "importedElements",
+        "upperBound": "-1",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "123",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EditionTableDescription",
+        "eSuperTypes": "#//description/TableDescription"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedColumnMappings",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/FeatureColumnMapping",
+        "containment": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedColumnMappings",
+        "upperBound": "-1",
+        "eType": "#//description/FeatureColumnMapping",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "126",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allColumnMappings",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/FeatureColumnMapping",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CrossTableDescription",
+        "eSuperTypes": "#//description/TableDescription"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedColumnMappings",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/ElementColumnMapping",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "intersection",
+        "upperBound": "-1",
+        "eType": "#//description/IntersectionMapping",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "createColumn",
+        "upperBound": "-1",
+        "eType": "#//description/CreateCrossColumnTool",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableMapping",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/RepresentationElementMapping"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "semanticElements",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "134",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The elements that are represented by this mapping."
+      }
+    },
+    {
+      "id": "135",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "136",
+      "type": "details",
+      "attributes": {
+        "key": "contentassist",
+        "value": ""
+      }
+    },
+    {
+      "id": "137",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "138",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "139",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "140",
+      "type": "details",
+      "attributes": {
+        "key": "view",
+        "value": "table.DTableElement | current DTableElement (DCell, DColumn, DLine, ...)."
+      }
+    },
+    {
+      "id": "141",
+      "type": "details",
+      "attributes": {
+        "key": "containerView",
+        "value": "ecore.EObject | container of the current DTableElement (variable is available if container is not null)."
+      }
+    },
+    {
+      "id": "142",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic target of containerView (if it is a DSemanticDecorator)."
+      }
+    },
+    {
+      "id": "143",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LineMapping",
+        "eSuperTypes": "#//description/TableMapping #//description/StyleUpdater"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedSubLines",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "containment": "true",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "145",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedSubLines",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "eOpposite": "#//description/LineMapping/reusedInMappings"
+      }
+    },
+    {
+      "id": "146",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allSubLines",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reusedInMappings",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "eOpposite": "#//description/LineMapping/reusedSubLines"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domainClass",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/TypeName"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "create",
+        "upperBound": "-1",
+        "eType": "#//description/CreateLineTool",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "delete",
+        "eType": "#//description/DeleteLineTool",
+        "containment": "true",
+        "eOpposite": "#//description/DeleteLineTool/mapping"
+      }
+    },
+    {
+      "id": "151",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "semanticCandidatesExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "153",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "154",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "155",
+      "type": "details",
+      "attributes": {
+        "key": "viewpoint",
+        "value": "table.DTable | (deprecated) current DTable."
+      }
+    },
+    {
+      "id": "156",
+      "type": "details",
+      "attributes": {
+        "key": "table",
+        "value": "table.DTable | current DTable."
+      }
+    },
+    {
+      "id": "157",
+      "type": "details",
+      "attributes": {
+        "key": "root",
+        "value": "ecore.EObject | semantic target of $table."
+      }
+    },
+    {
+      "id": "158",
+      "type": "details",
+      "attributes": {
+        "key": "containerView",
+        "value": "table.LineContainer | current LineContainer (DLine or DTable)."
+      }
+    },
+    {
+      "id": "159",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic target of $containerView (if it is a DSemanticDecorator)."
+      }
+    },
+    {
+      "id": "160",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "headerLabelExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "161",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "162",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a string."
+      }
+    },
+    {
+      "id": "163",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "164",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ColumnMapping",
+        "eSuperTypes": "#//description/TableMapping"
+      }
+    },
+    {
+      "id": "165",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "headerLabelExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "166",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "167",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a string."
+      }
+    },
+    {
+      "id": "168",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "169",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "initialWidth",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+      }
+    },
+    {
+      "id": "170",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "171",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The initial width of the column (calculated if not available)."
+      }
+    },
+    {
+      "id": "172",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ElementColumnMapping",
+        "eSuperTypes": "#//description/ColumnMapping #//description/StyleUpdater"
+      }
+    },
+    {
+      "id": "173",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domainClass",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/TypeName"
+      }
+    },
+    {
+      "id": "174",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "semanticCandidatesExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "175",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "176",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "177",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "178",
+      "type": "details",
+      "attributes": {
+        "key": "viewpoint",
+        "value": "table.DTable | (deprecated) current DTable."
+      }
+    },
+    {
+      "id": "179",
+      "type": "details",
+      "attributes": {
+        "key": "table",
+        "value": "table.DTable | current DTable."
+      }
+    },
+    {
+      "id": "180",
+      "type": "details",
+      "attributes": {
+        "key": "containerView",
+        "value": "table.DTable | current DTable."
+      }
+    },
+    {
+      "id": "181",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic element targeted by the current DTable."
+      }
+    },
+    {
+      "id": "182",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "create",
+        "upperBound": "-1",
+        "eType": "#//description/CreateColumnTool",
+        "containment": "true",
+        "eOpposite": "#//description/CreateColumnTool/mapping"
+      }
+    },
+    {
+      "id": "183",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "delete",
+        "eType": "#//description/DeleteColumnTool",
+        "containment": "true",
+        "eOpposite": "#//description/DeleteColumnTool/mapping"
+      }
+    },
+    {
+      "id": "184",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FeatureColumnMapping",
+        "eSuperTypes": "#//description/ColumnMapping #//description/CellUpdater #//description/StyleUpdater"
+      }
+    },
+    {
+      "id": "185",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "featureName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "186",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "187",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "188",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a string."
+      }
+    },
+    {
+      "id": "189",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "190",
+      "type": "details",
+      "attributes": {
+        "key": "root",
+        "value": "ecore.EObject | semantic target of the current DTable."
+      }
+    },
+    {
+      "id": "191",
+      "type": "details",
+      "attributes": {
+        "key": "line",
+        "value": "table.DLine | DLine of the current DCell."
+      }
+    },
+    {
+      "id": "192",
+      "type": "details",
+      "attributes": {
+        "key": "lineSemantic",
+        "value": "ecore.EObject | semantic target of $line"
+      }
+    },
+    {
+      "id": "193",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic target of $line."
+      }
+    },
+    {
+      "id": "194",
+      "type": "details",
+      "attributes": {
+        "key": "column",
+        "value": "table.DColumn | DColumn of the current DCell."
+      }
+    },
+    {
+      "id": "195",
+      "type": "details",
+      "attributes": {
+        "key": "columnSemantic",
+        "value": "ecore.EObject | semantic target of $column"
+      }
+    },
+    {
+      "id": "196",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "featureParentExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "197",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "198",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An expression to get the parent of the feature. By default, the parent of the feature is the semantic element of the line."
+      }
+    },
+    {
+      "id": "199",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "200",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "201",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "202",
+      "type": "details",
+      "attributes": {
+        "key": "root",
+        "value": "ecore.EObject | semantic target of the current DTable."
+      }
+    },
+    {
+      "id": "203",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic target of the current DLine."
+      }
+    },
+    {
+      "id": "204",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CellUpdater"
+      }
+    },
+    {
+      "id": "205",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getLabelComputationExpression",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "206",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getCreateCell",
+        "eType": "#//description/CreateCellTool"
+      }
+    },
+    {
+      "id": "207",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "directEdit",
+        "eType": "#//description/LabelEditTool",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "208",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "canEdit",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "209",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "210",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a boolean."
+      }
+    },
+    {
+      "id": "211",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "212",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StyleUpdater",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "213",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "defaultForeground",
+        "eType": "#//description/ForegroundStyleDescription",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "214",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foregroundConditionalStyle",
+        "upperBound": "-1",
+        "eType": "#//description/ForegroundConditionalStyle",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "215",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "defaultBackground",
+        "eType": "#//description/BackgroundStyleDescription",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "216",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "backgroundConditionalStyle",
+        "upperBound": "-1",
+        "eType": "#//description/BackgroundConditionalStyle",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "217",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IntersectionMapping",
+        "eSuperTypes": "#//description/TableMapping #//description/CellUpdater #//description/StyleUpdater"
+      }
+    },
+    {
+      "id": "218",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "lineMapping",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//description/LineMapping",
+        "eKeys": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/IdentifiedElement/name"
+      }
+    },
+    {
+      "id": "219",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columnMapping",
+        "lowerBound": "1",
+        "eType": "#//description/ColumnMapping"
+      }
+    },
+    {
+      "id": "220",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "221",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "222",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a string."
+      }
+    },
+    {
+      "id": "223",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "224",
+      "type": "details",
+      "attributes": {
+        "key": "root",
+        "value": "ecore.EObject | semantic target of the current DTable."
+      }
+    },
+    {
+      "id": "225",
+      "type": "details",
+      "attributes": {
+        "key": "line",
+        "value": "table.DLine | DLine of the current DCell."
+      }
+    },
+    {
+      "id": "226",
+      "type": "details",
+      "attributes": {
+        "key": "lineSemantic",
+        "value": "ecore.EObject | semantic target of $line"
+      }
+    },
+    {
+      "id": "227",
+      "type": "details",
+      "attributes": {
+        "key": "container",
+        "value": "ecore.EObject | semantic target of $line."
+      }
+    },
+    {
+      "id": "228",
+      "type": "details",
+      "attributes": {
+        "key": "column",
+        "value": "table.DColumn | DColumn of the current DCell."
+      }
+    },
+    {
+      "id": "229",
+      "type": "details",
+      "attributes": {
+        "key": "columnSemantic",
+        "value": "ecore.EObject | semantic target of $column"
+      }
+    },
+    {
+      "id": "230",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useDomainClass",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "231",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "columnFinderExpression",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "232",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "233",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "234",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "235",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "lineFinderExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "236",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "237",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "238",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "239",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "semanticCandidatesExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "240",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "241",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a Collection<EObject> or an EObject."
+      }
+    },
+    {
+      "id": "242",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "243",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domainClass",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/TypeName"
+      }
+    },
+    {
+      "id": "244",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "preconditionExpression",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "245",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "246",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An expression guarding the effect if evaluated to false."
+      }
+    },
+    {
+      "id": "247",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "248",
+      "type": "details",
+      "attributes": {
+        "key": "contentassist",
+        "value": ""
+      }
+    },
+    {
+      "id": "249",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "250",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a boolean."
+      }
+    },
+    {
+      "id": "251",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "252",
+      "type": "details",
+      "attributes": {
+        "key": "line",
+        "value": "table.DLine | the source view of the current potential line."
+      }
+    },
+    {
+      "id": "253",
+      "type": "details",
+      "attributes": {
+        "key": "lineSemantic",
+        "value": "ecore.EObject | the semantic element of $line."
+      }
+    },
+    {
+      "id": "254",
+      "type": "details",
+      "attributes": {
+        "key": "column",
+        "value": "table.DColumn | the source view of the current potential column."
+      }
+    },
+    {
+      "id": "255",
+      "type": "details",
+      "attributes": {
+        "key": "columnSemantic",
+        "value": "ecore.EObject | the semantic element of $column."
+      }
+    },
+    {
+      "id": "256",
+      "type": "details",
+      "attributes": {
+        "key": "table",
+        "value": "table.DTable | the current DTable."
+      }
+    },
+    {
+      "id": "257",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "create",
+        "eType": "#//description/CreateCellTool",
+        "containment": "true",
+        "eOpposite": "#//description/CreateCellTool/mapping"
+      }
+    },
+    {
+      "id": "258",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableTool"
+      }
+    },
+    {
+      "id": "259",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "variables",
+        "upperBound": "-1",
+        "eType": "#//description/TableVariable",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "260",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "firstModelOperation",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/ModelOperation",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "261",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LabelEditTool",
+        "eSuperTypes": "#//description/TableTool"
+      }
+    },
+    {
+      "id": "262",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mask",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/EditMaskVariables",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "263",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "264",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The edit mask."
+      }
+    },
+    {
+      "id": "265",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CreateTool",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/AbstractToolDescription #//description/TableTool"
+      }
+    },
+    {
+      "id": "266",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CreateColumnTool",
+        "eSuperTypes": "#//description/CreateTool"
+      }
+    },
+    {
+      "id": "267",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "lowerBound": "1",
+        "eType": "#//description/ElementColumnMapping",
+        "eOpposite": "#//description/ElementColumnMapping/create"
+      }
+    },
+    {
+      "id": "268",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CreateCrossColumnTool",
+        "eSuperTypes": "#//description/CreateTool"
+      }
+    },
+    {
+      "id": "269",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "lowerBound": "1",
+        "eType": "#//description/ElementColumnMapping"
+      }
+    },
+    {
+      "id": "270",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CreateLineTool",
+        "eSuperTypes": "#//description/CreateTool"
+      }
+    },
+    {
+      "id": "271",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "eType": "#//description/LineMapping"
+      }
+    },
+    {
+      "id": "272",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CreateCellTool",
+        "eSuperTypes": "#//description/TableTool ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/AbstractToolDescription"
+      }
+    },
+    {
+      "id": "273",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mask",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/EditMaskVariables",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "274",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "275",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The edit mask."
+      }
+    },
+    {
+      "id": "276",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "lowerBound": "1",
+        "eType": "#//description/IntersectionMapping",
+        "eOpposite": "#//description/IntersectionMapping/create"
+      }
+    },
+    {
+      "id": "277",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DeleteTool",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/AbstractToolDescription #//description/TableTool"
+      }
+    },
+    {
+      "id": "278",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DeleteColumnTool",
+        "eSuperTypes": "#//description/DeleteTool"
+      }
+    },
+    {
+      "id": "279",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "lowerBound": "1",
+        "eType": "#//description/ElementColumnMapping",
+        "eOpposite": "#//description/ElementColumnMapping/delete"
+      }
+    },
+    {
+      "id": "280",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DeleteLineTool",
+        "eSuperTypes": "#//description/DeleteTool"
+      }
+    },
+    {
+      "id": "281",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "mapping",
+        "lowerBound": "1",
+        "eType": "#//description/LineMapping",
+        "eOpposite": "#//description/LineMapping/delete"
+      }
+    },
+    {
+      "id": "282",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ForegroundStyleDescription"
+      }
+    },
+    {
+      "id": "283",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelSize",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt",
+        "defaultValueLiteral": "12"
+      }
+    },
+    {
+      "id": "284",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "285",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The font size."
+      }
+    },
+    {
+      "id": "286",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "labelFormat",
+        "eType": "ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//FontFormat",
+        "defaultValueLiteral": "normal"
+      }
+    },
+    {
+      "id": "287",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "288",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The font format."
+      }
+    },
+    {
+      "id": "289",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foreGroundColor",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"
+      }
+    },
+    {
+      "id": "290",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BackgroundStyleDescription"
+      }
+    },
+    {
+      "id": "291",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "backgroundColor",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"
+      }
+    },
+    {
+      "id": "292",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ForegroundConditionalStyle"
+      }
+    },
+    {
+      "id": "293",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "predicateExpression",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "294",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "295",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a boolean."
+      }
+    },
+    {
+      "id": "296",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "297",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "style",
+        "eType": "#//description/ForegroundStyleDescription",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "298",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BackgroundConditionalStyle"
+      }
+    },
+    {
+      "id": "299",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "predicateExpression",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.eclipse.sirius/model/viewpoint.ecore#//description/InterpretedExpression"
+      }
+    },
+    {
+      "id": "300",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/returnType"
+      }
+    },
+    {
+      "id": "301",
+      "type": "details",
+      "attributes": {
+        "key": "returnType",
+        "value": "a boolean."
+      }
+    },
+    {
+      "id": "302",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/sirius/interpreted/expression/variables"
+      }
+    },
+    {
+      "id": "303",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "style",
+        "eType": "#//description/BackgroundStyleDescription",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "304",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableVariable",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/AbstractVariable ../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/VariableContainer"
+      }
+    },
+    {
+      "id": "305",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "documentation",
+        "eType": "ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "306",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableCreationDescription",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationCreationDescription"
+      }
+    },
+    {
+      "id": "307",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableDescription",
+        "lowerBound": "1",
+        "eType": "#//description/TableDescription"
+      }
+    },
+    {
+      "id": "308",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableNavigationDescription",
+        "eSuperTypes": "../../org.eclipse.sirius/model/viewpoint.ecore#//description/tool/RepresentationNavigationDescription"
+      }
+    },
+    {
+      "id": "309",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableDescription",
+        "lowerBound": "1",
+        "eType": "#//description/TableDescription"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "46",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "61",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "62",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "71",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "86",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eOperations"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eOperations"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eParameters"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "details"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "details"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "details"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "details"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "57",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "58",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "54",
+      "target": "55",
+      "type": "details"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "59",
+      "target": "60",
+      "type": "details"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eOperations"
+    },
+    {
+      "source": "64",
+      "target": "67",
+      "type": "eOperations"
+    },
+    {
+      "source": "64",
+      "target": "69",
+      "type": "eOperations"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "eParameters"
+    },
+    {
+      "source": "67",
+      "target": "68",
+      "type": "eParameters"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "eParameters"
+    },
+    {
+      "source": "71",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "75",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "79",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "details"
+    },
+    {
+      "source": "75",
+      "target": "76",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "details"
+    },
+    {
+      "source": "80",
+      "target": "81",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "81",
+      "target": "82",
+      "type": "details"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "84",
+      "target": "85",
+      "type": "details"
+    },
+    {
+      "source": "86",
+      "target": "87",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "123",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "127",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "131",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "143",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "164",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "172",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "184",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "204",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "212",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "217",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "258",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "261",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "265",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "266",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "268",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "270",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "272",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "277",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "278",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "280",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "282",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "290",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "292",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "298",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "304",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "306",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "86",
+      "target": "308",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "87",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "94",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "95",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "98",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "101",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "104",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "107",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "110",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "113",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "114",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "115",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "116",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "118",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "87",
+      "target": "122",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "88",
+      "target": "89",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "88",
+      "target": "91",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "88",
+      "target": "93",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "89",
+      "target": "90",
+      "type": "details"
+    },
+    {
+      "source": "91",
+      "target": "92",
+      "type": "details"
+    },
+    {
+      "source": "95",
+      "target": "96",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "96",
+      "target": "97",
+      "type": "details"
+    },
+    {
+      "source": "98",
+      "target": "99",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "99",
+      "target": "100",
+      "type": "details"
+    },
+    {
+      "source": "101",
+      "target": "102",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "102",
+      "target": "103",
+      "type": "details"
+    },
+    {
+      "source": "104",
+      "target": "105",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "105",
+      "target": "106",
+      "type": "details"
+    },
+    {
+      "source": "107",
+      "target": "108",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "108",
+      "target": "109",
+      "type": "details"
+    },
+    {
+      "source": "110",
+      "target": "111",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "111",
+      "target": "112",
+      "type": "details"
+    },
+    {
+      "source": "119",
+      "target": "120",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "120",
+      "target": "121",
+      "type": "details"
+    },
+    {
+      "source": "123",
+      "target": "124",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "123",
+      "target": "125",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "123",
+      "target": "126",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "127",
+      "target": "128",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "127",
+      "target": "129",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "127",
+      "target": "130",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "131",
+      "target": "132",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "132",
+      "target": "135",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "132",
+      "target": "137",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "132",
+      "target": "139",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "133",
+      "target": "134",
+      "type": "details"
+    },
+    {
+      "source": "135",
+      "target": "136",
+      "type": "details"
+    },
+    {
+      "source": "137",
+      "target": "138",
+      "type": "details"
+    },
+    {
+      "source": "139",
+      "target": "140",
+      "type": "details"
+    },
+    {
+      "source": "139",
+      "target": "141",
+      "type": "details"
+    },
+    {
+      "source": "139",
+      "target": "142",
+      "type": "details"
+    },
+    {
+      "source": "143",
+      "target": "144",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "145",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "146",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "147",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "148",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "149",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "150",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "151",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "143",
+      "target": "160",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "151",
+      "target": "152",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "151",
+      "target": "154",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "152",
+      "target": "153",
+      "type": "details"
+    },
+    {
+      "source": "154",
+      "target": "155",
+      "type": "details"
+    },
+    {
+      "source": "154",
+      "target": "156",
+      "type": "details"
+    },
+    {
+      "source": "154",
+      "target": "157",
+      "type": "details"
+    },
+    {
+      "source": "154",
+      "target": "158",
+      "type": "details"
+    },
+    {
+      "source": "154",
+      "target": "159",
+      "type": "details"
+    },
+    {
+      "source": "160",
+      "target": "161",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "160",
+      "target": "163",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "161",
+      "target": "162",
+      "type": "details"
+    },
+    {
+      "source": "164",
+      "target": "165",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "164",
+      "target": "169",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "165",
+      "target": "166",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "165",
+      "target": "168",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "166",
+      "target": "167",
+      "type": "details"
+    },
+    {
+      "source": "169",
+      "target": "170",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "170",
+      "target": "171",
+      "type": "details"
+    },
+    {
+      "source": "172",
+      "target": "173",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "172",
+      "target": "174",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "172",
+      "target": "182",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "172",
+      "target": "183",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "174",
+      "target": "175",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "174",
+      "target": "177",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "175",
+      "target": "176",
+      "type": "details"
+    },
+    {
+      "source": "177",
+      "target": "178",
+      "type": "details"
+    },
+    {
+      "source": "177",
+      "target": "179",
+      "type": "details"
+    },
+    {
+      "source": "177",
+      "target": "180",
+      "type": "details"
+    },
+    {
+      "source": "177",
+      "target": "181",
+      "type": "details"
+    },
+    {
+      "source": "184",
+      "target": "185",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "184",
+      "target": "186",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "184",
+      "target": "196",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "186",
+      "target": "187",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "186",
+      "target": "189",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "187",
+      "target": "188",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "190",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "191",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "192",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "193",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "194",
+      "type": "details"
+    },
+    {
+      "source": "189",
+      "target": "195",
+      "type": "details"
+    },
+    {
+      "source": "196",
+      "target": "197",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "196",
+      "target": "199",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "196",
+      "target": "201",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "197",
+      "target": "198",
+      "type": "details"
+    },
+    {
+      "source": "199",
+      "target": "200",
+      "type": "details"
+    },
+    {
+      "source": "201",
+      "target": "202",
+      "type": "details"
+    },
+    {
+      "source": "201",
+      "target": "203",
+      "type": "details"
+    },
+    {
+      "source": "204",
+      "target": "205",
+      "type": "eOperations"
+    },
+    {
+      "source": "204",
+      "target": "206",
+      "type": "eOperations"
+    },
+    {
+      "source": "204",
+      "target": "207",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "204",
+      "target": "208",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "208",
+      "target": "209",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "208",
+      "target": "211",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "209",
+      "target": "210",
+      "type": "details"
+    },
+    {
+      "source": "212",
+      "target": "213",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "212",
+      "target": "214",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "212",
+      "target": "215",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "212",
+      "target": "216",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "218",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "219",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "220",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "230",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "231",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "235",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "239",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "243",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "244",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "217",
+      "target": "257",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "220",
+      "target": "221",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "220",
+      "target": "223",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "221",
+      "target": "222",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "224",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "225",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "226",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "227",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "228",
+      "type": "details"
+    },
+    {
+      "source": "223",
+      "target": "229",
+      "type": "details"
+    },
+    {
+      "source": "231",
+      "target": "232",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "231",
+      "target": "234",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "232",
+      "target": "233",
+      "type": "details"
+    },
+    {
+      "source": "235",
+      "target": "236",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "235",
+      "target": "238",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "236",
+      "target": "237",
+      "type": "details"
+    },
+    {
+      "source": "239",
+      "target": "240",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "239",
+      "target": "242",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "240",
+      "target": "241",
+      "type": "details"
+    },
+    {
+      "source": "244",
+      "target": "245",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "244",
+      "target": "247",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "244",
+      "target": "249",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "244",
+      "target": "251",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "245",
+      "target": "246",
+      "type": "details"
+    },
+    {
+      "source": "247",
+      "target": "248",
+      "type": "details"
+    },
+    {
+      "source": "249",
+      "target": "250",
+      "type": "details"
+    },
+    {
+      "source": "251",
+      "target": "252",
+      "type": "details"
+    },
+    {
+      "source": "251",
+      "target": "253",
+      "type": "details"
+    },
+    {
+      "source": "251",
+      "target": "254",
+      "type": "details"
+    },
+    {
+      "source": "251",
+      "target": "255",
+      "type": "details"
+    },
+    {
+      "source": "251",
+      "target": "256",
+      "type": "details"
+    },
+    {
+      "source": "258",
+      "target": "259",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "258",
+      "target": "260",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "261",
+      "target": "262",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "262",
+      "target": "263",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "263",
+      "target": "264",
+      "type": "details"
+    },
+    {
+      "source": "266",
+      "target": "267",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "268",
+      "target": "269",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "270",
+      "target": "271",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "272",
+      "target": "273",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "272",
+      "target": "276",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "273",
+      "target": "274",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "274",
+      "target": "275",
+      "type": "details"
+    },
+    {
+      "source": "278",
+      "target": "279",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "280",
+      "target": "281",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "283",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "286",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "289",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "283",
+      "target": "284",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "284",
+      "target": "285",
+      "type": "details"
+    },
+    {
+      "source": "286",
+      "target": "287",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "287",
+      "target": "288",
+      "type": "details"
+    },
+    {
+      "source": "290",
+      "target": "291",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "293",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "297",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "293",
+      "target": "294",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "293",
+      "target": "296",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "294",
+      "target": "295",
+      "type": "details"
+    },
+    {
+      "source": "298",
+      "target": "299",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "298",
+      "target": "303",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "299",
+      "target": "300",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "299",
+      "target": "302",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "300",
+      "target": "301",
+      "type": "details"
+    },
+    {
+      "source": "304",
+      "target": "305",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "306",
+      "target": "307",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "308",
+      "target": "309",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 310,
+    "edge_count": 309,
+    "node_type_count": 8,
+    "edge_type_count": 7
+  }
+}

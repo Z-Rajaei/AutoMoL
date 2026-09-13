@@ -1,0 +1,7139 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "connection",
+        "nsURI": "http://www.talend.org/metadata/connection/2010",
+        "nsPrefix": "TalendMetadata"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Metadata",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connections",
+        "upperBound": "-1",
+        "eType": "#//Connection",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Connection",
+        "eSuperTypes": "#//AbstractMetadataObject ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/foundation/softwaredeployment/DataProvider"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "base class tha represent a connection, may be to a database or a file or else"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "version",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "queries",
+        "eType": "#//QueriesConnection",
+        "containment": "true",
+        "eOpposite": "#//QueriesConnection/connection"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "This defines the SQL queries related to this connection"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ContextMode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "12",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "whether this connection is defined using a context or is standalone"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ContextId",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "15",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Id of the context this connection is linked to, only used when ContextMode attribute is true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetadataColumn",
+        "eSuperTypes": "#//AbstractMetadataObject ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/record/Field"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "18",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "represents a metada column which contains source (such as DB) definitions as weel as Talend mappings"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sourceType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "21",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Schema DB type (VARCHAR for example ), can be initialised from DB  column type and modified by the user.)\r\nThis is maintained in synch with the TalendType (at least in the Table schema editor).\r\n"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defaultValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "volatile": "true",
+        "transient": "true",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "23",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "24",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated Use initialValue  instead\r\n(This represents the default value for column. This may be changed by the user.)\r\n\r\n"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "talendType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "27",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "java type used by Talend for handling this column elements; This seems to be synched with the sourceType.\r\nThis must be the case for schema used for Table creation."
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "key",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "30",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Whether this column is a considered a key, in a business meaning (This is not technical).\r\nThis may apply to file, xml or dB columns.\r\nMay be changed by the user.\r\nWhen retrieving Metadata from DB this will be set to true if the column belong to the primary key."
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nullable",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "33",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "whether this column supports null values. May be changed by the user."
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "table",
+        "eType": "#//MetadataTable",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "36",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "reference to the containing table or view"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "originalField",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "volatile": "true",
+        "transient": "true",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "38",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "39",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use g(s)etName\r\nLogical name of the column"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pattern",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "41",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "42",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "pattern mainly used for date parsing"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "displayField",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractMetadataObject",
+        "abstract": "true",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/ModelElement"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "46",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "base class for all the metadata model"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "properties",
+        "lowerBound": "1",
+        "eType": "#//Map",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "48",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "49",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated Use taggedValue instead\r\n(map of general purpose key/value that is available to all classes of the metamodel.)\r\n"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "52",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "logical identifier"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "comment",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "54",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "55",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "free comment of this element, may be displayed to the user."
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "58",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "name to be displayed for the current object"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "readOnly",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "volatile": "true",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "synchronised",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "divergency",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetadataTable",
+        "eSuperTypes": "#//AbstractMetadataObject ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/Class"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "64",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "representation of a of set of columns"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sourceName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "volatile": "true",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "67",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use g(s)etName()\r\nname of the table, that is actual DB table name for DB tables"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tableType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "70",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "of value of TABLE, VIEW, SYNONYM, ALL_SYNONYM"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "attachedCDC",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "73",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "whether a CDC table is attached to this table"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "activatedCDC",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "76",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "whether CDC is activated, that is the trigger are set to record the changes"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//MetadataColumn",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "79",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "List of columns related to this table, this is a derived attribute from the feature attribute, thus volatile and transiant"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//Connection",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "82",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use MetadataTableHelper.getFirstconnection()\r\nref to the connection that contains this table"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Map",
+        "instanceClassName": "java.util.HashMap"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FileConnection",
+        "abstract": "true",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Server",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FilePath",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Format",
+        "lowerBound": "1",
+        "eType": "#//FileFormat"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Encoding",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FieldSeparatorValue",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RowSeparatorType",
+        "lowerBound": "1",
+        "eType": "#//RowSeparator",
+        "defaultValueLiteral": "Standart_EOL = 1"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RowSeparatorValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "TextIdentifier",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "93",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseHeader",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "HeaderValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseFooter",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FooterValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LimitValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FirstLineCaption",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RemoveEmptyRow",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "EscapeType",
+        "lowerBound": "1",
+        "eType": "#//Escape"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "EscapeChar",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "103",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "TextEnclosure",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "CsvOption",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "105",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DelimitedFileConnection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "106",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FieldSeparatorType",
+        "lowerBound": "1",
+        "eType": "#//FieldSeparator",
+        "defaultValueLiteral": "Semicolon"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "splitRecord",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "false"
+      }
+    },
+    {
+      "id": "108",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PositionalFileConnection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "109",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EbcdicConnection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "MidFile",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DataFile",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MDMConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "113",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getConnectionString",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "114",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "115",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "return the connection string to connect to the MDM server,\r\nit is a concatenation of protocol, server, port and context.\r\nthe connection string returned may not be a valid URL if some of the concatenated elements are not properly set.\r\nNo checking is done."
+      }
+    },
+    {
+      "id": "116",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Username",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Port",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Server",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Universe",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Datamodel",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "122",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Datacluster",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "123",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "schemas",
+        "upperBound": "-1",
+        "eType": "#//Concept",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "protocol",
+        "lowerBound": "1",
+        "eType": "#//MDMConnectionProtocol",
+        "defaultValueLiteral": "http"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "126",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "protocol used for connecting to MDM server, initial protocol is HTTP"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "context",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String",
+        "defaultValueLiteral": "talend/TalendPort"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "129",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "part of the url for connecting to the server, \r\nthe last part that defined the MDM web app context"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "FileFormat"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "UNIX"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "MAC",
+        "value": "1"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "WINDOWS",
+        "value": "2"
+      }
+    },
+    {
+      "id": "134",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "FieldSeparator"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Tabulation"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Semicolon",
+        "value": "1"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Comma",
+        "value": "2"
+      }
+    },
+    {
+      "id": "138",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Space",
+        "value": "3"
+      }
+    },
+    {
+      "id": "139",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Alt_65",
+        "value": "4",
+        "literal": "''(Alt 65, #A4)"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Custom_ANSI",
+        "value": "5"
+      }
+    },
+    {
+      "id": "141",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Custom_UTF8",
+        "value": "6"
+      }
+    },
+    {
+      "id": "142",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Custom_RegExp",
+        "value": "7"
+      }
+    },
+    {
+      "id": "143",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "Escape"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Delimited",
+        "value": "1"
+      }
+    },
+    {
+      "id": "145",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CSV"
+      }
+    },
+    {
+      "id": "146",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "RowSeparator"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Custom_String",
+        "literal": "Custom String"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Standart_EOL",
+        "value": "1",
+        "literal": "Standart EOL"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DatabaseConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "151",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Defines a connection to a Database"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DatabaseType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "153",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "154",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "logical type of the DB (for instance MySQL)"
+      }
+    },
+    {
+      "id": "155",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DriverJarPath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "156",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "157",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "absolute path to the jar that may be used for Generic JDBC connection"
+      }
+    },
+    {
+      "id": "158",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DriverClass",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "159",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "160",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "initial class for generic JDBC connection"
+      }
+    },
+    {
+      "id": "161",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "URL",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "162",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "163",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "the connection base URL for JDBC protocol.\r\nIt is a concatenation of DatabaseType, ServerName, Port and other attributes of this class"
+      }
+    },
+    {
+      "id": "164",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "dbVersionString",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "165",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "166",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "may hold the version of the Database for a given Database type (for instance MySQL_4 or MySQL_5)"
+      }
+    },
+    {
+      "id": "167",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Port",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "168",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "169",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "port used for the Database Connection"
+      }
+    },
+    {
+      "id": "170",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Username",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "171",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "172",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "user name used for DB connection authentification"
+      }
+    },
+    {
+      "id": "173",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "174",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "175",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "password used for DB connection authentification"
+      }
+    },
+    {
+      "id": "176",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ServerName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "177",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "178",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "IP adress or machine name of the DB server to connect to."
+      }
+    },
+    {
+      "id": "179",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DatasourceName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "180",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FileFieldName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "181",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "182",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Database file used for DB such as SqlLite"
+      }
+    },
+    {
+      "id": "183",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SID",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "184",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "185",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Logical name of the Database"
+      }
+    },
+    {
+      "id": "186",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SqlSynthax",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "187",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "StringQuote",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": "\""
+      }
+    },
+    {
+      "id": "188",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "NullChar",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": "000"
+      }
+    },
+    {
+      "id": "189",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DbmsId",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "190",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ProductId",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "191",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DBRootPath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "192",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "AdditionalParams",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "193",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "194",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "parameters that are to be added to the connection URL"
+      }
+    },
+    {
+      "id": "195",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "StandardSQL",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "196",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SystemSQL",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "197",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "cdcConns",
+        "eType": "#//CDCConnection",
+        "containment": "true",
+        "eOpposite": "#//CDCConnection/connection"
+      }
+    },
+    {
+      "id": "198",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "199",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "reference to CDC definition for this connection"
+      }
+    },
+    {
+      "id": "200",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "cdcTypeMode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "201",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SQLMode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true",
+        "unsettable": "true"
+      }
+    },
+    {
+      "id": "202",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UiSchema",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "203",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "204",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Host",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "205",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Username",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "206",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "207",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Client",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "208",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SystemNumber",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "209",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Language",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "210",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "Funtions",
+        "upperBound": "-1",
+        "eType": "#//SAPFunctionUnit",
+        "containment": "true",
+        "eOpposite": "#//SAPFunctionUnit/connection"
+      }
+    },
+    {
+      "id": "211",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "currentFucntion",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "212",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "IDocs",
+        "upperBound": "-1",
+        "eType": "#//SAPIDocUnit",
+        "containment": "true",
+        "eOpposite": "#//SAPIDocUnit/connection"
+      }
+    },
+    {
+      "id": "213",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPFunctionUnit",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "214",
+      "type": "eOperations",
+      "attributes": {
+        "name": "setDocument"
+      }
+    },
+    {
+      "id": "215",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "216",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use SAPFunctionHelper.getFirstDocument().g(s)etReference()"
+      }
+    },
+    {
+      "id": "217",
+      "type": "eParameters",
+      "attributes": {
+        "name": "document",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "218",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "OutputType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "219",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "OutputTableName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "220",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "InputParameterTable",
+        "eType": "#//InputSAPFunctionParameterTable",
+        "containment": "true",
+        "eOpposite": "#//InputSAPFunctionParameterTable/functionUnit"
+      }
+    },
+    {
+      "id": "221",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "OutputParameterTable",
+        "eType": "#//OutputSAPFunctionParameterTable",
+        "containment": "true",
+        "eOpposite": "#//OutputSAPFunctionParameterTable/functionUnit"
+      }
+    },
+    {
+      "id": "222",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "MetadataTable",
+        "eType": "#//MetadataTable",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "223",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//SAPConnection",
+        "eOpposite": "#//SAPConnection/Funtions"
+      }
+    },
+    {
+      "id": "224",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tables",
+        "upperBound": "-1",
+        "eType": "#//MetadataTable",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "225",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "TestInputParameterTable",
+        "eType": "#//SAPTestInputParameterTable",
+        "containment": "true",
+        "eOpposite": "#//SAPTestInputParameterTable/functionUnit"
+      }
+    },
+    {
+      "id": "226",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPIDocUnit",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "227",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//SAPConnection",
+        "eOpposite": "#//SAPConnection/IDocs"
+      }
+    },
+    {
+      "id": "228",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "programId",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "229",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "gatewayService",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "230",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useXmlOutput",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "231",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "xmlFile",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "232",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useHtmlOutput",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "233",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "htmlFile",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "234",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPFunctionParameterColumn",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "235",
+      "type": "eOperations",
+      "attributes": {
+        "name": "setDescription"
+      }
+    },
+    {
+      "id": "236",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "237",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use ModelElementHelper.getFirstDescription().setBody()"
+      }
+    },
+    {
+      "id": "238",
+      "type": "eParameters",
+      "attributes": {
+        "name": "description",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "239",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ParameterType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "240",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "StructureOrTableName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "241",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DataType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "242",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Length",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "243",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Value",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "244",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ParameterTable",
+        "eType": "#//SAPFunctionParameterTable",
+        "eOpposite": "#//SAPFunctionParameterTable/columns"
+      }
+    },
+    {
+      "id": "245",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPFunctionParameterTable",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "246",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//SAPFunctionParameterColumn",
+        "containment": "true",
+        "eOpposite": "#//SAPFunctionParameterColumn/ParameterTable"
+      }
+    },
+    {
+      "id": "247",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InputSAPFunctionParameterTable",
+        "eSuperTypes": "#//SAPFunctionParameterTable"
+      }
+    },
+    {
+      "id": "248",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "functionUnit",
+        "eType": "#//SAPFunctionUnit",
+        "eOpposite": "#//SAPFunctionUnit/InputParameterTable"
+      }
+    },
+    {
+      "id": "249",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OutputSAPFunctionParameterTable",
+        "eSuperTypes": "#//SAPFunctionParameterTable"
+      }
+    },
+    {
+      "id": "250",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "functionUnit",
+        "eType": "#//SAPFunctionUnit",
+        "eOpposite": "#//SAPFunctionUnit/OutputParameterTable"
+      }
+    },
+    {
+      "id": "251",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "RegexpFileConnection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "252",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FieldSeparatorType",
+        "lowerBound": "1",
+        "eType": "#//FieldSeparator"
+      }
+    },
+    {
+      "id": "253",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XmlFileConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "254",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "XsdFilePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "255",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "XmlFilePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "256",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Guess",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "257",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "MaskXPattern",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "258",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "schema",
+        "upperBound": "-1",
+        "eType": "#//XmlXPathLoopDescriptor",
+        "containment": "true",
+        "eOpposite": "#//XmlXPathLoopDescriptor/connection"
+      }
+    },
+    {
+      "id": "259",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Encoding",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "260",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "group",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "261",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "root",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "262",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "loop",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "263",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "inputModel",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "264",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "outputFilePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "265",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SchemaTarget"
+      }
+    },
+    {
+      "id": "266",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RelativeXPathQuery",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "267",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "TagName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "268",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "schema",
+        "eType": "#//XmlXPathLoopDescriptor",
+        "eOpposite": "#//XmlXPathLoopDescriptor/schemaTargets"
+      }
+    },
+    {
+      "id": "269",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "QueriesConnection"
+      }
+    },
+    {
+      "id": "270",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//Connection",
+        "resolveProxies": "false",
+        "eOpposite": "#//Connection/queries"
+      }
+    },
+    {
+      "id": "271",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "query",
+        "upperBound": "-1",
+        "eType": "#//Query",
+        "containment": "true",
+        "eOpposite": "#//Query/queries"
+      }
+    },
+    {
+      "id": "272",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Query",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "273",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "274",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "queries",
+        "eType": "#//QueriesConnection",
+        "eOpposite": "#//QueriesConnection/query"
+      }
+    },
+    {
+      "id": "275",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "contextMode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "276",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LdifFileConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "277",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "278",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FilePath",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "279",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LimitEntry",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "280",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "281",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Server",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "282",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FileExcelConnection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "283",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SheetName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "284",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sheetColumns",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "285",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "firstColumn",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "286",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "lastColumn",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "287",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "thousandSeparator",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "288",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "decimalSeparator",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "289",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "advancedSpearator",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "290",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "selectAllSheets",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "291",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sheetList",
+        "eType": "#//List"
+      }
+    },
+    {
+      "id": "292",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XmlXPathLoopDescriptor"
+      }
+    },
+    {
+      "id": "293",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LimitBoucle",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+      }
+    },
+    {
+      "id": "294",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "AbsoluteXPathQuery",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "295",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//XmlFileConnection",
+        "eOpposite": "#//XmlFileConnection/schema"
+      }
+    },
+    {
+      "id": "296",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "schemaTargets",
+        "upperBound": "-1",
+        "eType": "#//SchemaTarget",
+        "containment": "true",
+        "eOpposite": "#//SchemaTarget/schema"
+      }
+    },
+    {
+      "id": "297",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "GenericSchemaConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "298",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mappingTypeUsed",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "299",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mappingTypeId",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "300",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LDAPSchemaConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "301",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Host",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "302",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Port",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "303",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Protocol",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "304",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Filter",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "305",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Separator",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "306",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseAdvanced",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "307",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "StorePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "308",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "309",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UseAuthen",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "310",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "BindPrincipal",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "311",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "BindPassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "312",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LimitValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "313",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "EncryptionMethodName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "314",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Value",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "315",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SavePassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "316",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Aliases",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "317",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Referrals",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "318",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "CountLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "319",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "TimeOutLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "320",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "BaseDNs",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "321",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "GetBaseDNsFromRoot",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "322",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ReturnAttributes",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "323",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SelectedDN",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "324",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "WSDLSchemaConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "325",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "WSDL",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "326",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "needAuth",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "327",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "methodName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "328",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "parameters",
+        "lowerBound": "1",
+        "eType": "#//List",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "329",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "UserName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "330",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "331",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useProxy",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "332",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyHost",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "333",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyPort",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "334",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyUser",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "335",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyPassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "336",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Value",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "337",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "EndpointURI",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "338",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Encoding",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "339",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "timeOut",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "340",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isInputModel",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "341",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "serverNameSpace",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "342",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "serverName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "343",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "portNameSpace",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "344",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "portName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "345",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parameterValue",
+        "upperBound": "-1",
+        "eType": "#//WSDLParameter",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "346",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outputParameter",
+        "upperBound": "-1",
+        "eType": "#//WSDLParameter",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "347",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SalesforceSchemaConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "348",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "webServiceUrl",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "349",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "userName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "350",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "351",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "moduleName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "352",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "queryCondition",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "353",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useCustomModuleName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "354",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useProxy",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "355",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyHost",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "356",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyPort",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "357",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyUsername",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "358",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "proxyPassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "359",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "batchSize",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "360",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useHttpProxy",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "361",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "useAlphbet",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "362",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "timeOut",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "363",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "List",
+        "instanceClassName": "java.util.ArrayList"
+      }
+    },
+    {
+      "id": "364",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CDCConnection"
+      }
+    },
+    {
+      "id": "365",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "366",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "defining Change Data Capture for a given connection"
+      }
+    },
+    {
+      "id": "367",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connection",
+        "eType": "#//DatabaseConnection",
+        "eOpposite": "#//DatabaseConnection/cdcConns"
+      }
+    },
+    {
+      "id": "368",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "369",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "the connection this CDC relates to"
+      }
+    },
+    {
+      "id": "370",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "cdcTypes",
+        "upperBound": "-1",
+        "eType": "#//CDCType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "371",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CDCType",
+        "eSuperTypes": "#//AbstractMetadataObject"
+      }
+    },
+    {
+      "id": "372",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "linkDB",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "373",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "374",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "ID of the .properties file related to the CDC database"
+      }
+    },
+    {
+      "id": "375",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subscribers",
+        "upperBound": "-1",
+        "eType": "#//SubscriberTable",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "376",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "cdcConnection",
+        "eType": "#//CDCConnection"
+      }
+    },
+    {
+      "id": "377",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "journalName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "378",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SubscriberTable",
+        "eSuperTypes": "#//cwm/relational/TdTable"
+      }
+    },
+    {
+      "id": "379",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "system",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "380",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SAPTestInputParameterTable",
+        "eSuperTypes": "#//SAPFunctionParameterTable"
+      }
+    },
+    {
+      "id": "381",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "functionUnit",
+        "eType": "#//SAPFunctionUnit",
+        "eOpposite": "#//SAPFunctionUnit/TestInputParameterTable"
+      }
+    },
+    {
+      "id": "382",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Concept",
+        "eSuperTypes": "#//cwm/relational/TdTable"
+      }
+    },
+    {
+      "id": "383",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LoopExpression",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "384",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "LoopLimit",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+      }
+    },
+    {
+      "id": "385",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "conceptTargets",
+        "upperBound": "-1",
+        "eType": "#//ConceptTarget",
+        "containment": "true",
+        "eOpposite": "#//ConceptTarget/schema"
+      }
+    },
+    {
+      "id": "386",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "inputModel",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "387",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "group",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "388",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "root",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "389",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "loop",
+        "upperBound": "-1",
+        "eType": "#//XMLFileNode",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "390",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ConceptTarget"
+      }
+    },
+    {
+      "id": "391",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "schema",
+        "eType": "#//Concept",
+        "eOpposite": "#//Concept/conceptTargets"
+      }
+    },
+    {
+      "id": "392",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "targetName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "393",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RelativeLoopExpression",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "394",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "HL7Connection",
+        "eSuperTypes": "#//FileConnection"
+      }
+    },
+    {
+      "id": "395",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "StartChar",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "396",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "EndChar",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "397",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "root",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//HL7FileNode",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "398",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "outputFilePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "399",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "HeaderFooterConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "400",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isHeader",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "401",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "imports",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "402",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mainCode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "403",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "libraries",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "404",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "XMLFileNode"
+      }
+    },
+    {
+      "id": "405",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "XMLPath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "406",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RelatedColumn",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "407",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DefaultValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "408",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Attribute",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "409",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Order",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "410",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Type",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "411",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "WSDLParameter"
+      }
+    },
+    {
+      "id": "412",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Element",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "413",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "source",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "414",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Column",
+        "ordered": "false",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "415",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Expression",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "416",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ParameterInfo",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "417",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ParameterInfoParent",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "418",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "GenericPackage",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/Package"
+      }
+    },
+    {
+      "id": "419",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "420",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Default CWM package to use when none of the existing cwm packages fit the metadata to describe.\r\nThis is a container between Connection and MetadataTable"
+      }
+    },
+    {
+      "id": "421",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "MDMConnectionProtocol"
+      }
+    },
+    {
+      "id": "422",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "HTTP",
+        "literal": "http"
+      }
+    },
+    {
+      "id": "423",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "HL7FileNode"
+      }
+    },
+    {
+      "id": "424",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FilePath",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "425",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Order",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "426",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Attribute",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "427",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "DefaultValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "428",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "RelatedColumn",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "429",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Repeatable",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "430",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FTPConnection",
+        "eSuperTypes": "#//Connection"
+      }
+    },
+    {
+      "id": "431",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Host",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "432",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Port",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "433",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Username",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "434",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Password",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "435",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Mode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "436",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Ecoding",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "437",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SFTP",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "438",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FTPS",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "439",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Method",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "440",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "KeystoreFile",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "441",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "KeystorePassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "442",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Usesocks",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "443",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Proxyhost",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "444",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Proxyport",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "445",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Proxyuser",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "446",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "Proxypassword",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "447",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "CustomEncode",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "448",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "cwm",
+        "nsURI": "http://www.talend.org/cwm/2010",
+        "nsPrefix": "cwm"
+      }
+    },
+    {
+      "id": "449",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "relational",
+        "nsURI": "http://www.talend.org/cwm/resource/relational/2010",
+        "nsPrefix": "relational"
+      }
+    },
+    {
+      "id": "450",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdTable",
+        "eSuperTypes": "#//MetadataTable ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/Table"
+      }
+    },
+    {
+      "id": "451",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdView",
+        "eSuperTypes": "#//MetadataTable ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/View"
+      }
+    },
+    {
+      "id": "452",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdColumn",
+        "eSuperTypes": "#//MetadataColumn"
+      }
+    },
+    {
+      "id": "453",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "454",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "defines a DB related column"
+      }
+    },
+    {
+      "id": "455",
+      "type": "eOperations",
+      "attributes": {
+        "name": "setContentType"
+      }
+    },
+    {
+      "id": "456",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "457",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The type of the content of the column. This type is a meta-information either set by the user who knows what type of data is contained in the column, or infered from the data.\r\nThis is used for Datamining may be Nominal, Interval,...."
+      }
+    },
+    {
+      "id": "458",
+      "type": "eParameters",
+      "attributes": {
+        "name": "contentType",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "459",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getContentType",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "460",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "461",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The type of the content of the column. This type is a meta-information either set by the user who knows what type of data is contained in the column, or infered from the data."
+      }
+    },
+    {
+      "id": "462",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getJavaType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "463",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "464",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "@deprecated use getTdSqlDataType.javaDataType\r\nSQL data type from java.sql.Types."
+      }
+    },
+    {
+      "id": "465",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sqlDataType",
+        "eType": "#//cwm/relational/TdSqlDataType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "466",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdSqlDataType",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/SQLSimpleType"
+      }
+    },
+    {
+      "id": "467",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "468",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "defines the DB and java types and attributes of the column\r\nthe Name attribute is set to the JDBC TYPE_NAME value"
+      }
+    },
+    {
+      "id": "469",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "javaDataType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "470",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "471",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "SQL data type from java.sql.Types.\r\nthis may not be changed by the user"
+      }
+    },
+    {
+      "id": "472",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nullable",
+        "eType": "ecore:EEnum ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/enumerations/NullableType"
+      }
+    },
+    {
+      "id": "473",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "474",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Is this column nullable, or not or unknow.\r\nThe value in one of\r\njava.sql.DatabaseMetaData.columnNoNulls \r\njava.sql.DatabaseMetaData.columnNullable \r\njava.sql.DatabaseMetaData.columnNullableUnknown \r\n\r\nThis may not be changed by the user"
+      }
+    },
+    {
+      "id": "475",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "unsignedAttribute",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/Boolean"
+      }
+    },
+    {
+      "id": "476",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "477",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "is it unsigned?"
+      }
+    },
+    {
+      "id": "478",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "caseSensitive",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/Boolean"
+      }
+    },
+    {
+      "id": "479",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "autoIncrement",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/Boolean"
+      }
+    },
+    {
+      "id": "480",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "481",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "can it be used for an auto-increment value?"
+      }
+    },
+    {
+      "id": "482",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "localTypeName",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "483",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "484",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "localized version of the type name (may be null)"
+      }
+    },
+    {
+      "id": "485",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "searchable",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"
+      }
+    },
+    {
+      "id": "486",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "487",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "can you use \"WHERE\" based on this type."
+      }
+    },
+    {
+      "id": "488",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdTrigger",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/Trigger"
+      }
+    },
+    {
+      "id": "489",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdProcedure",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/relational/Procedure"
+      }
+    },
+    {
+      "id": "490",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "softwaredeployment",
+        "nsURI": "http://www.talend.org/cwm/foundation/softwaredeployment/2010",
+        "nsPrefix": "softwaredeployment"
+      }
+    },
+    {
+      "id": "491",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdDataManager",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/foundation/softwaredeployment/DataManager"
+      }
+    },
+    {
+      "id": "492",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdSoftwareSystem",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/foundation/softwaredeployment/SoftwareSystem"
+      }
+    },
+    {
+      "id": "493",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdMachine",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/foundation/softwaredeployment/Machine"
+      }
+    },
+    {
+      "id": "494",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "constants",
+        "nsURI": "http://www.talend.org/cwm/constants/constants/2010",
+        "nsPrefix": "constants"
+      }
+    },
+    {
+      "id": "495",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "DevelopmentStatus"
+      }
+    },
+    {
+      "id": "496",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "DRAFT",
+        "literal": "Draft"
+      }
+    },
+    {
+      "id": "497",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "PROD",
+        "value": "1",
+        "literal": "Production"
+      }
+    },
+    {
+      "id": "498",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "xml",
+        "nsURI": "http://www.talend.org/cwm/resource/xml/2010",
+        "nsPrefix": "org.talend.cwm.xml"
+      }
+    },
+    {
+      "id": "499",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdXmlElementType",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/xml/ElementType"
+      }
+    },
+    {
+      "id": "500",
+      "type": "eOperations",
+      "attributes": {
+        "name": "setContentType"
+      }
+    },
+    {
+      "id": "501",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "502",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The type of the content of the xml element. This type is a meta-information either set by the user who knows what type of data is contained in the xml element, or infered from the data."
+      }
+    },
+    {
+      "id": "503",
+      "type": "eParameters",
+      "attributes": {
+        "name": "contentType",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "504",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getContentType",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "505",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "506",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The type of the content of the xml element. This type is a meta-information either set by the user who knows what type of data is contained in the xml element, or infered from the data."
+      }
+    },
+    {
+      "id": "507",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xsdElementDeclaration",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      }
+    },
+    {
+      "id": "508",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedDocument",
+        "eType": "#//cwm/xml/TdXmlSchema"
+      }
+    },
+    {
+      "id": "509",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "javaType",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String"
+      }
+    },
+    {
+      "id": "510",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xmlContent",
+        "eType": "#//cwm/xml/TdXmlContent",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "511",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdXmlContent",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/xml/Content"
+      }
+    },
+    {
+      "id": "512",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "xmlElements",
+        "upperBound": "-1",
+        "eType": "#//cwm/xml/TdXmlElementType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "513",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TdXmlSchema",
+        "eSuperTypes": "../../org.talend.cwm.mip/model/CWM.ecore#//cwm/resource/xml/Schema"
+      }
+    },
+    {
+      "id": "514",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "xsdFilePath",
+        "eType": "ecore:EDataType ../../org.talend.cwm.mip/model/CWM.ecore#//cwm/objectmodel/core/String",
+        "defaultValueLiteral": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "44",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "62",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "83",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "84",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "105",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "108",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "109",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "112",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "130",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "134",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "143",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "146",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "149",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "203",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "213",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "226",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "234",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "245",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "247",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "249",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "251",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "253",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "265",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "269",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "272",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "276",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "282",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "292",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "297",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "300",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "324",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "347",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "363",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "364",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "371",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "378",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "380",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "382",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "390",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "394",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "399",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "404",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "411",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "418",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "421",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "423",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "430",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "448",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "3",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "3",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "3",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "details"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "details"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "type": "details"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "details"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "details"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "type": "details"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "details"
+    },
+    {
+      "source": "37",
+      "target": "38",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "details"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "details"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "44",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "50",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "61",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "details"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "details"
+    },
+    {
+      "source": "50",
+      "target": "51",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "51",
+      "target": "52",
+      "type": "details"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "54",
+      "target": "55",
+      "type": "details"
+    },
+    {
+      "source": "56",
+      "target": "57",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "details"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "62",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "71",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "74",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "77",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "63",
+      "target": "64",
+      "type": "details"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "66",
+      "target": "67",
+      "type": "details"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "details"
+    },
+    {
+      "source": "71",
+      "target": "72",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "details"
+    },
+    {
+      "source": "74",
+      "target": "75",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "75",
+      "target": "76",
+      "type": "details"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "78",
+      "target": "79",
+      "type": "details"
+    },
+    {
+      "source": "80",
+      "target": "81",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "81",
+      "target": "82",
+      "type": "details"
+    },
+    {
+      "source": "84",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "86",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "87",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "89",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "92",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "93",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "94",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "95",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "96",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "97",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "98",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "99",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "100",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "101",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "102",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "103",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "84",
+      "target": "104",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "105",
+      "target": "106",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "105",
+      "target": "107",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "109",
+      "target": "110",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "109",
+      "target": "111",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "113",
+      "type": "eOperations"
+    },
+    {
+      "source": "112",
+      "target": "116",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "118",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "120",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "121",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "122",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "123",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "124",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "112",
+      "target": "127",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "113",
+      "target": "114",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "114",
+      "target": "115",
+      "type": "details"
+    },
+    {
+      "source": "124",
+      "target": "125",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "125",
+      "target": "126",
+      "type": "details"
+    },
+    {
+      "source": "127",
+      "target": "128",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "128",
+      "target": "129",
+      "type": "details"
+    },
+    {
+      "source": "130",
+      "target": "131",
+      "type": "eLiterals"
+    },
+    {
+      "source": "130",
+      "target": "132",
+      "type": "eLiterals"
+    },
+    {
+      "source": "130",
+      "target": "133",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "135",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "136",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "137",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "138",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "139",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "140",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "141",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "142",
+      "type": "eLiterals"
+    },
+    {
+      "source": "143",
+      "target": "144",
+      "type": "eLiterals"
+    },
+    {
+      "source": "143",
+      "target": "145",
+      "type": "eLiterals"
+    },
+    {
+      "source": "146",
+      "target": "147",
+      "type": "eLiterals"
+    },
+    {
+      "source": "146",
+      "target": "148",
+      "type": "eLiterals"
+    },
+    {
+      "source": "149",
+      "target": "150",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "149",
+      "target": "152",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "155",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "158",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "161",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "164",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "167",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "170",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "173",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "176",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "179",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "180",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "183",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "186",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "187",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "188",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "189",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "190",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "191",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "192",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "195",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "196",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "197",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "200",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "201",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "202",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "150",
+      "target": "151",
+      "type": "details"
+    },
+    {
+      "source": "152",
+      "target": "153",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "153",
+      "target": "154",
+      "type": "details"
+    },
+    {
+      "source": "155",
+      "target": "156",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "156",
+      "target": "157",
+      "type": "details"
+    },
+    {
+      "source": "158",
+      "target": "159",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "159",
+      "target": "160",
+      "type": "details"
+    },
+    {
+      "source": "161",
+      "target": "162",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "162",
+      "target": "163",
+      "type": "details"
+    },
+    {
+      "source": "164",
+      "target": "165",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "165",
+      "target": "166",
+      "type": "details"
+    },
+    {
+      "source": "167",
+      "target": "168",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "168",
+      "target": "169",
+      "type": "details"
+    },
+    {
+      "source": "170",
+      "target": "171",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "171",
+      "target": "172",
+      "type": "details"
+    },
+    {
+      "source": "173",
+      "target": "174",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "174",
+      "target": "175",
+      "type": "details"
+    },
+    {
+      "source": "176",
+      "target": "177",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "177",
+      "target": "178",
+      "type": "details"
+    },
+    {
+      "source": "180",
+      "target": "181",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "181",
+      "target": "182",
+      "type": "details"
+    },
+    {
+      "source": "183",
+      "target": "184",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "184",
+      "target": "185",
+      "type": "details"
+    },
+    {
+      "source": "192",
+      "target": "193",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "193",
+      "target": "194",
+      "type": "details"
+    },
+    {
+      "source": "197",
+      "target": "198",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "198",
+      "target": "199",
+      "type": "details"
+    },
+    {
+      "source": "203",
+      "target": "204",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "205",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "206",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "207",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "208",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "209",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "210",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "211",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "203",
+      "target": "212",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "214",
+      "type": "eOperations"
+    },
+    {
+      "source": "213",
+      "target": "218",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "219",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "220",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "221",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "222",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "223",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "224",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "213",
+      "target": "225",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "214",
+      "target": "215",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "214",
+      "target": "217",
+      "type": "eParameters"
+    },
+    {
+      "source": "215",
+      "target": "216",
+      "type": "details"
+    },
+    {
+      "source": "226",
+      "target": "227",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "228",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "229",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "230",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "231",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "232",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "233",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "235",
+      "type": "eOperations"
+    },
+    {
+      "source": "234",
+      "target": "239",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "240",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "241",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "242",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "243",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "234",
+      "target": "244",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "235",
+      "target": "236",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "235",
+      "target": "238",
+      "type": "eParameters"
+    },
+    {
+      "source": "236",
+      "target": "237",
+      "type": "details"
+    },
+    {
+      "source": "245",
+      "target": "246",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "247",
+      "target": "248",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "249",
+      "target": "250",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "251",
+      "target": "252",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "254",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "255",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "256",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "257",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "258",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "259",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "260",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "261",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "262",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "263",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "253",
+      "target": "264",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "265",
+      "target": "266",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "265",
+      "target": "267",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "265",
+      "target": "268",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "269",
+      "target": "270",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "269",
+      "target": "271",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "272",
+      "target": "273",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "272",
+      "target": "274",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "272",
+      "target": "275",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "277",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "278",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "279",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "280",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "281",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "283",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "284",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "285",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "286",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "287",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "288",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "289",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "290",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "282",
+      "target": "291",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "293",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "294",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "295",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "292",
+      "target": "296",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "297",
+      "target": "298",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "297",
+      "target": "299",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "301",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "302",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "303",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "304",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "305",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "306",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "307",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "308",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "309",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "310",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "311",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "312",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "313",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "314",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "315",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "316",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "317",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "318",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "319",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "320",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "321",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "322",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "300",
+      "target": "323",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "325",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "326",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "327",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "328",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "329",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "330",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "331",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "332",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "333",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "334",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "335",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "336",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "337",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "338",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "339",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "340",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "341",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "342",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "343",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "344",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "345",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "324",
+      "target": "346",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "348",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "349",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "350",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "351",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "352",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "353",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "354",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "355",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "356",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "357",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "358",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "359",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "360",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "361",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "347",
+      "target": "362",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "364",
+      "target": "365",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "364",
+      "target": "367",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "364",
+      "target": "370",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "365",
+      "target": "366",
+      "type": "details"
+    },
+    {
+      "source": "367",
+      "target": "368",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "368",
+      "target": "369",
+      "type": "details"
+    },
+    {
+      "source": "371",
+      "target": "372",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "371",
+      "target": "375",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "371",
+      "target": "376",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "371",
+      "target": "377",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "372",
+      "target": "373",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "373",
+      "target": "374",
+      "type": "details"
+    },
+    {
+      "source": "378",
+      "target": "379",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "380",
+      "target": "381",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "383",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "384",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "385",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "386",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "387",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "388",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "382",
+      "target": "389",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "390",
+      "target": "391",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "390",
+      "target": "392",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "390",
+      "target": "393",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "394",
+      "target": "395",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "394",
+      "target": "396",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "394",
+      "target": "397",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "394",
+      "target": "398",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "399",
+      "target": "400",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "399",
+      "target": "401",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "399",
+      "target": "402",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "399",
+      "target": "403",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "405",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "406",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "407",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "408",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "409",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "404",
+      "target": "410",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "412",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "413",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "414",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "415",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "416",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "411",
+      "target": "417",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "418",
+      "target": "419",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "419",
+      "target": "420",
+      "type": "details"
+    },
+    {
+      "source": "421",
+      "target": "422",
+      "type": "eLiterals"
+    },
+    {
+      "source": "423",
+      "target": "424",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "423",
+      "target": "425",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "423",
+      "target": "426",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "423",
+      "target": "427",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "423",
+      "target": "428",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "423",
+      "target": "429",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "431",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "432",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "433",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "434",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "435",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "436",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "437",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "438",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "439",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "440",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "441",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "442",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "443",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "444",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "445",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "446",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "430",
+      "target": "447",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "448",
+      "target": "449",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "448",
+      "target": "490",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "448",
+      "target": "494",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "448",
+      "target": "498",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "449",
+      "target": "450",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "449",
+      "target": "451",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "449",
+      "target": "452",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "449",
+      "target": "466",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "449",
+      "target": "488",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "449",
+      "target": "489",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "452",
+      "target": "453",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "452",
+      "target": "455",
+      "type": "eOperations"
+    },
+    {
+      "source": "452",
+      "target": "459",
+      "type": "eOperations"
+    },
+    {
+      "source": "452",
+      "target": "462",
+      "type": "eOperations"
+    },
+    {
+      "source": "452",
+      "target": "465",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "453",
+      "target": "454",
+      "type": "details"
+    },
+    {
+      "source": "455",
+      "target": "456",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "455",
+      "target": "458",
+      "type": "eParameters"
+    },
+    {
+      "source": "456",
+      "target": "457",
+      "type": "details"
+    },
+    {
+      "source": "459",
+      "target": "460",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "460",
+      "target": "461",
+      "type": "details"
+    },
+    {
+      "source": "462",
+      "target": "463",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "463",
+      "target": "464",
+      "type": "details"
+    },
+    {
+      "source": "466",
+      "target": "467",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "466",
+      "target": "469",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "472",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "475",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "478",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "479",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "482",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "466",
+      "target": "485",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "467",
+      "target": "468",
+      "type": "details"
+    },
+    {
+      "source": "469",
+      "target": "470",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "470",
+      "target": "471",
+      "type": "details"
+    },
+    {
+      "source": "472",
+      "target": "473",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "473",
+      "target": "474",
+      "type": "details"
+    },
+    {
+      "source": "475",
+      "target": "476",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "476",
+      "target": "477",
+      "type": "details"
+    },
+    {
+      "source": "479",
+      "target": "480",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "480",
+      "target": "481",
+      "type": "details"
+    },
+    {
+      "source": "482",
+      "target": "483",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "483",
+      "target": "484",
+      "type": "details"
+    },
+    {
+      "source": "485",
+      "target": "486",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "486",
+      "target": "487",
+      "type": "details"
+    },
+    {
+      "source": "490",
+      "target": "491",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "490",
+      "target": "492",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "490",
+      "target": "493",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "494",
+      "target": "495",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "495",
+      "target": "496",
+      "type": "eLiterals"
+    },
+    {
+      "source": "495",
+      "target": "497",
+      "type": "eLiterals"
+    },
+    {
+      "source": "498",
+      "target": "499",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "498",
+      "target": "511",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "498",
+      "target": "513",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "499",
+      "target": "500",
+      "type": "eOperations"
+    },
+    {
+      "source": "499",
+      "target": "504",
+      "type": "eOperations"
+    },
+    {
+      "source": "499",
+      "target": "507",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "499",
+      "target": "508",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "499",
+      "target": "509",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "499",
+      "target": "510",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "500",
+      "target": "501",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "500",
+      "target": "503",
+      "type": "eParameters"
+    },
+    {
+      "source": "501",
+      "target": "502",
+      "type": "details"
+    },
+    {
+      "source": "504",
+      "target": "505",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "505",
+      "target": "506",
+      "type": "details"
+    },
+    {
+      "source": "511",
+      "target": "512",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "513",
+      "target": "514",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 515,
+    "edge_count": 514,
+    "node_type_count": 9,
+    "edge_type_count": 8
+  }
+}

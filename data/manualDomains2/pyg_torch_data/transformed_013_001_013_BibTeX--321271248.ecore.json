@@ -1,0 +1,829 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Boolean"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "5",
+      "type": "EPackage",
+      "attributes": {
+        "name": "BIBTEX"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LocatedElement",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "location",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "commentsBefore",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "commentsAfter",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Bibtex"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/Entry",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Entry",
+        "abstract": "true",
+        "eSuperTypes": "/1/LocatedElement"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "key",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "fields",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/Field",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Article",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Book",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Inbook",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Booklet",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Inproceedings",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Proceedings",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Incollection",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Techreport",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PhdThesis",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MastersThesis",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Manual",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Misc",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Field",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Authors",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AuthorUrls",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Title",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Journal",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BookTitle",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Institution",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Organization",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Type",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Day",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Number",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Chapter",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Volume",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Series",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Pages",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Publisher",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Howpublished",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "School",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Editor",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Edition",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Address",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Year",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Month",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Note",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Text",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractField",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Isbn",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Issn",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Url",
+        "eSuperTypes": "/1/Field"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Doi",
+        "eSuperTypes": "/1/Field"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "10",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "18",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "23",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "34",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "35",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "37",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "40",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "43",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "44",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "45",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "46",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "48",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "49",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "50",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "51",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "52",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "53",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "54",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "55",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "56",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "57",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 58,
+    "edge_count": 57,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

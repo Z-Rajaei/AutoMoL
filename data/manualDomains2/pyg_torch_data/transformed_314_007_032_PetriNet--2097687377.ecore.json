@@ -1,0 +1,714 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "petrinet",
+        "nsURI": "https://petrinet",
+        "nsPrefix": "petrinet"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/OCL/Import"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "ecore",
+        "value": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "4",
+      "type": "details",
+      "attributes": {
+        "key": "invocationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "settingDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "6",
+      "type": "details",
+      "attributes": {
+        "key": "validationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Network"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "nameForbidden"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "nameForbidden",
+        "value": "\n\t\t\tself.name <> ''"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "nodes",
+        "upperBound": "-1",
+        "eType": "#//Node",
+        "containment": "true",
+        "eOpposite": "#//Node/reseau"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "arcs",
+        "upperBound": "-1",
+        "eType": "#//Arc",
+        "containment": "true",
+        "eOpposite": "#//Arc/reseau"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Node",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "17",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "nameForbidden noIsolatedNode"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "19",
+      "type": "details",
+      "attributes": {
+        "key": "nameForbidden",
+        "value": "\n        \tself.name <> ''"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "noIsolatedNode",
+        "value": "\n            self.predecessors->size() > 0 or self.successors->size() > 0"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reseau",
+        "lowerBound": "1",
+        "eType": "#//Network",
+        "eOpposite": "#//Network/nodes"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "predecessors",
+        "upperBound": "-1",
+        "eType": "#//Arc",
+        "eOpposite": "#//Arc/target"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "successors",
+        "upperBound": "-1",
+        "eType": "#//Arc",
+        "eOpposite": "#//Arc/source"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "ArcKind"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "normal"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "read_arc"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Arc"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "30",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "tokensCountNotNull"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "32",
+      "type": "details",
+      "attributes": {
+        "key": "tokensCountNotNull",
+        "value": "\n\t\t\tself.tokensCount > 0"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "readOnly",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "kind",
+        "lowerBound": "1",
+        "eType": "#//ArcKind"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tokensCount",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt",
+        "defaultValueLiteral": "1"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reseau",
+        "lowerBound": "1",
+        "eType": "#//Network",
+        "eOpposite": "#//Network/arcs"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "lowerBound": "1",
+        "eType": "#//Node",
+        "eOpposite": "#//Node/successors"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//Node",
+        "eOpposite": "#//Node/predecessors"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "#//Node"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "existArcs onlyArcsToPlaces"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "43",
+      "type": "details",
+      "attributes": {
+        "key": "existArcs",
+        "value": "\n\t\t\tself.successors->size() > 0"
+      }
+    },
+    {
+      "id": "44",
+      "type": "details",
+      "attributes": {
+        "key": "onlyArcsToPlaces",
+        "value": "\n\t\t\tself.successors\n\t\t\t->forAll(s | s.target.oclIsKindOf(Place))"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Place",
+        "eSuperTypes": "#//Node"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "47",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "validTokensCount onlyArcToTransitions"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "49",
+      "type": "details",
+      "attributes": {
+        "key": "validTokensCount",
+        "value": "\n\t\t\tself.tokensCount >= 0"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "onlyArcToTransitions",
+        "value": "\n\t\t\tself.successors\n\t\t\t->forAll(s | s.target.oclIsKindOf(Transition))"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tokensCount",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt",
+        "defaultValueLiteral": "0"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "28",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "45",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "15",
+      "target": "18",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "15",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "details"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "details"
+    },
+    {
+      "source": "18",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "eLiterals"
+    },
+    {
+      "source": "25",
+      "target": "27",
+      "type": "eLiterals"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "28",
+      "target": "31",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "28",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "details"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "39",
+      "target": "42",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "details"
+    },
+    {
+      "source": "42",
+      "target": "44",
+      "type": "details"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "48",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "50",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 52,
+    "edge_count": 51,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

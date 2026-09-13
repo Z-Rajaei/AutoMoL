@@ -1,0 +1,433 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Boolean"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "5",
+      "type": "EPackage",
+      "attributes": {
+        "name": "MySQL"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NamedElement",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DataBase",
+        "eSuperTypes": "/1/NamedElement"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tables",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/Table",
+        "containment": "true",
+        "eOpposite": "/1/Table/database"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Table",
+        "eSuperTypes": "/1/NamedElement"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "/1/Column",
+        "containment": "true",
+        "eOpposite": "/1/Column/table"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/DataBase",
+        "eOpposite": "/1/DataBase/tables"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Column",
+        "eSuperTypes": "/1/NamedElement"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isPrimaryKey",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/Boolean"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "null",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/Boolean"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defaultValue",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "comment",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "table",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Table",
+        "eOpposite": "/1/Table/columns"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IntegerColumn",
+        "eSuperTypes": "/1/Column"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isAutoIncrement",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/Boolean"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EnumColumn",
+        "eSuperTypes": "/1/Column"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enumSet",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/EnumSet",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EnumSet"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enumItems",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/EnumItem",
+        "containment": "true",
+        "eOpposite": "/1/EnumItem/enumSet"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EnumItem",
+        "eSuperTypes": "/1/NamedElement"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enumSet",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/EnumSet",
+        "eOpposite": "/1/EnumSet/enumItems"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "10",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 28,
+    "edge_count": 27,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

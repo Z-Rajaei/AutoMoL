@@ -1,0 +1,371 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "Bibtex",
+        "nsURI": "http://www.sap.com/furcas/examples/bibtex",
+        "nsPrefix": "bibtex"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "validationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "settingDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "4",
+      "type": "details",
+      "attributes": {
+        "key": "invocationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "LiteratureDb"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "7",
+      "type": "details",
+      "attributes": {
+        "key": "uniqueName",
+        "value": "LiteratureDb.allInstances()->select(db | db.name = self.name)->size() = 1"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "uniqueName"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "author",
+        "upperBound": "-1",
+        "eType": "#//Author",
+        "containment": "true",
+        "eOpposite": "#//Author/literaturedb"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "upperBound": "-1",
+        "eType": "#//Entry",
+        "containment": "true",
+        "eOpposite": "#//Entry/literaturedb"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Entry"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "15",
+      "type": "details",
+      "attributes": {
+        "key": "uniqueID",
+        "value": "self.literaturedb.entries->select(e | e.id = self.id)->size() = 1"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "17",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "uniqueID"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "title",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "author",
+        "upperBound": "-1",
+        "eType": "#//Author",
+        "eOpposite": "#//Author/publications"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "literaturedb",
+        "lowerBound": "1",
+        "eType": "#//LiteratureDb",
+        "eOpposite": "#//LiteratureDb/entries"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Author"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "publications",
+        "upperBound": "-1",
+        "eType": "#//Entry",
+        "eOpposite": "#//Entry/author"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "literaturedb",
+        "lowerBound": "1",
+        "eType": "#//LiteratureDb",
+        "eOpposite": "#//LiteratureDb/author"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "details"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "5",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "details"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "13",
+      "target": "16",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "13",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "details"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 26,
+    "edge_count": 25,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

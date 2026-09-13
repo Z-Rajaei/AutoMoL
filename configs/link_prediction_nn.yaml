@@ -1,0 +1,92 @@
+ensemble:
+  name: voting
+  size: 2
+hpo:
+  max_evals: 25
+  name: anneal
+models:
+- hp_space:
+  - feasiblePoints: 2,3
+    parameterName: num_layers
+    type: DISCRETE
+  - length: 3
+    maxValue:
+    - 64
+    - 128
+    - 64
+    minValue:
+    - 16
+    - 32
+    - 16
+    numericalType: INTEGER
+    parameterName: hidden
+    scalingType: LOG
+    type: NUMERICAL_LIST
+  - maxValue: 0.5
+    minValue: 0.2
+    parameterName: dropout
+    scalingType: LINEAR
+    type: DOUBLE
+  - feasiblePoints:
+    - relu
+    - elu
+    - tanh
+    parameterName: act
+    type: CATEGORICAL
+  name: gcn-model
+- hp_space:
+  - feasiblePoints: 2,3
+    parameterName: num_layers
+    type: DISCRETE
+  - length: 3
+    maxValue:
+    - 64
+    - 128
+    - 64
+    minValue:
+    - 16
+    - 32
+    - 16
+    numericalType: INTEGER
+    parameterName: hidden
+    scalingType: LOG
+    type: NUMERICAL_LIST
+  - maxValue: 0.5
+    minValue: 0.2
+    parameterName: dropout
+    scalingType: LINEAR
+    type: DOUBLE
+  - feasiblePoints:
+    - mean
+    - max
+    - sum
+    parameterName: agg
+    type: CATEGORICAL
+  name: sage-model
+trainer:
+  hp_space:
+  - maxValue: 400
+    minValue: 100
+    parameterName: max_epoch
+    scalingType: LINEAR
+    type: INTEGER
+  - maxValue: 64
+    minValue: 16
+    parameterName: batch_size
+    scalingType: LOG
+    type: INTEGER
+  - maxValue: 40
+    minValue: 10
+    parameterName: early_stopping_round
+    scalingType: LINEAR
+    type: INTEGER
+  - maxValue: 0.01
+    minValue: 0.0001
+    parameterName: lr
+    scalingType: LOG
+    type: DOUBLE
+  - maxValue: 0.001
+    minValue: 1.0e-06
+    parameterName: weight_decay
+    scalingType: LOG
+    type: DOUBLE

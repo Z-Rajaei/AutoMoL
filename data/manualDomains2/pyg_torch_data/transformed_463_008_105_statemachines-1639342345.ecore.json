@@ -1,0 +1,708 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "statemachines",
+        "nsURI": "http://soton.ac.uk/models/eventb/statemachines/2014",
+        "nsPrefix": "statemachines"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "TranslationKind"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "MULTIVAR"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "SINGLEVAR",
+        "value": "1"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "REFINEDVAR",
+        "value": "2"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Statemachine",
+        "eSuperTypes": "../../ac.soton.eventb.emf.core.extension/model/eventbcoreextension.ecore#//EventBNamedCommentedDataElaborationElement ../../org.eventb.emf.core/model/eventbcore.ecore#//AbstractExtension ../../ac.soton.eventb.emf.diagrams/model/diagrams.ecore#//Diagram"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "7",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "hasValidName\nconcreteHasNoRefinedStates\nrefinedHasNoConcreteStates\nhasOneInitial\nhasOneFinal\nrootHasInitial\nhasInitialIfIncoming\ninstancesIsData\nhasValidSelfName"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "org.eventb.emf.core.extendedMetaClasses",
+        "references": "../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "refines",
+        "eType": "#//Statemachine"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "nodes",
+        "upperBound": "-1",
+        "eType": "#//AbstractNode",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "instances",
+        "eType": "ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "selfName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": "this"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "translation",
+        "eType": "#//TranslationKind"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StatemachineOwner",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "statemachines",
+        "upperBound": "-1",
+        "eType": "#//Statemachine",
+        "containment": "true",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "../../ac.soton.eventb.emf.core.extension/model/eventbcoreextension.ecore#//EventBCommentedLabeledEventGroupElement"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "19",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "notToAny\nnotToInitial\nnotFromFinal\nnotFromInitialToFinal\nelaborates\nguards"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//AbstractNode",
+        "eOpposite": "#//AbstractNode/incoming"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "lowerBound": "1",
+        "eType": "#//AbstractNode",
+        "eOpposite": "#//AbstractNode/outgoing"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sourceContainer",
+        "eType": "ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBElement",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "targetContainer",
+        "eType": "ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBElement"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "operations",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eTypeArguments",
+      "attributes": {}
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractNode",
+        "abstract": "true",
+        "eSuperTypes": "../../org.eventb.emf.core/model/eventbcore.ecore#//EventBElement"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incoming",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/target"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outgoing",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/source"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "#//AbstractNode ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed #//StatemachineOwner"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "32",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "hasValidName\nconcreteHasNoRefinedStatemachines\nvalidInvariants\n"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "refines",
+        "eType": "#//State"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "invariants",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Invariant",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "active",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Initial",
+        "eSuperTypes": "#//AbstractNode"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "38",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "hasOutgoing"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Final",
+        "eSuperTypes": "#//AbstractNode"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "hasIncoming"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Any",
+        "eSuperTypes": "#//AbstractNode"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Junction",
+        "eSuperTypes": "#//AbstractNode"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "45",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "hasIncoming\nhasOutgoing"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Fork",
+        "eSuperTypes": "#//AbstractNode"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "48",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "isForkORJoin\nnodesInParallelStatemachines\n"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eOperations",
+      "attributes": {
+        "name": "isFork",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eOperations",
+      "attributes": {
+        "name": "isJoin",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "43",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "46",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eLiterals"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "details"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "17",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eGenericType"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "27",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "30",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "details"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "37",
+      "target": "38",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "details"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "46",
+      "target": "49",
+      "type": "eOperations"
+    },
+    {
+      "source": "46",
+      "target": "50",
+      "type": "eOperations"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 51,
+    "edge_count": 50,
+    "node_type_count": 9,
+    "edge_type_count": 8
+  }
+}

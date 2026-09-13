@@ -1,0 +1,799 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "conference",
+        "nsURI": "http://www.example.org/conference",
+        "nsPrefix": "conference"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tracks",
+        "upperBound": "-1",
+        "eType": "#//Track",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "speakers",
+        "upperBound": "-1",
+        "eType": "#//Person",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "days",
+        "upperBound": "-1",
+        "eType": "#//Day",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "locations",
+        "upperBound": "-1",
+        "eType": "#//Location",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Talk"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "speakers",
+        "upperBound": "-1",
+        "eType": "#//Person",
+        "eOpposite": "#//Person/talks"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "abstract",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "duration",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subjects",
+        "upperBound": "-1",
+        "eType": "#//Subject",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "makingOfStories",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Story",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "day",
+        "eType": "#//Day",
+        "eOpposite": "#//Day/talks"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "location",
+        "eType": "#//Location",
+        "eOpposite": "#//Location/talks"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "time",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Person"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "talks",
+        "upperBound": "-1",
+        "eType": "#//Talk",
+        "eOpposite": "#//Talk/speakers"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "organisation",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tracks",
+        "upperBound": "-1",
+        "eType": "#//Track",
+        "eOpposite": "#//Track/animators"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Track"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "talks",
+        "upperBound": "-1",
+        "eType": "#//Talk",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "animators",
+        "upperBound": "-1",
+        "eType": "#//Person",
+        "eOpposite": "#//Person/tracks"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Subject"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isDone",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Day"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "talks",
+        "upperBound": "-1",
+        "eType": "#//Talk",
+        "eOpposite": "#//Talk/day"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Location"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "talks",
+        "upperBound": "-1",
+        "eType": "#//Talk",
+        "eOpposite": "#//Talk/location"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "makingOf",
+        "nsURI": "http://www.example.org/conference/makingOf",
+        "nsPrefix": "makingOf"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Day"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tasks",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Task",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ideas",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Task",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "participants",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Participant",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Story"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "days",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Day",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Task"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "isInvolved",
+        "upperBound": "-1",
+        "eType": "#//makingOf/Participant"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Participant"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "age",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "person",
+        "eType": "#//Person"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "attitude",
+        "eType": "#//makingOf/Attitude"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "Attitude"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "serious"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "cool",
+        "value": "1"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "disgraceful",
+        "value": "2"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "35",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "35",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "35",
+      "target": "44",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "35",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "35",
+      "target": "51",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "36",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "36",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "36",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "46",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "49",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "50",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "52",
+      "type": "eLiterals"
+    },
+    {
+      "source": "51",
+      "target": "53",
+      "type": "eLiterals"
+    },
+    {
+      "source": "51",
+      "target": "54",
+      "type": "eLiterals"
+    }
+  ],
+  "stats": {
+    "node_count": 55,
+    "edge_count": 54,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

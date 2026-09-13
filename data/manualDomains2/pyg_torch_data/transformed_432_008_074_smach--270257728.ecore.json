@@ -1,0 +1,401 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "smach",
+        "nsURI": "http://smach/1.0",
+        "nsPrefix": "smach"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "SMACHStateOutcomes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "succeeded"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "preempted",
+        "value": "1"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "aborted",
+        "value": "2",
+        "literal": "aborted"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "SMACHGoalTypes"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "static_goal"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "userdata_goal",
+        "value": "1"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SMACHStateMachine",
+        "eSuperTypes": "ros.ecore#//Node"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "states",
+        "upperBound": "-1",
+        "eType": "#//SMACHState",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transitions",
+        "upperBound": "-1",
+        "eType": "#//SMACHTransition",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "finalStates",
+        "upperBound": "-1",
+        "eType": "#//FinalState",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "initialStates",
+        "upperBound": "-1",
+        "eType": "#//InitActionState",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "SkillInterface",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "False"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SMACHTransition"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "#//SMACHStateOutcomes"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "Source",
+        "lowerBound": "1",
+        "eType": "#//SMACHState"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "Target",
+        "lowerBound": "1",
+        "eType": "#//SMACHState"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SMACHState"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "goal",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "goal_type",
+        "eType": "#//SMACHGoalTypes"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "remap_overwrite",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ActionState",
+        "eSuperTypes": "ros.ecore#//ActionClient #//SMACHState"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ServiceState",
+        "eSuperTypes": "ros.ecore#//ServiceClient #//SMACHState"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FinalState",
+        "eSuperTypes": "#//SMACHState"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "eType": "#//SMACHStateOutcomes"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InitStraightState",
+        "eSuperTypes": "#//SMACHState"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InitActionState",
+        "eSuperTypes": "#//SMACHState"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "18",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "23",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eLiterals"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eLiterals"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "type": "eLiterals"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 28,
+    "edge_count": 27,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

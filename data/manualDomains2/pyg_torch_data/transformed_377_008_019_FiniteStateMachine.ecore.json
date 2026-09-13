@@ -1,0 +1,426 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "FSM"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MgaObject"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "position",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "/0/MgaObject"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "stateMachine",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/StateMachine",
+        "eOpposite": "/0/StateMachine/transition"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "associationStateState",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/AssociationStateState",
+        "eOpposite": "/0/AssociationStateState/transition"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "/0/MgaObject"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "stateMachine",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/StateMachine",
+        "eOpposite": "/0/StateMachine/state"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "associationStateStatedst",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/0/AssociationStateState",
+        "eOpposite": "/0/AssociationStateState/dstTransition"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "associationStateStatesrc",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/0/AssociationStateState",
+        "eOpposite": "/0/AssociationStateState/srcTransition"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateMachine",
+        "eSuperTypes": "/0/MgaObject"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rootFolder",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/RootFolder",
+        "eOpposite": "/0/RootFolder/stateMachine"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "state",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/State",
+        "containment": "true",
+        "eOpposite": "/0/State/stateMachine"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transition",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Transition",
+        "containment": "true",
+        "eOpposite": "/0/Transition/stateMachine"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "RootFolder"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rootFolders",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/RootFolder",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "stateMachine",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/StateMachine",
+        "containment": "true",
+        "eOpposite": "/0/StateMachine/rootFolder"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AssociationStateState"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transition",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/Transition",
+        "eOpposite": "/0/Transition/associationStateState"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dstTransition",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/0/State",
+        "eOpposite": "/0/State/associationStateStatedst"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "srcTransition",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/0/State",
+        "eOpposite": "/0/State/associationStateStatesrc"
+      }
+    },
+    {
+      "id": "24",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "12",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "24",
+      "target": "26",
+      "type": "eClassifiers"
+    }
+  ],
+  "stats": {
+    "node_count": 27,
+    "edge_count": 26,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

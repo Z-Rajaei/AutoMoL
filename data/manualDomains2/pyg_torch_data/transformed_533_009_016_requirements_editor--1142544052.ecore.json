@@ -1,0 +1,1102 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "requirements_editor",
+        "nsURI": "http://www.example.org/requirements_editor",
+        "nsPrefix": "requirements_editor"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/OCL/Import"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "ecore",
+        "value": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "4",
+      "type": "details",
+      "attributes": {
+        "key": "invocationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "settingDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "6",
+      "type": "details",
+      "attributes": {
+        "key": "validationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Requirement",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "differentResponsible notItself"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "differentResponsible",
+        "value": "self.requirementOwnedBy.personOwnsCategory->forAll(c | not c.requirement->includes(self))"
+      }
+    },
+    {
+      "id": "12",
+      "type": "details",
+      "attributes": {
+        "key": "notItself",
+        "value": "self.dependencySource->select(oclIsTypeOf(Requires))->forAll(requires: Dependency | findLeafNodes(requires.oclAsType(Requires).argument)->forAll(ra: RequirementArgument | ra.requirement <> self))"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eOperations",
+      "attributes": {
+        "name": "findLeafNodes",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//RequirementArgument"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "15",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "\n\t\t\tif argument.oclIsKindOf(BinaryOperatorArgument) then\n\t\t\t\tfindLeafNodes(argument.oclAsType(BinaryOperatorArgument).leftSideArgument)->union(findLeafNodes(argument.oclAsType(BinaryOperatorArgument).rightSideArgument))\n\t\t\telse\n\t\t\t\tif argument.oclIsKindOf(NOTOperator) then\n\t\t\t\t\tfindLeafNodes(argument.oclAsType(NOTOperator).argument)\n\t\t\t\telse\n\t\t\t\t\tSet{argument.oclAsType(RequirementArgument)}\n\t\t\t\tendif\n\t\t\tendif"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eParameters",
+      "attributes": {
+        "name": "argument",
+        "eType": "#//Argument"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "identifier",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "iD": "true"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "priority",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isMandatory",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "description",
+        "lowerBound": "1",
+        "eType": "#//Description",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "requirementOwnedBy",
+        "lowerBound": "1",
+        "eType": "#//Person",
+        "eOpposite": "#//Person/personOwnsRequirement"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dependencySource",
+        "upperBound": "-1",
+        "eType": "#//Dependency",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Category"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "26",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "moreRequirementsThanCategories"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "28",
+      "type": "details",
+      "attributes": {
+        "key": "moreRequirementsThanCategories",
+        "value": "Category.allInstances()->size() <= Requirement.allInstances()->size()"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subcategoryOf",
+        "upperBound": "-1",
+        "eType": "#//Category",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "categoryOwnedBy",
+        "lowerBound": "1",
+        "eType": "#//Person",
+        "eOpposite": "#//Person/personOwnsCategory"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "requirement",
+        "upperBound": "-1",
+        "eType": "#//Requirement",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Description",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TextualDescription",
+        "eSuperTypes": "#//Description"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "QualityRequirement",
+        "eSuperTypes": "#//Requirement"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FunctionalRequirement",
+        "eSuperTypes": "#//Requirement"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Person"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "40",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "isResponsible"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "42",
+      "type": "details",
+      "attributes": {
+        "key": "isResponsible",
+        "value": "self.personOwnsCategory->size() + self.personOwnsRequirement->size() > 0"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "iD": "true"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "personOwnsRequirement",
+        "upperBound": "-1",
+        "eType": "#//Requirement",
+        "eOpposite": "#//Requirement/requirementOwnedBy"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "personOwnsCategory",
+        "upperBound": "-1",
+        "eType": "#//Category",
+        "eOpposite": "#//Category/categoryOwnedBy"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Dependency",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SimpleDependency",
+        "abstract": "true",
+        "eSuperTypes": "#//Dependency"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "49",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "targetNotSource"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "51",
+      "type": "details",
+      "attributes": {
+        "key": "targetNotSource",
+        "value": "not self.dependencyTarget.dependencySource->includes(self)"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "comment",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dependencyTarget",
+        "lowerBound": "1",
+        "eType": "#//Requirement"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Refines",
+        "eSuperTypes": "#//SimpleDependency"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ICost",
+        "eSuperTypes": "#//SimpleDependency"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CValue",
+        "eSuperTypes": "#//SimpleDependency"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Requires",
+        "eSuperTypes": "#//Dependency"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "59",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "selfDependency"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+      }
+    },
+    {
+      "id": "61",
+      "type": "details",
+      "attributes": {
+        "key": "selfDependency",
+        "value": "self.argument.oclAsSet()->closure(arg : Argument | \n\t\t\tif arg.oclIsKindOf(BinaryOperatorArgument) then arg.oclAsType(BinaryOperatorArgument).leftSideArgument.oclAsSet()->including(arg.oclAsType(BinaryOperatorArgument).rightSideArgument) \n\t\t\telse \n\t\t\t\tif arg.oclIsKindOf(NOTOperator) then arg.oclAsType(NOTOperator).argument.oclAsSet() \n\t\t\t\telse arg.oclAsSet() \n\t\t\t\tendif \n\t\t\tendif\n\t\t)->select(arg : Argument | arg.oclIsKindOf(RequirementArgument))->forAll(arg : Argument | not arg.oclAsType(RequirementArgument).requirement.dependencySource->includes(self))"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "argument",
+        "lowerBound": "1",
+        "eType": "#//Argument",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Argument",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BinaryOperatorArgument",
+        "eSuperTypes": "#//Argument"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rightSideArgument",
+        "lowerBound": "1",
+        "eType": "#//Argument",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "leftSideArgument",
+        "lowerBound": "1",
+        "eType": "#//Argument",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "operator",
+        "eType": "#//BinaryOperator"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "RequirementArgument",
+        "eSuperTypes": "#//Argument"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "requirement",
+        "lowerBound": "1",
+        "eType": "#//Requirement"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "BinaryOperator"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "OR"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "AND",
+        "value": "1"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DocumentRoot"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rootCategories",
+        "upperBound": "-1",
+        "eType": "#//Category",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "person",
+        "upperBound": "-1",
+        "eType": "#//Person",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NOTOperator",
+        "eSuperTypes": "#//Argument"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "argument",
+        "lowerBound": "1",
+        "eType": "#//Argument",
+        "containment": "true"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "34",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "37",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "46",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "54",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "55",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "56",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "57",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "63",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "68",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "70",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "73",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "77",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "13",
+      "type": "eOperations"
+    },
+    {
+      "source": "7",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "10",
+      "target": "12",
+      "type": "details"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "13",
+      "target": "16",
+      "type": "eParameters"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "24",
+      "target": "27",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "24",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "details"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "details"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "38",
+      "target": "41",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "38",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "44",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "details"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "details"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "47",
+      "target": "50",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "47",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "details"
+    },
+    {
+      "source": "50",
+      "target": "51",
+      "type": "details"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "57",
+      "target": "60",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "57",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "details"
+    },
+    {
+      "source": "60",
+      "target": "61",
+      "type": "details"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "67",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "70",
+      "target": "71",
+      "type": "eLiterals"
+    },
+    {
+      "source": "70",
+      "target": "72",
+      "type": "eLiterals"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "73",
+      "target": "75",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "73",
+      "target": "76",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 79,
+    "edge_count": 78,
+    "node_type_count": 8,
+    "edge_type_count": 7
+  }
+}

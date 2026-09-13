@@ -1,0 +1,561 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "4",
+      "type": "EPackage",
+      "attributes": {
+        "name": "BibTeX"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BibTeXFile"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/BibTeXEntry",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Author"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "author",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BibTeXEntry",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AuthoredEntry",
+        "abstract": "true",
+        "eSuperTypes": "/1/BibTeXEntry"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "authors",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/1/Author",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DatedEntry",
+        "abstract": "true",
+        "eSuperTypes": "/1/BibTeXEntry"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "year",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TitledEntry",
+        "abstract": "true",
+        "eSuperTypes": "/1/BibTeXEntry"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "title",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BookTitledEntry",
+        "abstract": "true",
+        "eSuperTypes": "/1/BibTeXEntry"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "booktitle",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Article",
+        "eSuperTypes": "/1/AuthoredEntry /1/DatedEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "journal",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TechReport",
+        "eSuperTypes": "/1/AuthoredEntry /1/DatedEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Unpublished",
+        "eSuperTypes": "/1/AuthoredEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "note",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Manual",
+        "eSuperTypes": "/1/TitledEntry"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Proceedings",
+        "eSuperTypes": "/1/DatedEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InProceedings",
+        "eSuperTypes": "/1/Proceedings /1/AuthoredEntry /1/BookTitledEntry"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Booklet",
+        "eSuperTypes": "/1/DatedEntry"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Book",
+        "eSuperTypes": "/1/AuthoredEntry /1/DatedEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "publisher",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InCollection",
+        "eSuperTypes": "/1/Book /1/BookTitledEntry"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InBook",
+        "eSuperTypes": "/1/Book"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "chapter",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/Integer"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Misc",
+        "eSuperTypes": "/1/BibTeXEntry"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ThesisEntry",
+        "abstract": "true",
+        "eSuperTypes": "/1/AuthoredEntry /1/DatedEntry /1/TitledEntry"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "school",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PhDThesis",
+        "eSuperTypes": "/1/ThesisEntry"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MasterThesis",
+        "eSuperTypes": "/1/ThesisEntry"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "4",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "28",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "34",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "37",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 38,
+    "edge_count": 37,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

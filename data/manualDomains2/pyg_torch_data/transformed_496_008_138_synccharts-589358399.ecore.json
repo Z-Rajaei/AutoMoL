@@ -1,0 +1,1364 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "synccharts",
+        "nsURI": "http://kieler.cs.cau.de/synccharts/0.2.4",
+        "nsPrefix": "synccharts"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Action",
+        "eSuperTypes": "../../de.cau.cs.kieler.core.annotations/model/annotations.ecore#//Annotatable"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An Action represents some effect that is executed under some\ncertain condition. The condition or sometimes called guard is\nthe trigger which simply is any boolean {@link Expression} over\n{@link Signal}s or {@link Variable}s. Note that Actions may also be used\nin contexts, where no trigger or resp. effects are allowed. E.g.\na suspensionTrigger has no effect.\n<p>\nThe effects of an Action are either {@link Assignment}, {@link Emission} or escaping\nto an {@link TextEffect}.\n<p>\nAn Action has a String label that represents the trigger and the effects\nlist in a textual representation. The user of the \nmodel is required to synchronize the label with the actual\ntrigger and effects objects. For the SyncCharts graphical editor\nthis is done by using an Xtext grammar/parser."
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "effects",
+        "upperBound": "-1",
+        "eType": "#//Effect",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trigger",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Expression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "delay",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt",
+        "defaultValueLiteral": "1"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isImmediate",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Assignment",
+        "eSuperTypes": "#//Effect"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An Assignment assigns a new value to a {@link Variable}.\nIt carries a reference to a Variable and an {@link Expression} \nthat represents the new value for that Variable."
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "variable",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Variable"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "expression",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Expression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Effect",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "16",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An Effect is something executed by an {@link Action}.\n"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Emission",
+        "eSuperTypes": "#//Effect"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "19",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An Emission represents setting an {@link Signal}\nfrom \"absent\" to \"present\" in a tick.\nAn Emission has a reference to the Signal\nthat it emits.\nFor valued Signals, an Emission may carry an\n{@link Expression} that represents the new\nvalue for that signal."
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "signal",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Signal"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "newValue",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Expression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Region",
+        "eSuperTypes": "#//Scope"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "24",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Regions represent a parallelism in SyncCharts. A {@link State} may contain\nmultiple Regions and each Region may contain multiple States. The Regions\nare then logically executed in parallel. A SyncChart gets represented by one root Region \nthat contains exactly one root State.\n<p>\nA Region is a {@link Scope} and therefore gets identified by label and id\nand carries an interface declaration. Hence a Region may declare\nlocal signals or variables."
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "states",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "containment": "true",
+        "eOpposite": "#//State/parentRegion"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parentState",
+        "eType": "#//State",
+        "eOpposite": "#//State/regions"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Substitution"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parentScope",
+        "lowerBound": "1",
+        "eType": "#//Scope",
+        "eOpposite": "#//Scope/renamings"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "formal",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "actual",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "#//Scope"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "33",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A State is the main entity in a SyncChart. States are located in a {@link Region}.\nA SyncChart itself is represented by a top-level root Region that contains\nexactly one root State. Every State may contain multiple parallel Regions\nwhereas a Region contains multiple States. This allows nested State\nmachines with parallelism.\n<p>\nA State may be initial or final or both. An initial State is the entry State of a Region.\nSyncCharts may only have one initial State per Region. A final State indcates that\nits parent Region has terminated and nothing needs to be done in that Region\nand its parent State may be left via a normal termination transition.\n<p>\nA State is also a Scope and hence may carry an interface declaration and is\nidentified by id and label.\n<p>\nStates have a type to indicate different properties of States. See {@link StateType}."
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "lowerBound": "1",
+        "eType": "#//StateType"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "regions",
+        "upperBound": "-1",
+        "eType": "#//Region",
+        "containment": "true",
+        "eOpposite": "#//Region/parentState"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parentRegion",
+        "lowerBound": "1",
+        "eType": "#//Region",
+        "eOpposite": "#//Region/states"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isInitial",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isFinal",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outgoingTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true",
+        "eOpposite": "#//Transition/sourceState"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incomingTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/targetState"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "StateType"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "43",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A type for a State to specify some special properties.\n\n  "
+      }
+    },
+    {
+      "id": "44",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NORMAL"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "46",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Simple or\nmacro States are of type NORMAL."
+      }
+    },
+    {
+      "id": "47",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CONDITIONAL",
+        "value": "1"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "49",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A CONDITIONAL State is only a\npseudostate in a sense that it will be left immediately within\none tick. Its outgoing transitions have to be immediate."
+      }
+    },
+    {
+      "id": "50",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "REFERENCE"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "52",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A REFERENCE\nstate carries a bodyReference to an arbitrary EObject. If this object is another\nState, e.g. from another file, this reference can be used to modularize\nSyncCharts. In such case all original interface of the referenced state\nneeds to be redefined by {@link Substitution} objects."
+      }
+    },
+    {
+      "id": "53",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "TEXTUAL"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "55",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A TEXTUAL\nstate will be defined not by child Regions but by bodyText that represents\nits behavior, e.g. in the language Esterel or something similar. "
+      }
+    },
+    {
+      "id": "56",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "#//Action"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "58",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A Transition represents a connection between two {@link State}s and the\nshift from the source to the target State. In SyncCharts Transitions may\nonly be specified between States on the same Regions. Inter-level\nTransitions are not allowed.\n<p>\nA Transition is an {@link Action} and therefore may contain a trigger condition\nwhich guards the Transition and effects that get executed when the transition\nis taken.\n<p>\nTransitions have an integer priority. If there are multiple outgoing \ntransitions of a States and multiple triggers are evaluated to true, then\nthe transition with lowest priority is taken.\n<p>\nA history transition will enter its source state in its containing Regions at the states that\nit has left them before. So it does not start at the initial states in all circumstances but\nin the states that the source state was left in some earlier tick. Only when a State is entered\nfor the first time (i.e. there is no history) then it is always entered in its initial States.\n<p>\nA transition has a type {@link TransitionType}."
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "priority",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "lowerBound": "1",
+        "eType": "#//TransitionType"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "targetState",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/incomingTransitions"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isHistory",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sourceState",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/outgoingTransitions"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "TransitionType"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "66",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A Transition has a type specifying some special property.\n"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "WEAKABORT",
+        "literal": "WEAKABORT"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "69",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A WEAKABORT transition allows the\nexited State to execute its contents in that tick."
+      }
+    },
+    {
+      "id": "70",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "STRONGABORT",
+        "value": "1"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "72",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A STRONGABORT will immediately\nleave the state and not allow any actions in\nthe source State in that tick. "
+      }
+    },
+    {
+      "id": "73",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NORMALTERMINATION",
+        "value": "2",
+        "literal": "NORMALTERMINATION"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "75",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A NORMALTERMINATION will leave a State whenever all contained\nRegions are in final States. A normal termination may not define a guard trigger."
+      }
+    },
+    {
+      "id": "76",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Scope",
+        "abstract": "true",
+        "eSuperTypes": "../../de.cau.cs.kieler.core.annotations/model/annotations.ecore#//Annotatable"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "78",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A Scope is the abstract superclass for State and Region. \n<p>\nThe fields label and id are there to identify such object, where the label\nmay be an arbitrary String and the id may be used as identifier in programming languages. Therefore the\nid should be unique within its containing scope, should start with a word character (letter, underscore) and should not\ncontain whitespace.\n<p>\nThe interfaceDeclaration is a String text field containing the interface declaration in a textual representation. \nThe user of a model instance needs to take care that this textual representation gets parsed correctly and \ntranslated into proper Interface objects (e.g. Signals and Variables). For example the SyncCharts editor uses\nan Xtext grammar/parser to do this.\n<p>\nA Scope may carry lists of entry-, inner- or exit {@link Action}s that are executed on either Scope entry, staying a tick\nin the Scope or exiting the Scope. A suspensionTrigger Action guards the suspension of a Scope. When this trigger\nis evaluated to true, then the contents of the Scope is no longer evaluated until the guard gets false again."
+      }
+    },
+    {
+      "id": "79",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "label",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "signals",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Signal",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "variables",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//Variable",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "suspensionTrigger",
+        "eType": "#//Action",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "exitActions",
+        "upperBound": "-1",
+        "eType": "#//Action",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "innerActions",
+        "upperBound": "-1",
+        "eType": "#//Action",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entryActions",
+        "upperBound": "-1",
+        "eType": "#//Action",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "bodyReference",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "bodyContents",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "bodyText",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//TextualCode",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "renamings",
+        "upperBound": "-1",
+        "eType": "#//Substitution",
+        "containment": "true",
+        "eOpposite": "#//Substitution/parentScope"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "interfaceDeclaration",
+        "eType": "#//Parsable"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Parsable",
+        "instanceClassName": "java.lang.String"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "94",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A Parsable is a String that represents model information\nthat can be parsed by some external parser. It is used to\ntechnically distinguish simple Strings from information\nthat will be post processed by a parser and hence does not\ncarry semantical information in its own.\n"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TextEffect",
+        "eSuperTypes": "../../de.cau.cs.kieler.core.kexpressions/model/kexpressions.ecore#//TextualCode #//Effect"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "97",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "An TextEffect is a {@link TextualCode} that allows to\nescape to some textual host code in an effect. This\ncan be any arbitrary String."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "56",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "76",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "92",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "95",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "details"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "17",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "details"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "22",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "type": "details"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "27",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "27",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "31",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "type": "details"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "41",
+      "target": "44",
+      "type": "eLiterals"
+    },
+    {
+      "source": "41",
+      "target": "47",
+      "type": "eLiterals"
+    },
+    {
+      "source": "41",
+      "target": "50",
+      "type": "eLiterals"
+    },
+    {
+      "source": "41",
+      "target": "53",
+      "type": "eLiterals"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "details"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "details"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "details"
+    },
+    {
+      "source": "50",
+      "target": "51",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "51",
+      "target": "52",
+      "type": "details"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "54",
+      "target": "55",
+      "type": "details"
+    },
+    {
+      "source": "56",
+      "target": "57",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "56",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "61",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "details"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "64",
+      "target": "67",
+      "type": "eLiterals"
+    },
+    {
+      "source": "64",
+      "target": "70",
+      "type": "eLiterals"
+    },
+    {
+      "source": "64",
+      "target": "73",
+      "type": "eLiterals"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "details"
+    },
+    {
+      "source": "67",
+      "target": "68",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "details"
+    },
+    {
+      "source": "70",
+      "target": "71",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "71",
+      "target": "72",
+      "type": "details"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "74",
+      "target": "75",
+      "type": "details"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "76",
+      "target": "79",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "81",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "84",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "86",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "87",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "89",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "details"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "93",
+      "target": "94",
+      "type": "details"
+    },
+    {
+      "source": "95",
+      "target": "96",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "96",
+      "target": "97",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 98,
+    "edge_count": 97,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

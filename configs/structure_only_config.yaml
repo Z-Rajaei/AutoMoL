@@ -1,0 +1,50 @@
+input:
+  format: "ecore"
+  metamodelpath: "manualDomains2/metamodels/Metamodel.ecore"
+  modelspath: "manualDomains2"
+
+output:
+  format: "PyG"
+  # path: "manualDomains2/pyg_torch_data_structure_only"  # مسیر متفاوت برای خروجی
+  path: "manualDomains2/pyg_torch_data"  # مسیر متفاوت برای خروجی
+
+label_mapping: "manualDomains2/models/graph_cluster_mapping.json"
+
+configuration:
+  adaptations:
+    # تنظیمات سراسری برای همه کلاس‌ها
+    excludeAllAttributes: false  # ویژگی‌ها را حفظ می‌کنیم
+    # includeClasses: []        # همه کلاس‌ها شامل می‌شوند (پیش‌فرض)
+    
+    metamodels:
+      - uri: "http://metamodel"
+        name: "Metamodel"
+        packages:
+          - name: "*"  # همه پکیج‌ها
+            classes:
+              - name: "*"  # همه کلاس‌ها
+                includeAllAttributes: false  # شامل همه ویژگی‌ها
+                include: ['name','type']
+                exclude: []
+                features:
+                  - feature: "name"
+                    encoding: "word2vec"
+                    # encoding: "words4MDE"
+                    # dimension: 300
+                  - feature: "type"
+                    encoding: "oneHot"   # values are categorical (ecore:EClass, ecore:EAttribute, ...), not free text
+                  - feature: "abstract"
+                    encoding: "numerical"
+                  - feature: "ordered"
+                    encoding: "numerical"
+                  - feature: "unique"
+                    encoding: "numerical"
+                  - feature: "containment"
+                    encoding: "numerical"
+                  - feature: "lowerBound"
+                    encoding: "numerical"
+                  - feature: "upperBound"
+                    encoding: "numerical"
+              - name: "EClass"
+                renaming: "Node"
+

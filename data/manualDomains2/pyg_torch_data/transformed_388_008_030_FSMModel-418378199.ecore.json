@@ -1,0 +1,615 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "FSMModel",
+        "nsURI": "http://org.gemoc.moccml.fsmmodel/1.0",
+        "nsPrefix": "org.gemoc.moccml.fsmmodel"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/OCL/Import"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "fr.inria.aoste.timemodel",
+        "value": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation",
+        "value": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation"
+      }
+    },
+    {
+      "id": "4",
+      "type": "details",
+      "attributes": {
+        "key": "fr.inria.aoste.timemodel.classicalexpression",
+        "value": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "7",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The notion of State in FSMModel is a description of a state of control. A control state contributes in regulating incoming and outgoing requests of various concurrent\nentities. It allows defining the order in which the various requests must precede or succeed. This is done by describing in each state the authorized events / requests, and by defining the successors and predecessors states (of each state) that are part of the synchronization process."
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "inputTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/target"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outputTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/source"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "12",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The concept of Transition is used to describe the relationships between the various states of the control FSM. They are used to define relations of succession and precedence between the control states. Specifically, FSMModel transitions define references source, target to denote the < source > states and < target > states for a given transition."
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/outputTransitions",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/inputTransitions",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "guard",
+        "eType": "#//AbstractGuard",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "17",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The conditions on transitions are referenced as the \"guard\". A \"guard\" is placed on the transition expression and its evaluation is mandatory for the state change."
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trigger",
+        "eType": "#//AbstractTrigger",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Transitions have \"trigger\" reference that is of type Event. The occurrence of an event called the \"trigger\" may involve state change during the control process if all additional conditions on the transition are verified.\nIn the context of FSMModel, occurrences of events that are \"trigger\" are MoCInterfaces (Send / Receive / Ack) and MoCEvents."
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "actions",
+        "upperBound": "-1",
+        "eType": "#//AbstractAction",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "23",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Action: The action function is defined for the State and Transition. In both cases, the function references the Block they integrate. In the notation of action, a stands for State or Transition. The Blocks define the sequences of instructions for internal and external communication. The internal communication is the communication between control FSM and external control is the answer provided to each requesting concurrent entity."
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateMachineDefinition",
+        "eSuperTypes": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "declarationBlock",
+        "eType": "#//DeclarationBlock",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "transitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "states",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "containment": "true",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "initialStates",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "finalStates",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractTrigger",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractAction",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractGuard",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Guard",
+        "eSuperTypes": "#//AbstractGuard"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "value",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression/BooleanExpression",
+        "containment": "true",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Trigger",
+        "eSuperTypes": "#//AbstractTrigger"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trueTriggers",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation/BindableEntity",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "falseTriggers",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation/BindableEntity",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IntegerAssignement",
+        "eSuperTypes": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression/BinaryIntegerExpression #//AbstractAction"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DeclarationBlock"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "concreteEntities",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation/ConcreteEntity",
+        "containment": "true",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "classicalExpressions",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression/ClassicalExpression",
+        "containment": "true",
+        "eKeys": "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//NamedElement/name"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "10",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "35",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "details"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "details"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "10",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "details"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "details"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "35",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "41",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 42,
+    "edge_count": 41,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

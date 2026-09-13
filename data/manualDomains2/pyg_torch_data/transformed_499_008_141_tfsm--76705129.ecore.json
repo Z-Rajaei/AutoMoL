@@ -1,0 +1,796 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "tfsm",
+        "nsURI": "http://www.gemoc.org/sample/tfsm",
+        "nsPrefix": "org.gemoc.sample.tfsm"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TFSM",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eOperations",
+      "attributes": {
+        "name": "init",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eOperations",
+      "attributes": {
+        "name": "changeCurrentState"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eParameters",
+      "attributes": {
+        "name": "newState",
+        "eType": "#//State"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedStates",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "containment": "true",
+        "eOpposite": "#//State/owningFSM"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "initialState",
+        "lowerBound": "1",
+        "eType": "#//State"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "localEvents",
+        "upperBound": "-1",
+        "eType": "#//FSMEvent",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "localClock",
+        "lowerBound": "1",
+        "eType": "#//FSMClock",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "currentState",
+        "eType": "#//State"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eOperations",
+      "attributes": {
+        "name": "onEnter",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "dynamic"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eOperations",
+      "attributes": {
+        "name": "onLeave",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "dynamic"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "owningFSM",
+        "lowerBound": "1",
+        "eType": "#//TFSM",
+        "eOpposite": "#//TFSM/ownedStates"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outgoingTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/source"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incomingTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/target"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eOperations",
+      "attributes": {
+        "name": "fire",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/outgoingTransitions"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/incomingTransitions"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ownedGuard",
+        "lowerBound": "1",
+        "eType": "#//Guard",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "generatedEvents",
+        "upperBound": "-1",
+        "eType": "#//FSMEvent"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "action",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NamedElement",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Guard",
+        "abstract": "true",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TemporalGuard",
+        "eSuperTypes": "#//Guard"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "onClock",
+        "lowerBound": "1",
+        "eType": "#//FSMClock"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "afterDuration",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EventGuard",
+        "eSuperTypes": "#//Guard"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "triggeringEvent",
+        "lowerBound": "1",
+        "eType": "#//FSMEvent"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FSMEvent",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eOperations",
+      "attributes": {
+        "name": "occurs",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sollicitingTransitions",
+        "upperBound": "-1",
+        "eType": "#//Transition"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "FSMClock",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eOperations",
+      "attributes": {
+        "name": "ticks",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "dynamic"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "numberOfTicks",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TimedSystem",
+        "eSuperTypes": "#//NamedElement"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eOperations",
+      "attributes": {
+        "name": "init",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tfsms",
+        "upperBound": "-1",
+        "eType": "#//TFSM",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "globalClocks",
+        "upperBound": "-1",
+        "eType": "#//FSMClock",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "globalEvents",
+        "upperBound": "-1",
+        "eType": "#//FSMEvent",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EvaluateGuard",
+        "eSuperTypes": "#//Guard"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eOperations",
+      "attributes": {
+        "name": "evaluate",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "aspect"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "condition",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "52",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eOperations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eOperations"
+    },
+    {
+      "source": "1",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "type": "eParameters"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eOperations"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "type": "eOperations"
+    },
+    {
+      "source": "14",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eOperations"
+    },
+    {
+      "source": "22",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "33",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "41",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "eOperations"
+    },
+    {
+      "source": "42",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eOperations"
+    },
+    {
+      "source": "47",
+      "target": "49",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "50",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "52",
+      "target": "53",
+      "type": "eOperations"
+    },
+    {
+      "source": "52",
+      "target": "55",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "eAnnotations"
+    }
+  ],
+  "stats": {
+    "node_count": 56,
+    "edge_count": 55,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

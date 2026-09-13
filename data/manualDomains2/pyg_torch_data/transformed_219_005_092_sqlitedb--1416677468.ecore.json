@@ -1,0 +1,2631 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "model",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model",
+        "nsPrefix": "org.ynn.sqlitedb.modeler"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DatabaseVersions"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getFirstVersion",
+        "lowerBound": "1",
+        "eType": "#//DatabaseVersion"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getLastVersion",
+        "lowerBound": "1",
+        "eType": "#//DatabaseVersion"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createVersion",
+        "lowerBound": "1",
+        "eType": "#//DatabaseVersion"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "versions",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//DatabaseVersion",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "packageName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "fileName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DatabaseVersion"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "lowerBound": "1",
+        "eType": "#//Database",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "previousVersion",
+        "eType": "#//DatabaseVersion",
+        "eOpposite": "#//DatabaseVersion/nextVersion"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "nextVersion",
+        "eType": "#//DatabaseVersion",
+        "eOpposite": "#//DatabaseVersion/previousVersion"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tableMapping",
+        "eType": "#//common/TableMapping",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columnMapping",
+        "eType": "#//common/ColumnMapping",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Database",
+        "eSuperTypes": "#//common/NameProvider"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tables",
+        "upperBound": "-1",
+        "eType": "#//table/Table",
+        "containment": "true",
+        "eOpposite": "#//table/Table/database"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "views",
+        "upperBound": "-1",
+        "eType": "#//view/View",
+        "containment": "true",
+        "eOpposite": "#//view/View/database"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "triggers",
+        "upperBound": "-1",
+        "eType": "#//trigger/Trigger",
+        "containment": "true",
+        "eOpposite": "#//trigger/Trigger/database"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "indexes",
+        "upperBound": "-1",
+        "eType": "#//index/Index",
+        "containment": "true",
+        "eOpposite": "#//index/Index/database"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "common",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/common",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NameProvider",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MappingEntry"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eTypeParameters",
+      "attributes": {
+        "name": "T"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "previous"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eGenericType",
+      "attributes": {
+        "eTypeParameter": "#//common/MappingEntry/T"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "current"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eGenericType",
+      "attributes": {
+        "eTypeParameter": "#//common/MappingEntry/T"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StringToTableMappingEntryMap",
+        "instanceClassName": "java.util.Map$Entry"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "key",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "value",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//table/Table"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StringToColumnMappingEntryMap",
+        "instanceClassName": "java.util.Map$Entry"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "key",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "value",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//column/Column"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableMapping"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getPrevious",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "String currKey = current.getName();\r\nMappingEntry<Table> mappingEntry = getCurr2entryMap().get(currKey);\r\nif (mappingEntry == null) return null;\r\nreturn mappingEntry.getPrevious();"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eParameters",
+      "attributes": {
+        "name": "current",
+        "lowerBound": "1",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getAllPrevious",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "45",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "Collection<Table> all = new <%java.util.ArrayList%><Table>(getEntries().size());\r\nfor (MappingEntry<Table> entry : getEntries()) {\r\n\tall.add(entry.getPrevious());\r\n}\r\nreturn all;"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//table/Table"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getCurrent",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "String prevKey = previous.getName();\r\nMappingEntry<Table> mappingEntry = getPrev2entryMap().get(prevKey);\r\nif (mappingEntry == null) return null;\r\nreturn mappingEntry.getCurrent();"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eParameters",
+      "attributes": {
+        "name": "previous",
+        "lowerBound": "1",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getAllCurrent",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "54",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "Collection<Table> all = new ArrayList<Table>(getEntries().size());\r\nfor (MappingEntry<Table> entry : getEntries()) {\r\n\tall.add(entry.getCurrent());\r\n}\r\nreturn all;"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//table/Table"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eOperations",
+      "attributes": {
+        "name": "put"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "59",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "MappingEntry<Table> entry = CommonFactory.eINSTANCE.createMappingEntry();\r\nentry.setPrevious(previous);\r\nentry.setCurrent(current);\r\nString prevKey = previous.getName();\r\nString currKey = current.getName();\r\n// TODO - Do it in a transaction\r\n// If there is already a mapping for previous or current - remove it\r\nif (getPrev2entryMap().containsKey(prevKey) || getCurr2entryMap().containsKey(currKey)) {\r\n\tMappingEntry<Table> oldEntry;\r\n\toldEntry = getPrev2entryMap().removeKey(prevKey);\r\n\tif (oldEntry != null) getEntries().remove(oldEntry);\r\n\toldEntry = getCurr2entryMap().removeKey(currKey);\r\n\tif (oldEntry != null) getEntries().remove(oldEntry);\r\n}\r\ngetEntries().add(entry);\r\ngetPrev2entryMap().put(prevKey, entry);\r\ngetCurr2entryMap().put(currKey, entry);"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eParameters",
+      "attributes": {
+        "name": "previous",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eParameters",
+      "attributes": {
+        "name": "current",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eOperations",
+      "attributes": {
+        "name": "entries",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "64",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "return <%java.util.Collections%>.unmodifiableCollection(getEntries());"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//table/Table"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "prev2entryMap",
+        "upperBound": "-1",
+        "eType": "#//common/StringToTableMappingEntryMap",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "70",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "71",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "curr2entryMap",
+        "upperBound": "-1",
+        "eType": "#//common/StringToTableMappingEntryMap",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "74",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "75",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "upperBound": "-1",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "78",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "79",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//table/Table"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ColumnMapping"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getPrevious",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "85",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "String currKey = current.getName();\r\nMappingEntry<Column> mappingEntry = getCurr2entryMap().get(currKey);\r\nif (mappingEntry == null) return null;\r\nreturn mappingEntry.getPrevious();"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eParameters",
+      "attributes": {
+        "name": "current",
+        "lowerBound": "1",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getAllPrevious",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "89",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "Collection<Column> all = new <%java.util.ArrayList%><Column>(getEntries().size());\r\nfor (MappingEntry<Column> entry : getEntries()) {\r\n\tall.add(entry.getPrevious());\r\n}\r\nreturn all;"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//column/Column"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getCurrent",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "94",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "String prevKey = previous.getName();\r\nMappingEntry<Column> mappingEntry = getPrev2entryMap().get(prevKey);\r\nif (mappingEntry == null) return null;\r\nreturn mappingEntry.getCurrent();"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eParameters",
+      "attributes": {
+        "name": "previous",
+        "lowerBound": "1",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getAllCurrent",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "98",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "Collection<Column> all = new ArrayList<Column>(getEntries().size());\r\nfor (MappingEntry<Column> entry : getEntries()) {\r\n\tall.add(entry.getCurrent());\r\n}\r\nreturn all;"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//column/Column"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eOperations",
+      "attributes": {
+        "name": "put"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "103",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "MappingEntry<Column> entry = CommonFactory.eINSTANCE.createMappingEntry();\r\nentry.setPrevious(previous);\r\nentry.setCurrent(current);\r\nString prevKey = previous.getName();\r\nString currKey = current.getName();\r\n// TODO - Do it in a transaction\r\n// If there is already a mapping for previous or current - remove it\r\nif (getPrev2entryMap().containsKey(prevKey) || getCurr2entryMap().containsKey(currKey)) {\r\n\tMappingEntry<Column> oldEntry;\r\n\toldEntry = getPrev2entryMap().removeKey(prevKey);\r\n\tif (oldEntry != null) getEntries().remove(oldEntry);\r\n\toldEntry = getCurr2entryMap().removeKey(currKey);\r\n\tif (oldEntry != null) getEntries().remove(oldEntry);\r\n}\r\ngetEntries().add(entry);\r\ngetPrev2entryMap().put(prevKey, entry);\r\ngetCurr2entryMap().put(currKey, entry);"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eParameters",
+      "attributes": {
+        "name": "previous",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "105",
+      "type": "eParameters",
+      "attributes": {
+        "name": "current",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "106",
+      "type": "eOperations",
+      "attributes": {
+        "name": "entries",
+        "lowerBound": "1"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "108",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "return <%java.util.Collections%>.unmodifiableCollection(getEntries());"
+      }
+    },
+    {
+      "id": "109",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/Collection"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//column/Column"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "prev2entryMap",
+        "upperBound": "-1",
+        "eType": "#//common/StringToColumnMappingEntryMap",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "113",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "114",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "115",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "curr2entryMap",
+        "upperBound": "-1",
+        "eType": "#//common/StringToColumnMappingEntryMap",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "118",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "119",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "upperBound": "-1",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "122",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedGetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "123",
+      "type": "details",
+      "attributes": {
+        "key": "suppressedSetVisibility",
+        "value": "true"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "#//common/MappingEntry"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//column/Column"
+      }
+    },
+    {
+      "id": "126",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Collection",
+        "instanceClassName": "java.util.Collection"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eTypeParameters",
+      "attributes": {
+        "name": "T"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "table",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/table",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Table",
+        "eSuperTypes": "#//common/NameProvider"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "lowerBound": "1",
+        "eType": "#//Database",
+        "eOpposite": "#//Database/tables"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//column/Column",
+        "containment": "true",
+        "eOpposite": "#//column/Column/table"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "constraints",
+        "upperBound": "-1",
+        "eType": "#//table/TableConstraint",
+        "containment": "true",
+        "eOpposite": "#//table/TableConstraint/table"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableConstraint",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "134",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "table",
+        "lowerBound": "1",
+        "eType": "#//table/Table",
+        "eOpposite": "#//table/Table/constraints"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PrimaryKeyTableConstraint",
+        "eSuperTypes": "#//table/TableConstraint"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "lowerBound": "1",
+        "eType": "#//column/IndexedColumn",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "138",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "UniqueTableConstraint",
+        "eSuperTypes": "#//table/TableConstraint"
+      }
+    },
+    {
+      "id": "139",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "lowerBound": "1",
+        "eType": "#//column/IndexedColumn",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CheckTableConstraint",
+        "eSuperTypes": "#//table/TableConstraint"
+      }
+    },
+    {
+      "id": "141",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "expression",
+        "lowerBound": "1",
+        "eType": "#//expression/Expression",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "142",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ForeignKeyTableConstraint",
+        "eSuperTypes": "#//table/TableConstraint"
+      }
+    },
+    {
+      "id": "143",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foreignTable",
+        "lowerBound": "1",
+        "eType": "#//table/Table"
+      }
+    },
+    {
+      "id": "145",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foreignColumns",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "146",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "column",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/column",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Column",
+        "eSuperTypes": "#//common/NameProvider"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "table",
+        "lowerBound": "1",
+        "eType": "#//table/Table",
+        "eOpposite": "#//table/Table/columns"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "lowerBound": "1",
+        "eType": "#//column/DataType"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "constraints",
+        "upperBound": "-1",
+        "eType": "#//column/ColumnConstraint",
+        "containment": "true",
+        "eOpposite": "#//column/ColumnConstraint/column"
+      }
+    },
+    {
+      "id": "151",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "DataType"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NULL"
+      }
+    },
+    {
+      "id": "153",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "INTEGER",
+        "value": "1"
+      }
+    },
+    {
+      "id": "154",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "REAL",
+        "value": "2"
+      }
+    },
+    {
+      "id": "155",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "TEXT",
+        "value": "3"
+      }
+    },
+    {
+      "id": "156",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "BLOB",
+        "value": "4"
+      }
+    },
+    {
+      "id": "157",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IndexedColumn"
+      }
+    },
+    {
+      "id": "158",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "column",
+        "lowerBound": "1",
+        "eType": "#//column/Column"
+      }
+    },
+    {
+      "id": "159",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ColumnConstraint",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "160",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "161",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "column",
+        "lowerBound": "1",
+        "eType": "#//column/Column",
+        "eOpposite": "#//column/Column/constraints"
+      }
+    },
+    {
+      "id": "162",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PrimaryKeyColumnConstraint",
+        "eSuperTypes": "#//column/ColumnConstraint"
+      }
+    },
+    {
+      "id": "163",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NotNullColumnConstraint",
+        "eSuperTypes": "#//column/ColumnConstraint"
+      }
+    },
+    {
+      "id": "164",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "UniqueColumnConstraint",
+        "eSuperTypes": "#//column/ColumnConstraint"
+      }
+    },
+    {
+      "id": "165",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CheckColumnConstraint",
+        "eSuperTypes": "#//column/ColumnConstraint"
+      }
+    },
+    {
+      "id": "166",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "expression",
+        "lowerBound": "1",
+        "eType": "#//expression/Expression"
+      }
+    },
+    {
+      "id": "167",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DefaultValueColumnConstraint",
+        "abstract": "true",
+        "eSuperTypes": "#//column/ColumnConstraint"
+      }
+    },
+    {
+      "id": "168",
+      "type": "eTypeParameters",
+      "attributes": {
+        "name": "T"
+      }
+    },
+    {
+      "id": "169",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "value",
+        "lowerBound": "1",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "170",
+      "type": "eGenericType",
+      "attributes": {
+        "eTypeParameter": "#//column/DefaultValueColumnConstraint/T"
+      }
+    },
+    {
+      "id": "171",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DefaultExpressionValueColumnConstraint"
+      }
+    },
+    {
+      "id": "172",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "#//column/DefaultValueColumnConstraint"
+      }
+    },
+    {
+      "id": "173",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//expression/Expression"
+      }
+    },
+    {
+      "id": "174",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DefaultStringValueColumnConstraint"
+      }
+    },
+    {
+      "id": "175",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "#//column/DefaultValueColumnConstraint"
+      }
+    },
+    {
+      "id": "176",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "177",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DefaultIntegerValueColumnConstraint"
+      }
+    },
+    {
+      "id": "178",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "#//column/DefaultValueColumnConstraint"
+      }
+    },
+    {
+      "id": "179",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"
+      }
+    },
+    {
+      "id": "180",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DefaultRealValueColumnConstraint"
+      }
+    },
+    {
+      "id": "181",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "#//column/DefaultValueColumnConstraint"
+      }
+    },
+    {
+      "id": "182",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
+      }
+    },
+    {
+      "id": "183",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "view",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/view",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "184",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "View",
+        "eSuperTypes": "#//common/NameProvider"
+      }
+    },
+    {
+      "id": "185",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "lowerBound": "1",
+        "eType": "#//Database",
+        "eOpposite": "#//Database/views"
+      }
+    },
+    {
+      "id": "186",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "index",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/index",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "187",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Index",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "188",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "lowerBound": "1",
+        "eType": "#//Database",
+        "eOpposite": "#//Database/indexes"
+      }
+    },
+    {
+      "id": "189",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "trigger",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/trigger",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "190",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Trigger",
+        "eSuperTypes": "#//common/NameProvider"
+      }
+    },
+    {
+      "id": "191",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "database",
+        "lowerBound": "1",
+        "eType": "#//Database",
+        "eOpposite": "#//Database/triggers"
+      }
+    },
+    {
+      "id": "192",
+      "type": "eSubpackages",
+      "attributes": {
+        "name": "expression",
+        "nsURI": "http://ynn.org/sqlitedb/modeler/model/expression",
+        "nsPrefix": "org.ynn.sqlitedb.modeler.model"
+      }
+    },
+    {
+      "id": "193",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Expression",
+        "abstract": "true"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "19",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "128",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "146",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "183",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "186",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "189",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "0",
+      "target": "192",
+      "type": "eSubpackages"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eOperations"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eOperations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eOperations"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "28",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "82",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "19",
+      "target": "126",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eTypeParameters"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eGenericType"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eGenericType"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eGenericType"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "33",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "eGenericType"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "43",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "48",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "52",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "57",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "62",
+      "type": "eOperations"
+    },
+    {
+      "source": "38",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "76",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "39",
+      "target": "42",
+      "type": "eParameters"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "43",
+      "target": "46",
+      "type": "eGenericType"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "details"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "48",
+      "target": "51",
+      "type": "eParameters"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "52",
+      "target": "53",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "52",
+      "target": "55",
+      "type": "eGenericType"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "details"
+    },
+    {
+      "source": "55",
+      "target": "56",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "57",
+      "target": "60",
+      "type": "eParameters"
+    },
+    {
+      "source": "57",
+      "target": "61",
+      "type": "eParameters"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "details"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "62",
+      "target": "65",
+      "type": "eGenericType"
+    },
+    {
+      "source": "63",
+      "target": "64",
+      "type": "details"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "66",
+      "target": "67",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "details"
+    },
+    {
+      "source": "69",
+      "target": "71",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "details"
+    },
+    {
+      "source": "73",
+      "target": "75",
+      "type": "details"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "76",
+      "target": "80",
+      "type": "eGenericType"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "details"
+    },
+    {
+      "source": "77",
+      "target": "79",
+      "type": "details"
+    },
+    {
+      "source": "80",
+      "target": "81",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "82",
+      "target": "83",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "87",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "92",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "96",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "101",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "106",
+      "type": "eOperations"
+    },
+    {
+      "source": "82",
+      "target": "112",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "82",
+      "target": "116",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "82",
+      "target": "120",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "83",
+      "target": "86",
+      "type": "eParameters"
+    },
+    {
+      "source": "84",
+      "target": "85",
+      "type": "details"
+    },
+    {
+      "source": "87",
+      "target": "88",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "87",
+      "target": "90",
+      "type": "eGenericType"
+    },
+    {
+      "source": "88",
+      "target": "89",
+      "type": "details"
+    },
+    {
+      "source": "90",
+      "target": "91",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "92",
+      "target": "95",
+      "type": "eParameters"
+    },
+    {
+      "source": "93",
+      "target": "94",
+      "type": "details"
+    },
+    {
+      "source": "96",
+      "target": "97",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "96",
+      "target": "99",
+      "type": "eGenericType"
+    },
+    {
+      "source": "97",
+      "target": "98",
+      "type": "details"
+    },
+    {
+      "source": "99",
+      "target": "100",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "101",
+      "target": "102",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "101",
+      "target": "104",
+      "type": "eParameters"
+    },
+    {
+      "source": "101",
+      "target": "105",
+      "type": "eParameters"
+    },
+    {
+      "source": "102",
+      "target": "103",
+      "type": "details"
+    },
+    {
+      "source": "106",
+      "target": "107",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "106",
+      "target": "109",
+      "type": "eGenericType"
+    },
+    {
+      "source": "107",
+      "target": "108",
+      "type": "details"
+    },
+    {
+      "source": "109",
+      "target": "110",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "110",
+      "target": "111",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "112",
+      "target": "113",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "113",
+      "target": "114",
+      "type": "details"
+    },
+    {
+      "source": "113",
+      "target": "115",
+      "type": "details"
+    },
+    {
+      "source": "116",
+      "target": "117",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "117",
+      "target": "118",
+      "type": "details"
+    },
+    {
+      "source": "117",
+      "target": "119",
+      "type": "details"
+    },
+    {
+      "source": "120",
+      "target": "121",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "120",
+      "target": "124",
+      "type": "eGenericType"
+    },
+    {
+      "source": "121",
+      "target": "122",
+      "type": "details"
+    },
+    {
+      "source": "121",
+      "target": "123",
+      "type": "details"
+    },
+    {
+      "source": "124",
+      "target": "125",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "126",
+      "target": "127",
+      "type": "eTypeParameters"
+    },
+    {
+      "source": "128",
+      "target": "129",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "128",
+      "target": "133",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "128",
+      "target": "136",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "128",
+      "target": "138",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "128",
+      "target": "140",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "128",
+      "target": "142",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "129",
+      "target": "130",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "129",
+      "target": "131",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "129",
+      "target": "132",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "133",
+      "target": "134",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "133",
+      "target": "135",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "136",
+      "target": "137",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "138",
+      "target": "139",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "140",
+      "target": "141",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "142",
+      "target": "143",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "142",
+      "target": "144",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "142",
+      "target": "145",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "146",
+      "target": "147",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "151",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "157",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "159",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "162",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "163",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "164",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "165",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "167",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "171",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "174",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "177",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "146",
+      "target": "180",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "147",
+      "target": "148",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "147",
+      "target": "149",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "147",
+      "target": "150",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "151",
+      "target": "152",
+      "type": "eLiterals"
+    },
+    {
+      "source": "151",
+      "target": "153",
+      "type": "eLiterals"
+    },
+    {
+      "source": "151",
+      "target": "154",
+      "type": "eLiterals"
+    },
+    {
+      "source": "151",
+      "target": "155",
+      "type": "eLiterals"
+    },
+    {
+      "source": "151",
+      "target": "156",
+      "type": "eLiterals"
+    },
+    {
+      "source": "157",
+      "target": "158",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "159",
+      "target": "160",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "159",
+      "target": "161",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "165",
+      "target": "166",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "167",
+      "target": "168",
+      "type": "eTypeParameters"
+    },
+    {
+      "source": "167",
+      "target": "169",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "169",
+      "target": "170",
+      "type": "eGenericType"
+    },
+    {
+      "source": "171",
+      "target": "172",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "172",
+      "target": "173",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "174",
+      "target": "175",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "175",
+      "target": "176",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "177",
+      "target": "178",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "178",
+      "target": "179",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "180",
+      "target": "181",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "181",
+      "target": "182",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "183",
+      "target": "184",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "184",
+      "target": "185",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "186",
+      "target": "187",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "187",
+      "target": "188",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "189",
+      "target": "190",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "190",
+      "target": "191",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "192",
+      "target": "193",
+      "type": "eClassifiers"
+    }
+  ],
+  "stats": {
+    "node_count": 194,
+    "edge_count": 193,
+    "node_type_count": 13,
+    "edge_type_count": 12
+  }
+}

@@ -1,0 +1,1106 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "database",
+        "nsURI": "http://www.hundsun.com/ares/studio/jres/database/1.0.0",
+        "nsPrefix": "database"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DBModuleCommonProperty"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "database supportDatabases"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "database",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": "Oracle"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "supportDatabases",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": "Oracle,DB2,MySQL,SQL Sever"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DatabaseResourceData",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//JRESResourceInfo"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableResourceData",
+        "eSuperTypes": "#//DatabaseResourceData"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "name objectId"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//TableColumn",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "indexes",
+        "upperBound": "-1",
+        "eType": "#//TableIndex",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "keys",
+        "upperBound": "-1",
+        "eType": "#//TableKey",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableColumn",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//ExtensibleModel"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "15",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "name columnName fieldName defaultValue dataType"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "volatile": "true",
+        "transient": "true",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "17",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"
+      }
+    },
+    {
+      "id": "18",
+      "type": "details",
+      "attributes": {
+        "key": "namespace",
+        "value": ""
+      }
+    },
+    {
+      "id": "19",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "字段名，目前和FieldName属性一样。"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "chineseName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "dataType",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "25",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "数据类型，只有非标准字段才有用。 注意这个值在界面上目前显示的是“字段类型”，注意和ColumnType这个属性区分。"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "columnName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "28",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "“重命名”属性。"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "fieldName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "31",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "字段名，目前和Name属性一致。"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "primaryKey",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "unique",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nullable",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean",
+        "defaultValueLiteral": "true"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defaultValue",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foreignkey",
+        "upperBound": "-1",
+        "eType": "#//ForeignKey",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mark",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "comments",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "columnType",
+        "eType": "#//ColumnType"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "字段类型，用于区分和标准字段和非标准字段。 注意界面上显示的“字段类型”实际上是Dataype这个属性，不是这个属性。这个属性在界面上不显示。"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableIndexColumn",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//ExtensibleModel"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "44",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "columnName"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "columnName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ascending",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "columnType",
+        "eType": "#//ColumnType"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableIndex",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//ExtensibleModel"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "name columns"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "unique",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "cluster",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//TableIndexColumn",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mark",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ViewResourceData",
+        "eSuperTypes": "#//DatabaseResourceData"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "58",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "name sql objectId"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sql",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isHistory",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DBGenContext",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//ExtensibleModel"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ForeignKey"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tableName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "fieldName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TableKey",
+        "eSuperTypes": "../../com.hundsun.ares.studio.core/model/ares.ecore#//ExtensibleModel"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "67",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "name columns"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "69",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "eType": "#//key_type"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "foreignKey",
+        "upperBound": "-1",
+        "eType": "#//ForeignKey",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "columns",
+        "upperBound": "-1",
+        "eType": "#//TableColumn"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "mark",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "73",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "key_type"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Primary",
+        "literal": "主键"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Unique",
+        "value": "1",
+        "literal": "唯一"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Foreign",
+        "value": "2",
+        "literal": "外键"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "ColumnType"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "STD_FIELD",
+        "literal": "STD_FIELD"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NON_STD_FIELD",
+        "value": "1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "48",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "56",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "61",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "62",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "65",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "73",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "77",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "13",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "23",
+      "target": "24",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "details"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "details"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "42",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "42",
+      "target": "46",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "42",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "48",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "55",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "56",
+      "target": "57",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "56",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "56",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "details"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "62",
+      "target": "64",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "65",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "69",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "70",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "71",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "66",
+      "target": "67",
+      "type": "details"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "eLiterals"
+    },
+    {
+      "source": "73",
+      "target": "75",
+      "type": "eLiterals"
+    },
+    {
+      "source": "73",
+      "target": "76",
+      "type": "eLiterals"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "eLiterals"
+    },
+    {
+      "source": "77",
+      "target": "79",
+      "type": "eLiterals"
+    }
+  ],
+  "stats": {
+    "node_count": 80,
+    "edge_count": 79,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Boolean"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "5",
+      "type": "EPackage",
+      "attributes": {
+        "name": "ControllerUML"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ControllerAttribute"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "controller",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Controller",
+        "eOpposite": "/1/Controller/controllerAttribute"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Controller"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "controllerAttribute",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/ControllerAttribute",
+        "eOpposite": "/1/ControllerAttribute/controller"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "behavior",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/StateMachine",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateMachine"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "states",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/State",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "substates",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/State",
+        "containment": "true",
+        "eOpposite": "/1/State/theContainer"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "theContainer",
+        "ordered": "false",
+        "eType": "/1/State",
+        "eOpposite": "/1/State/substates"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outGoing",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/StateTransition",
+        "containment": "true",
+        "eOpposite": "/1/StateTransition/source"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incoming",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/StateTransition",
+        "eOpposite": "/1/StateTransition/target"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SubControllerState",
+        "eSuperTypes": "/1/State"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "controller",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Controller"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ViewState",
+        "eSuperTypes": "/1/State"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateTransition"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "source",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/State",
+        "eOpposite": "/1/State/outGoing"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "target",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/State",
+        "eOpposite": "/1/State/incoming"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trigger",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Event"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "effect",
+        "ordered": "false",
+        "eType": "/1/StateMachineAction",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StateMachineAction"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "18",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "13",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "21",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "21",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "21",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 28,
+    "edge_count": 27,
+    "node_type_count": 4,
+    "edge_type_count": 3
+  }
+}

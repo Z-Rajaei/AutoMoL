@@ -1,0 +1,4285 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "Conference"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Thing"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Meta-Reviewer",
+        "eSuperTypes": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Reviewer",
+        "eSuperTypes": "/0/ConferenceMember /0/User /0/Person"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assignedByAdministrator",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "adjustBid",
+        "ordered": "false",
+        "eType": "/0/Bid",
+        "eOpposite": "/0/Bid/adjustedBy"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "readPaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasBeenAssigned",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "writeReview",
+        "ordered": "false",
+        "eType": "/0/Review"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assignExternalReviewer",
+        "ordered": "false",
+        "eType": "/0/ExternalReviewer",
+        "eOpposite": "/0/ExternalReviewer/assignedByReviewer"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "invites_co-reviewers",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "invited_by",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_review_reference_or_expertise",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Decision"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Preference"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ProgramCommittee"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasProgramCommitteeMember",
+        "ordered": "false",
+        "eType": "/0/ProgramCommitteeMember",
+        "eOpposite": "/0/ProgramCommitteeMember/memberOfProgramCommittee"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Bid"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "adjustedBy",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference",
+        "eSuperTypes": "/0/Thing /0/Event"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasConferenceMember",
+        "ordered": "false",
+        "eType": "/0/ConferenceMember",
+        "eOpposite": "/0/ConferenceMember/memberOfConference"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "paperAssignmentFinalizedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviewCriteriaEnteredBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "paperAssignmentToolsRunBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "virtualMeetingEnabledBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hardcopyMailingManifestsPrintedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "detailsEnteredBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviewerBiddingStartedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "date",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "reviewsPerPaper",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/Integer"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "logoURL",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/anyURI"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "acceptsHardcopySubmissions",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/Boolean"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "siteURL",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/anyURI"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ConferenceChair",
+        "eSuperTypes": "/0/ConferenceMember /0/Chairman"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ConferenceMember",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "memberOfConference",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AssociatedChair",
+        "eSuperTypes": "/0/ConferenceMember /0/Chairman"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ProgramCommitteeMember",
+        "eSuperTypes": "/0/Person /0/ConferenceMember"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "memberOfProgramCommittee",
+        "ordered": "false",
+        "eType": "/0/ProgramCommittee",
+        "eOpposite": "/0/ProgramCommittee/hasProgramCommitteeMember"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "maxPapers",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/Integer"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "addedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AuthorNotReviewer",
+        "eSuperTypes": "/0/Author"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SubjectArea"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ExternalReviewer",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assignedByReviewer",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Chairman",
+        "eSuperTypes": "/0/Person /0/ConferenceMember"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ProgramCommitteeChair",
+        "eSuperTypes": "/0/ProgramCommitteeMember /0/Chairman"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "endReview",
+        "ordered": "false",
+        "eType": "/0/Review"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Acceptance",
+        "eSuperTypes": "/0/Decision"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Rejection",
+        "eSuperTypes": "/0/Decision"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Paper",
+        "eSuperTypes": "/0/Document /0/Regular_contribution"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasCo-author",
+        "ordered": "false",
+        "eType": "/0/Co-author",
+        "eOpposite": "/0/Co-author/co-writePaper"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasBid",
+        "ordered": "false",
+        "eType": "/0/Bid"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasDecision",
+        "ordered": "false",
+        "eType": "/0/Decision"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assignedTo",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasSubjectArea",
+        "ordered": "false",
+        "eType": "/0/SubjectArea"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "readByReviewer",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "paperID",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/unsignedLong"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "title",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasAuthor",
+        "ordered": "false",
+        "eType": "/0/Author"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "acceptedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rejectedBy",
+        "ordered": "false",
+        "eType": "/0/Administrator"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "readByMeta-Reviewer",
+        "ordered": "false",
+        "eType": "/0/Meta-Reviewer"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Author",
+        "eSuperTypes": "/0/ConferenceMember /0/User"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "submitPaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "writePaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Co-author",
+        "eSuperTypes": "/0/Author"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "co-writePaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PaperAbstract",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PaperFullVersion",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Administrator",
+        "eSuperTypes": "/0/User /0/Person"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "approve",
+        "ordered": "false",
+        "eType": "/0/Event",
+        "eOpposite": "/0/Event/approved_by"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assign",
+        "ordered": "false",
+        "eType": "/0/Role",
+        "eOpposite": "/0/Role/assigned_by"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "finalizePaperAssignment",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "runPaperAssignmentTools",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enableVirtualMeeting",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "startReviewerBidding",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assignReviewer",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rejectPaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enterConferenceDetails",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "printHardcopyMailingManifests",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "setMaxPapers",
+        "ordered": "false",
+        "eType": "/0/ProgramCommitteeMember"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "enterReviewCriteria",
+        "ordered": "false",
+        "eType": "/0/Conference"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "acceptPaper",
+        "ordered": "false",
+        "eType": "/0/Paper"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "addProgramCommitteeMember",
+        "ordered": "false",
+        "eType": "/0/ProgramCommitteeMember",
+        "eOpposite": "/0/ProgramCommitteeMember/addedBy"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Meta-Review",
+        "eSuperTypes": "/0/Review"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "unsignedLong"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "anyURI"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "conists_of",
+        "ordered": "false",
+        "eType": "/0/Event_Tracks"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "confirmed_by",
+        "ordered": "false",
+        "eType": "/0/Approval_Email",
+        "eOpposite": "/0/Approval_Email/confirm"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "defined_by",
+        "ordered": "false",
+        "eType": "/0/Event_Setup",
+        "eOpposite": "/0/Event_Setup/define"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "approved_by",
+        "ordered": "false",
+        "eType": "/0/Administrator",
+        "eOpposite": "/0/Administrator/approve"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Account"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "registred_by",
+        "ordered": "false",
+        "eType": "/0/Person",
+        "eOpposite": "/0/Person/register"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Inforamtion"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "User",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "recieve",
+        "ordered": "false",
+        "eType": "/0/Document",
+        "eOpposite": "/0/Document/recieved_by"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "create",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "submit",
+        "ordered": "false",
+        "eType": "/0/Document",
+        "eOpposite": "/0/Document/submited__by"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Role",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "assigned_by",
+        "ordered": "false",
+        "eType": "/0/Administrator",
+        "eOpposite": "/0/Administrator/assign"
+      }
+    },
+    {
+      "id": "103",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Help_Request",
+        "eSuperTypes": "/0/Request"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Person",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "105",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "inverse_of_add",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "106",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "execute",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "get",
+        "ordered": "false",
+        "eType": "/0/Inforamtion"
+      }
+    },
+    {
+      "id": "108",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "use",
+        "ordered": "false",
+        "eType": "/0/Document",
+        "eOpposite": "/0/Document/used_by"
+      }
+    },
+    {
+      "id": "109",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "register",
+        "ordered": "false",
+        "eType": "/0/Account",
+        "eOpposite": "/0/Account/registred_by"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "modify",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "take_part_in",
+        "ordered": "false",
+        "eType": "/0/Event"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "remove",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "113",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "add",
+        "ordered": "false",
+        "eType": "/0/Person"
+      }
+    },
+    {
+      "id": "114",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "send",
+        "ordered": "false",
+        "eType": "/0/Activity",
+        "eOpposite": "/0/Activity/sent_by"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "added_by",
+        "ordered": "false",
+        "eType": "/0/Person"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "contributes",
+        "ordered": "false",
+        "eType": "/0/Conference_document",
+        "eOpposite": "/0/Conference_document/has_authors"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_an_email",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_the_first_name",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_gender",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/EEnum"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_the_last_name",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "hasConflictOfInterest",
+        "ordered": "false",
+        "eType": "/0/Document"
+      }
+    },
+    {
+      "id": "122",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "email",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "123",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Symposium",
+        "eSuperTypes": "/0/Event"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Abstract",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Document",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "126",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "recieved_by",
+        "ordered": "false",
+        "eType": "/0/User",
+        "eOpposite": "/0/User/recieve"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "used_by",
+        "ordered": "false",
+        "eType": "/0/Person",
+        "eOpposite": "/0/Person/use"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "submited__by",
+        "ordered": "false",
+        "eType": "/0/User",
+        "eOpposite": "/0/User/submit"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Invited_Paper",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Admin_Role",
+        "eSuperTypes": "/0/Role"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Paper_Typologies",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event_Setup"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "define",
+        "ordered": "false",
+        "eType": "/0/Event",
+        "eOpposite": "/0/Event/defined_by"
+      }
+    },
+    {
+      "id": "134",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event_URL",
+        "eSuperTypes": "/0/URL"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "concerned",
+        "ordered": "false",
+        "eType": "/0/Event"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "URL"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Notification_Email",
+        "eSuperTypes": "/0/Email"
+      }
+    },
+    {
+      "id": "138",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Email",
+        "eSuperTypes": "/0/Document"
+      }
+    },
+    {
+      "id": "139",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Short_Paper",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Author_Role",
+        "eSuperTypes": "/0/Role"
+      }
+    },
+    {
+      "id": "141",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Preview",
+        "eSuperTypes": "/0/Review_Form"
+      }
+    },
+    {
+      "id": "142",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review_Form",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "143",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Committe_Role",
+        "eSuperTypes": "/0/Role"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Group_Email",
+        "eSuperTypes": "/0/Email"
+      }
+    },
+    {
+      "id": "145",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Submission_Template",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "146",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review_Form_Setup",
+        "eSuperTypes": "/0/Review_Form"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Misc",
+        "eSuperTypes": "/0/Help_Request"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event_Creation",
+        "eSuperTypes": "/0/Activity"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Approval_Email",
+        "eSuperTypes": "/0/Email"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "confirm",
+        "ordered": "false",
+        "eType": "/0/Event",
+        "eOpposite": "/0/Event/confirmed_by"
+      }
+    },
+    {
+      "id": "151",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Rejection_Email",
+        "eSuperTypes": "/0/Email"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Submission",
+        "eSuperTypes": "/0/Document"
+      }
+    },
+    {
+      "id": "153",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Template",
+        "eSuperTypes": "/0/Document"
+      }
+    },
+    {
+      "id": "154",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Feature_Request",
+        "eSuperTypes": "/0/Help_Request"
+      }
+    },
+    {
+      "id": "155",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event_Tracks",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "156",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Request",
+        "eSuperTypes": "/0/Activity"
+      }
+    },
+    {
+      "id": "157",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Activity"
+      }
+    },
+    {
+      "id": "158",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_result",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "159",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sent_by",
+        "ordered": "false",
+        "eType": "/0/Person",
+        "eOpposite": "/0/Person/send"
+      }
+    },
+    {
+      "id": "160",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Head_Role",
+        "eSuperTypes": "/0/Role"
+      }
+    },
+    {
+      "id": "161",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Detail",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "162",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Corresponding_Author",
+        "eSuperTypes": "/0/Author"
+      }
+    },
+    {
+      "id": "163",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Reviewer_Role",
+        "eSuperTypes": "/0/Role"
+      }
+    },
+    {
+      "id": "164",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Event_Approval",
+        "eSuperTypes": "/0/Activity"
+      }
+    },
+    {
+      "id": "165",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Registration",
+        "eSuperTypes": "/0/Activity"
+      }
+    },
+    {
+      "id": "166",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Full_Paper",
+        "eSuperTypes": "/0/Paper"
+      }
+    },
+    {
+      "id": "167",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Research_Topic",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "168",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Description"
+      }
+    },
+    {
+      "id": "169",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Assistance",
+        "eSuperTypes": "/0/Help_Request"
+      }
+    },
+    {
+      "id": "170",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Email_Template",
+        "eSuperTypes": "/0/Event_Setup"
+      }
+    },
+    {
+      "id": "171",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_participant",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "172",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Active_conference_participant",
+        "eSuperTypes": "/0/Conference_contributor /0/Conference_participant"
+      }
+    },
+    {
+      "id": "173",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "gives_presentations",
+        "ordered": "false",
+        "eType": "/0/Presentation",
+        "eOpposite": "/0/Presentation/is_given_by"
+      }
+    },
+    {
+      "id": "174",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Passive_conference_participant",
+        "eSuperTypes": "/0/Conference_participant"
+      }
+    },
+    {
+      "id": "175",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review_expertise",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "176",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_submitted_contribution",
+        "ordered": "false",
+        "eType": "/0/Submitted_contribution",
+        "eOpposite": "/0/Submitted_contribution/has_a_review_expertise"
+      }
+    },
+    {
+      "id": "177",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_an_expertise",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/EEnum"
+      }
+    },
+    {
+      "id": "178",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Submitted_contribution",
+        "eSuperTypes": "/0/Written_contribution"
+      }
+    },
+    {
+      "id": "179",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_review_expertise",
+        "ordered": "false",
+        "eType": "/0/Review_expertise",
+        "eOpposite": "/0/Review_expertise/has_a_submitted_contribution"
+      }
+    },
+    {
+      "id": "180",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Regular_author",
+        "eSuperTypes": "/0/Conference_contributor"
+      }
+    },
+    {
+      "id": "181",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_contributor",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "182",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Contribution_1th-author",
+        "eSuperTypes": "/0/Regular_author"
+      }
+    },
+    {
+      "id": "183",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Contribution_co-author",
+        "eSuperTypes": "/0/Regular_author"
+      }
+    },
+    {
+      "id": "184",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_contribution",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "185",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "is_submitted_at",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_contributions"
+      }
+    },
+    {
+      "id": "186",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Co-chair",
+        "eSuperTypes": "/0/Committee_member"
+      }
+    },
+    {
+      "id": "187",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_committe_co-chair_of",
+        "ordered": "false",
+        "eType": "/0/Committee",
+        "eOpposite": "/0/Committee/has_a_committee_co-chair"
+      }
+    },
+    {
+      "id": "188",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Committee",
+        "eSuperTypes": "/0/User"
+      }
+    },
+    {
+      "id": "189",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_members",
+        "ordered": "false",
+        "eType": "/0/Committee_member",
+        "eOpposite": "/0/Committee_member/was_a_member_of"
+      }
+    },
+    {
+      "id": "190",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_committee_of",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_a_commtitee"
+      }
+    },
+    {
+      "id": "191",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_committee_co-chair",
+        "ordered": "false",
+        "eType": "/0/Co-chair",
+        "eOpposite": "/0/Co-chair/was_a_committe_co-chair_of"
+      }
+    },
+    {
+      "id": "192",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_committee_chair",
+        "ordered": "false",
+        "eType": "/0/Chair",
+        "eOpposite": "/0/Chair/was_a_committee_chair_of"
+      }
+    },
+    {
+      "id": "193",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Committee_member",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "194",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_member_of",
+        "ordered": "false",
+        "eType": "/0/Committee",
+        "eOpposite": "/0/Committee/has_members"
+      }
+    },
+    {
+      "id": "195",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Abstract",
+        "eSuperTypes": "/0/Extended_abstract"
+      }
+    },
+    {
+      "id": "196",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "is_the_1th_part_of",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "197",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Extended_abstract",
+        "eSuperTypes": "/0/Regular_contribution"
+      }
+    },
+    {
+      "id": "198",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Important_dates"
+      }
+    },
+    {
+      "id": "199",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_an_abstract_submission_date",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "200",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_a_full_paper_submission_date",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "201",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_an_ending_date",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "202",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_a_date_of_acceptance_announcement",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "203",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_a_date_of_camera_ready_paper_submission",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "204",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "is_a_starting_date",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "205",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "belong_to_a_conference_volume",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_important_dates"
+      }
+    },
+    {
+      "id": "206",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Invited_speaker",
+        "eSuperTypes": "/0/Conference_contributor"
+      }
+    },
+    {
+      "id": "207",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_proceedings"
+      }
+    },
+    {
+      "id": "208",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_an_ISBN",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "209",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_publisher",
+        "ordered": "false",
+        "eType": "/0/Publisher",
+        "eOpposite": "/0/Publisher/issues"
+      }
+    },
+    {
+      "id": "210",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_a_volume",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/Integer"
+      }
+    },
+    {
+      "id": "211",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Information_for_participants",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "212",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_document"
+      }
+    },
+    {
+      "id": "213",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_authors",
+        "ordered": "false",
+        "eType": "/0/Person",
+        "eOpposite": "/0/Person/contributes"
+      }
+    },
+    {
+      "id": "214",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_a_date_of_issue",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/date"
+      }
+    },
+    {
+      "id": "215",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Organization"
+      }
+    },
+    {
+      "id": "216",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Regular_contribution",
+        "eSuperTypes": "/0/Written_contribution"
+      }
+    },
+    {
+      "id": "217",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Poster",
+        "eSuperTypes": "/0/Conference_contribution"
+      }
+    },
+    {
+      "id": "218",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Written_contribution",
+        "eSuperTypes": "/0/Conference_contribution"
+      }
+    },
+    {
+      "id": "219",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_applicant",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "220",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Camera_ready_contribution",
+        "eSuperTypes": "/0/Accepted_contribution"
+      }
+    },
+    {
+      "id": "221",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Accepted_contribution",
+        "eSuperTypes": "/0/Reviewed_contribution"
+      }
+    },
+    {
+      "id": "222",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Program_committee",
+        "eSuperTypes": "/0/Committee"
+      }
+    },
+    {
+      "id": "223",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_program_committee_of",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_a_program_committee"
+      }
+    },
+    {
+      "id": "224",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Organizing_committee",
+        "eSuperTypes": "/0/Committee"
+      }
+    },
+    {
+      "id": "225",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_an_organizing_committee_of",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_an_organizing_committee"
+      }
+    },
+    {
+      "id": "226",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Steering_committee",
+        "eSuperTypes": "/0/Committee"
+      }
+    },
+    {
+      "id": "227",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_steering_committee_of",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_a_steering_committee"
+      }
+    },
+    {
+      "id": "228",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_volume",
+        "eSuperTypes": "/0/Conference"
+      }
+    },
+    {
+      "id": "229",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_parts",
+        "ordered": "false",
+        "eType": "/0/Conference_part",
+        "eOpposite": "/0/Conference_part/is_part_of_conference_volumes"
+      }
+    },
+    {
+      "id": "230",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_workshops",
+        "ordered": "false",
+        "eType": "/0/Workshop"
+      }
+    },
+    {
+      "id": "231",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_tracks",
+        "ordered": "false",
+        "eType": "/0/Track"
+      }
+    },
+    {
+      "id": "232",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_tutorials",
+        "ordered": "false",
+        "eType": "/0/Tutorial"
+      }
+    },
+    {
+      "id": "233",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_commtitee",
+        "ordered": "false",
+        "eType": "/0/Committee",
+        "eOpposite": "/0/Committee/was_a_committee_of"
+      }
+    },
+    {
+      "id": "234",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_steering_committee",
+        "ordered": "false",
+        "eType": "/0/Steering_committee",
+        "eOpposite": "/0/Steering_committee/was_a_steering_committee_of"
+      }
+    },
+    {
+      "id": "235",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_an_organizing_committee",
+        "ordered": "false",
+        "eType": "/0/Organizing_committee",
+        "eOpposite": "/0/Organizing_committee/was_an_organizing_committee_of"
+      }
+    },
+    {
+      "id": "236",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_important_dates",
+        "ordered": "false",
+        "eType": "/0/Important_dates",
+        "eOpposite": "/0/Important_dates/belong_to_a_conference_volume"
+      }
+    },
+    {
+      "id": "237",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_contributions",
+        "ordered": "false",
+        "eType": "/0/Conference_contribution",
+        "eOpposite": "/0/Conference_contribution/is_submitted_at"
+      }
+    },
+    {
+      "id": "238",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_a_location",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "239",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_program_committee",
+        "ordered": "false",
+        "eType": "/0/Program_committee",
+        "eOpposite": "/0/Program_committee/was_a_program_committee_of"
+      }
+    },
+    {
+      "id": "240",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Call_for_paper",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "241",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_announcement",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "242",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Invited_talk",
+        "eSuperTypes": "/0/Presentation"
+      }
+    },
+    {
+      "id": "243",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_part"
+      }
+    },
+    {
+      "id": "244",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_track-workshop-tutorial_topic",
+        "ordered": "false",
+        "eType": "/0/Topic",
+        "eOpposite": "/0/Topic/is_a_topis_of_conference_parts"
+      }
+    },
+    {
+      "id": "245",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "is_part_of_conference_volumes",
+        "ordered": "false",
+        "eType": "/0/Conference_volume",
+        "eOpposite": "/0/Conference_volume/has_parts"
+      }
+    },
+    {
+      "id": "246",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_track-workshop-tutorial_chair",
+        "ordered": "false",
+        "eType": "/0/Track-workshop_chair",
+        "eOpposite": "/0/Track-workshop_chair/was_a_track-workshop_chair_of"
+      }
+    },
+    {
+      "id": "247",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Presentation",
+        "eSuperTypes": "/0/Conference_contribution"
+      }
+    },
+    {
+      "id": "248",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "is_given_by",
+        "ordered": "false",
+        "eType": "/0/Active_conference_participant",
+        "eOpposite": "/0/Active_conference_participant/gives_presentations"
+      }
+    },
+    {
+      "id": "249",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Chair",
+        "eSuperTypes": "/0/Committee_member"
+      }
+    },
+    {
+      "id": "250",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_committee_chair_of",
+        "ordered": "false",
+        "eType": "/0/Committee",
+        "eOpposite": "/0/Committee/has_a_committee_chair"
+      }
+    },
+    {
+      "id": "251",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Track",
+        "eSuperTypes": "/0/Conference_part"
+      }
+    },
+    {
+      "id": "252",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Workshop",
+        "eSuperTypes": "/0/Conference_part /0/Event"
+      }
+    },
+    {
+      "id": "253",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Tutorial",
+        "eSuperTypes": "/0/Conference_part"
+      }
+    },
+    {
+      "id": "254",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Rejected_contribution",
+        "eSuperTypes": "/0/Reviewed_contribution"
+      }
+    },
+    {
+      "id": "255",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Reviewed_contribution",
+        "eSuperTypes": "/0/Submitted_contribution"
+      }
+    },
+    {
+      "id": "256",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_review",
+        "ordered": "false",
+        "eType": "/0/Review",
+        "eOpposite": "/0/Review/reviews"
+      }
+    },
+    {
+      "id": "257",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review",
+        "eSuperTypes": "/0/Conference_document /0/Document"
+      }
+    },
+    {
+      "id": "258",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "writtenBy",
+        "ordered": "false",
+        "eType": "/0/Reviewer"
+      }
+    },
+    {
+      "id": "259",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviews",
+        "ordered": "false",
+        "eType": "/0/Reviewed_contribution",
+        "eOpposite": "/0/Reviewed_contribution/has_a_review"
+      }
+    },
+    {
+      "id": "260",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Topic"
+      }
+    },
+    {
+      "id": "261",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "belongs_to_a_review_reference",
+        "ordered": "false",
+        "eType": "/0/Review_preference"
+      }
+    },
+    {
+      "id": "262",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "is_a_topis_of_conference_parts",
+        "ordered": "false",
+        "eType": "/0/Conference_part",
+        "eOpposite": "/0/Conference_part/has_a_track-workshop-tutorial_topic"
+      }
+    },
+    {
+      "id": "263",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Late_paid_applicant",
+        "eSuperTypes": "/0/Paid_applicant"
+      }
+    },
+    {
+      "id": "264",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Paid_applicant",
+        "eSuperTypes": "/0/Registeered_applicant"
+      }
+    },
+    {
+      "id": "265",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Early_paid_applicant",
+        "eSuperTypes": "/0/Paid_applicant"
+      }
+    },
+    {
+      "id": "266",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Organizer",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "267",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Call_for_participation",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "268",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Publisher"
+      }
+    },
+    {
+      "id": "269",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "issues",
+        "ordered": "false",
+        "eType": "/0/Conference_proceedings",
+        "eOpposite": "/0/Conference_proceedings/has_a_publisher"
+      }
+    },
+    {
+      "id": "270",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Registeered_applicant",
+        "eSuperTypes": "/0/Conference_applicant"
+      }
+    },
+    {
+      "id": "271",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Track-workshop_chair",
+        "eSuperTypes": "/0/Person"
+      }
+    },
+    {
+      "id": "272",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "was_a_track-workshop_chair_of",
+        "ordered": "false",
+        "eType": "/0/Conference_part",
+        "eOpposite": "/0/Conference_part/has_a_track-workshop-tutorial_chair"
+      }
+    },
+    {
+      "id": "273",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_www",
+        "eSuperTypes": "/0/Conference_document"
+      }
+    },
+    {
+      "id": "274",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_a_URL",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/String"
+      }
+    },
+    {
+      "id": "275",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference_fees"
+      }
+    },
+    {
+      "id": "276",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review_preference",
+        "eSuperTypes": "/0/Thing"
+      }
+    },
+    {
+      "id": "277",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "has_a_topic_or_a_submission_contribution",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/0/Thing"
+      }
+    },
+    {
+      "id": "278",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "has_a_degree",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/Integer"
+      }
+    },
+    {
+      "id": "279",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "date"
+      }
+    },
+    {
+      "id": "280",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "EEnum"
+      }
+    },
+    {
+      "id": "281",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "high",
+        "value": "1"
+      }
+    },
+    {
+      "id": "282",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "medium",
+        "value": "2"
+      }
+    },
+    {
+      "id": "283",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "low",
+        "value": "3"
+      }
+    },
+    {
+      "id": "284",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "very high",
+        "value": "4"
+      }
+    },
+    {
+      "id": "285",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "male",
+        "value": "5"
+      }
+    },
+    {
+      "id": "286",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "female",
+        "value": "6"
+      }
+    },
+    {
+      "id": "287",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "288",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Boolean"
+      }
+    },
+    {
+      "id": "289",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "290",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "287",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "18",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "34",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "35",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "37",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "43",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "44",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "46",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "49",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "50",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "51",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "67",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "69",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "70",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "71",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "86",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "87",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "88",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "89",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "94",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "96",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "97",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "101",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "103",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "104",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "123",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "124",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "125",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "129",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "130",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "131",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "132",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "134",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "136",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "137",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "138",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "139",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "140",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "141",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "142",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "143",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "144",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "145",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "146",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "147",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "148",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "149",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "151",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "152",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "153",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "154",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "155",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "156",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "157",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "160",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "161",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "162",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "163",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "164",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "165",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "166",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "167",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "168",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "169",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "170",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "171",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "172",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "174",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "175",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "178",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "180",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "181",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "182",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "183",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "184",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "186",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "188",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "193",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "195",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "197",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "198",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "206",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "207",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "211",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "212",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "215",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "216",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "217",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "218",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "219",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "220",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "221",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "222",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "224",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "226",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "228",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "240",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "241",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "242",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "243",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "247",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "249",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "251",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "252",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "253",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "254",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "255",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "257",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "260",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "263",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "264",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "265",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "266",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "267",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "268",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "270",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "271",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "273",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "275",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "276",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "279",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "280",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "20",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "35",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "41",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "55",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "57",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "58",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "61",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "51",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "67",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "73",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "74",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "75",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "76",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "77",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "79",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "81",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "84",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "89",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "89",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "89",
+      "target": "92",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "89",
+      "target": "93",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "94",
+      "target": "95",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "97",
+      "target": "98",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "97",
+      "target": "99",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "97",
+      "target": "100",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "101",
+      "target": "102",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "105",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "106",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "107",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "108",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "109",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "110",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "111",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "112",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "113",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "114",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "115",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "116",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "118",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "120",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "121",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "104",
+      "target": "122",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "125",
+      "target": "126",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "125",
+      "target": "127",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "125",
+      "target": "128",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "134",
+      "target": "135",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "149",
+      "target": "150",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "157",
+      "target": "158",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "157",
+      "target": "159",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "172",
+      "target": "173",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "175",
+      "target": "176",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "175",
+      "target": "177",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "178",
+      "target": "179",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "184",
+      "target": "185",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "186",
+      "target": "187",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "188",
+      "target": "189",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "188",
+      "target": "190",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "188",
+      "target": "191",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "188",
+      "target": "192",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "193",
+      "target": "194",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "195",
+      "target": "196",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "199",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "200",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "201",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "202",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "203",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "204",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "198",
+      "target": "205",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "207",
+      "target": "208",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "207",
+      "target": "209",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "207",
+      "target": "210",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "212",
+      "target": "213",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "212",
+      "target": "214",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "222",
+      "target": "223",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "224",
+      "target": "225",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "226",
+      "target": "227",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "229",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "230",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "231",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "232",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "233",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "234",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "235",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "236",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "237",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "238",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "228",
+      "target": "239",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "243",
+      "target": "244",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "243",
+      "target": "245",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "243",
+      "target": "246",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "247",
+      "target": "248",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "249",
+      "target": "250",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "255",
+      "target": "256",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "257",
+      "target": "258",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "257",
+      "target": "259",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "260",
+      "target": "261",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "260",
+      "target": "262",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "268",
+      "target": "269",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "271",
+      "target": "272",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "273",
+      "target": "274",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "277",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "276",
+      "target": "278",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "280",
+      "target": "281",
+      "type": "eLiterals"
+    },
+    {
+      "source": "280",
+      "target": "282",
+      "type": "eLiterals"
+    },
+    {
+      "source": "280",
+      "target": "283",
+      "type": "eLiterals"
+    },
+    {
+      "source": "280",
+      "target": "284",
+      "type": "eLiterals"
+    },
+    {
+      "source": "280",
+      "target": "285",
+      "type": "eLiterals"
+    },
+    {
+      "source": "280",
+      "target": "286",
+      "type": "eLiterals"
+    },
+    {
+      "source": "287",
+      "target": "288",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "287",
+      "target": "289",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "287",
+      "target": "290",
+      "type": "eClassifiers"
+    }
+  ],
+  "stats": {
+    "node_count": 291,
+    "edge_count": 290,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

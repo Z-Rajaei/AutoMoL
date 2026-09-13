@@ -1,0 +1,1932 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "publication",
+        "nsURI": "http:///publication.example.v0",
+        "nsPrefix": "publication"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "SequenceType"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "startToStart"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "finishToStart",
+        "value": "1"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "startToFinish",
+        "value": "2"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "finishToFinish",
+        "value": "3"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PublicationProcess",
+        "eSuperTypes": "#//Named"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "8",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "9",
+      "type": "details",
+      "attributes": {
+        "key": "kref=publicationRules",
+        "value": ""
+      }
+    },
+    {
+      "id": "10",
+      "type": "details",
+      "attributes": {
+        "key": "kref=phases",
+        "value": ""
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "nav:process",
+        "value": ""
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "phases",
+        "upperBound": "-1",
+        "eType": "#//PublicationPhase",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "minTime",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "maxTime",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "publicationRules",
+        "upperBound": "-1",
+        "eType": "#//Rule",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PublicationPhase"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "18",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "19",
+      "type": "details",
+      "attributes": {
+        "key": "label=name",
+        "value": ""
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "ref=neededPerson",
+        "value": ""
+      }
+    },
+    {
+      "id": "21",
+      "type": "details",
+      "attributes": {
+        "key": "kref=placeholder"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "linksToSuccessors",
+        "upperBound": "-1",
+        "eType": "#//Sequence",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "minTime",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "maxTime",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "neededPerson",
+        "upperBound": "-1",
+        "eType": "#//Researcher",
+        "eOpposite": "#//Researcher/phaseParticipation"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "rules",
+        "upperBound": "-1",
+        "eType": "#//Rule"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "placeholder",
+        "eType": "#//PlaceHolderPP",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Sequence"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "31",
+      "type": "details",
+      "attributes": {
+        "key": "link",
+        "value": ""
+      }
+    },
+    {
+      "id": "32",
+      "type": "details",
+      "attributes": {
+        "key": "lsrc=predecessor",
+        "value": ""
+      }
+    },
+    {
+      "id": "33",
+      "type": "details",
+      "attributes": {
+        "key": "ltrg=successor",
+        "value": ""
+      }
+    },
+    {
+      "id": "34",
+      "type": "details",
+      "attributes": {
+        "key": "cont=PublicationPhase.linksToSuccessors",
+        "value": ""
+      }
+    },
+    {
+      "id": "35",
+      "type": "details",
+      "attributes": {
+        "key": "label=sequenceType",
+        "value": ""
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sequenceType",
+        "lowerBound": "1",
+        "eType": "#//SequenceType"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "successor",
+        "lowerBound": "1",
+        "eType": "#//PublicationPhase"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "predecessor",
+        "lowerBound": "1",
+        "eType": "#//PublicationPhase"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Rule"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "42",
+      "type": "details",
+      "attributes": {
+        "key": "label=key",
+        "value": ""
+      }
+    },
+    {
+      "id": "43",
+      "type": "details",
+      "attributes": {
+        "key": "label=text"
+      }
+    },
+    {
+      "id": "44",
+      "type": "details",
+      "attributes": {
+        "key": "kref=placeholder"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "text",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "key",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "placeholder",
+        "eType": "#//PlaceHolderRule",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Researcher"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "51",
+      "type": "details",
+      "attributes": {
+        "key": "lnk=writes",
+        "value": ""
+      }
+    },
+    {
+      "id": "52",
+      "type": "details",
+      "attributes": {
+        "key": "lnk=reviews",
+        "value": ""
+      }
+    },
+    {
+      "id": "53",
+      "type": "details",
+      "attributes": {
+        "key": "label=name",
+        "value": ""
+      }
+    },
+    {
+      "id": "54",
+      "type": "details",
+      "attributes": {
+        "key": "label=position"
+      }
+    },
+    {
+      "id": "55",
+      "type": "details",
+      "attributes": {
+        "key": "kref=placeholder"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "phaseParticipation",
+        "upperBound": "-1",
+        "eType": "#//PublicationPhase",
+        "eOpposite": "#//PublicationPhase/neededPerson"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "forName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "position",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "writes",
+        "upperBound": "-1",
+        "eType": "#//Write",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviews",
+        "upperBound": "-1",
+        "eType": "#//Review",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "papers",
+        "upperBound": "-1",
+        "eType": "#//Paper",
+        "eOpposite": "#//Paper/authors"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "placeholder",
+        "eType": "#//PlaceHolderRs",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Paper",
+        "eSuperTypes": "#//Named"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "66",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "67",
+      "type": "details",
+      "attributes": {
+        "key": "kref=paragraphs",
+        "value": ""
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "paragraphs",
+        "upperBound": "-1",
+        "eType": "#//Paragraph",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "progress",
+        "upperBound": "-1",
+        "eType": "#//Progress",
+        "containment": "true",
+        "eOpposite": "#//Progress/paper"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "authors",
+        "upperBound": "-1",
+        "eType": "#//Researcher",
+        "eOpposite": "#//Researcher/papers"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Paragraph",
+        "eSuperTypes": "#//Counted #//Named"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "73",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "74",
+      "type": "details",
+      "attributes": {
+        "key": "kref=reviews",
+        "value": ""
+      }
+    },
+    {
+      "id": "75",
+      "type": "details",
+      "attributes": {
+        "key": "cont=Paper.paragraphs",
+        "value": ""
+      }
+    },
+    {
+      "id": "76",
+      "type": "details",
+      "attributes": {
+        "key": "label=name"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviews",
+        "upperBound": "-1",
+        "eType": "#//ReviewNote",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "content",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ReviewNote",
+        "eSuperTypes": "#//Named"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "81",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "82",
+      "type": "details",
+      "attributes": {
+        "key": "kref=placeholder"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "placeholder",
+        "eType": "#//PlaceHolderRn",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "content",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Progress",
+        "eSuperTypes": "#//Labelled"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "87",
+      "type": "details",
+      "attributes": {
+        "key": "link",
+        "value": ""
+      }
+    },
+    {
+      "id": "88",
+      "type": "details",
+      "attributes": {
+        "key": "cont=Paper.progress",
+        "value": ""
+      }
+    },
+    {
+      "id": "89",
+      "type": "details",
+      "attributes": {
+        "key": "ltrg=process",
+        "value": ""
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "process",
+        "eType": "#//PublicationProcess"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "paper",
+        "eType": "#//Paper",
+        "eOpposite": "#//Paper/progress"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "percent",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "time",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Write",
+        "eSuperTypes": "#//Labelled"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "paragraph",
+        "eType": "#//Paragraph"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Review",
+        "eSuperTypes": "#//Labelled"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "reviewNote",
+        "eType": "#//ReviewNote"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PublicationStructure",
+        "eSuperTypes": "#//Named"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "102",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "103",
+      "type": "details",
+      "attributes": {
+        "key": "kref=researchers",
+        "value": ""
+      }
+    },
+    {
+      "id": "104",
+      "type": "details",
+      "attributes": {
+        "key": "kref=papers",
+        "value": ""
+      }
+    },
+    {
+      "id": "105",
+      "type": "details",
+      "attributes": {
+        "key": "nav:structure",
+        "value": ""
+      }
+    },
+    {
+      "id": "106",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "researchers",
+        "upperBound": "-1",
+        "eType": "#//Researcher",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "papers",
+        "upperBound": "-1",
+        "eType": "#//Paper",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "108",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PublicationSystem"
+      }
+    },
+    {
+      "id": "109",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "110",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "111",
+      "type": "details",
+      "attributes": {
+        "key": "cref=processView",
+        "value": ""
+      }
+    },
+    {
+      "id": "112",
+      "type": "details",
+      "attributes": {
+        "key": "cref=structuralView",
+        "value": ""
+      }
+    },
+    {
+      "id": "113",
+      "type": "details",
+      "attributes": {
+        "key": "pov",
+        "value": ""
+      }
+    },
+    {
+      "id": "114",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "processView",
+        "eType": "#//PublicationProcess",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "structuralView",
+        "eType": "#//PublicationStructure",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Named",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "118",
+      "type": "details",
+      "attributes": {
+        "key": "label=name",
+        "value": ""
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Counted",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "122",
+      "type": "details",
+      "attributes": {
+        "key": "label=id",
+        "value": ""
+      }
+    },
+    {
+      "id": "123",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Labelled",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "126",
+      "type": "details",
+      "attributes": {
+        "key": "label=lname",
+        "value": ""
+      }
+    },
+    {
+      "id": "127",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "lname",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PlaceHolderRs",
+        "eSuperTypes": "#//PlaceHolder"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "130",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "131",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PlaceHolderRule",
+        "eSuperTypes": "#//PlaceHolder"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "133",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "134",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PlaceHolder",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PlaceHolderRn",
+        "eSuperTypes": "#//PlaceHolder"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "138",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    },
+    {
+      "id": "139",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PlaceHolderPP",
+        "eSuperTypes": "#//PlaceHolder"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "diagraph"
+      }
+    },
+    {
+      "id": "141",
+      "type": "details",
+      "attributes": {
+        "key": "node",
+        "value": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "48",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "71",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "79",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "85",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "94",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "97",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "100",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "108",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "116",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "120",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "124",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "128",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "131",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "134",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "136",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "139",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eLiterals"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eLiterals"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "6",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "details"
+    },
+    {
+      "source": "7",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "details"
+    },
+    {
+      "source": "17",
+      "target": "19",
+      "type": "details"
+    },
+    {
+      "source": "17",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "type": "details"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "29",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "32",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "33",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "34",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "35",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "39",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "46",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "40",
+      "target": "42",
+      "type": "details"
+    },
+    {
+      "source": "40",
+      "target": "43",
+      "type": "details"
+    },
+    {
+      "source": "40",
+      "target": "44",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "48",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "57",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "58",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "61",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "51",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "52",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "53",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "54",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "55",
+      "type": "details"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "64",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "69",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "70",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "65",
+      "target": "66",
+      "type": "details"
+    },
+    {
+      "source": "65",
+      "target": "67",
+      "type": "details"
+    },
+    {
+      "source": "71",
+      "target": "72",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "71",
+      "target": "77",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "71",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "74",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "75",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "76",
+      "type": "details"
+    },
+    {
+      "source": "79",
+      "target": "80",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "79",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "79",
+      "target": "84",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "80",
+      "target": "81",
+      "type": "details"
+    },
+    {
+      "source": "80",
+      "target": "82",
+      "type": "details"
+    },
+    {
+      "source": "85",
+      "target": "86",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "85",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "85",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "85",
+      "target": "92",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "85",
+      "target": "93",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "86",
+      "target": "87",
+      "type": "details"
+    },
+    {
+      "source": "86",
+      "target": "88",
+      "type": "details"
+    },
+    {
+      "source": "86",
+      "target": "89",
+      "type": "details"
+    },
+    {
+      "source": "94",
+      "target": "95",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "94",
+      "target": "96",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "97",
+      "target": "98",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "97",
+      "target": "99",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "100",
+      "target": "101",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "100",
+      "target": "106",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "100",
+      "target": "107",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "101",
+      "target": "102",
+      "type": "details"
+    },
+    {
+      "source": "101",
+      "target": "103",
+      "type": "details"
+    },
+    {
+      "source": "101",
+      "target": "104",
+      "type": "details"
+    },
+    {
+      "source": "101",
+      "target": "105",
+      "type": "details"
+    },
+    {
+      "source": "108",
+      "target": "109",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "108",
+      "target": "114",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "108",
+      "target": "115",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "109",
+      "target": "110",
+      "type": "details"
+    },
+    {
+      "source": "109",
+      "target": "111",
+      "type": "details"
+    },
+    {
+      "source": "109",
+      "target": "112",
+      "type": "details"
+    },
+    {
+      "source": "109",
+      "target": "113",
+      "type": "details"
+    },
+    {
+      "source": "116",
+      "target": "117",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "116",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "117",
+      "target": "118",
+      "type": "details"
+    },
+    {
+      "source": "120",
+      "target": "121",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "120",
+      "target": "123",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "121",
+      "target": "122",
+      "type": "details"
+    },
+    {
+      "source": "124",
+      "target": "125",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "124",
+      "target": "127",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "125",
+      "target": "126",
+      "type": "details"
+    },
+    {
+      "source": "128",
+      "target": "129",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "129",
+      "target": "130",
+      "type": "details"
+    },
+    {
+      "source": "131",
+      "target": "132",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "details"
+    },
+    {
+      "source": "134",
+      "target": "135",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "136",
+      "target": "137",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "137",
+      "target": "138",
+      "type": "details"
+    },
+    {
+      "source": "139",
+      "target": "140",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "140",
+      "target": "141",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 142,
+    "edge_count": 141,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

@@ -1,0 +1,2379 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "XMI",
+      "attributes": {
+        "version": "2.0"
+      }
+    },
+    {
+      "id": "1",
+      "type": "EPackage",
+      "attributes": {
+        "name": "PrimitiveTypes"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Boolean"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Integer"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "String"
+      }
+    },
+    {
+      "id": "5",
+      "type": "EPackage",
+      "attributes": {
+        "name": "HAL"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "HAL"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connexion",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Connexion",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "contents",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/Entry",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Connexion"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "login",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "password",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Entry",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "autLab",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/AutLabType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tampons",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "/1/TamponType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Article",
+        "abstract": "true",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "metaArt",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/MetaArtType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArticleRecent",
+        "eSuperTypes": "/1/Article"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "fichiers",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/DepotsType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArticleRetro",
+        "eSuperTypes": "/1/Article"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "dateRedaction",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "fichiers",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/AbstractDepot",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Notice",
+        "eSuperTypes": "/1/Entry"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "metaArtNotice",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/MetaArtNoticeType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ReferenceBiblioType",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArtRevueType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urldoi",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "journal",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "volume",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "page",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "annee",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "WorkshopType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urldoi",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "titconf",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ville",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pays",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "edcom",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "annee",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "page",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "edsci",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "serie",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArtOuvrageType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urldoi",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "titouv",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "edcom",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "annee",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "edsci",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "serie",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OuvrageType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urldoi",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "edcom",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "annee",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "page",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TheseType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "orgthe",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "niveau",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "defencedate",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "directeur",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "codirecteur",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BrevetType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "datebrevet",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "numbrevet",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "page",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pays",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AutreType",
+        "abstract": "true",
+        "eSuperTypes": "/1/ReferenceBiblioType"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urldoi",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "annee",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArtRevue",
+        "eSuperTypes": "/1/ArtRevueType"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArtJournal",
+        "eSuperTypes": "/1/ArtRevueType"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Workshop",
+        "eSuperTypes": "/1/WorkshopType"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Communication",
+        "eSuperTypes": "/1/WorkshopType"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Conference",
+        "eSuperTypes": "/1/WorkshopType"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArtOuvrage",
+        "eSuperTypes": "/1/ArtOuvrageType"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Ouvrage",
+        "eSuperTypes": "/1/OuvrageType"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Brevet",
+        "eSuperTypes": "/1/BrevetType"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Autre",
+        "eSuperTypes": "/1/AutreType"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "These",
+        "eSuperTypes": "/1/TheseType"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetaType",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "langue",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "title",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "comment",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "refInterne",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "idext",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isEpj",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/Integer"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "isEpl",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "classification",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "collaboration",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "keyword",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "datevisible",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/1/DateVisibleEnum"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "financement",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "researchteam",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetaArtType",
+        "eSuperTypes": "/1/MetaType"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domain",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "abstract",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "referenceBiblio",
+        "ordered": "false",
+        "eType": "/1/ReferenceBiblioType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "96",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetaArtNoticeType",
+        "eSuperTypes": "/1/MetaType"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "domain",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "abstract",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "99",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "referenceBiblio",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/ReferenceBiblioType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AutLabType"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "auteurs",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/1/Auteur"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "laboratoires",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/1/Laboratoire"
+      }
+    },
+    {
+      "id": "103",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Auteur"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nom",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "105",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "prenom",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "106",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "autrePrenom",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "email",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "108",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "urlPerso",
+        "ordered": "false",
+        "unique": "false",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "109",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "lab",
+        "ordered": "false",
+        "eType": "/1/Laboratoire"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Laboratoire"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/Integer"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "metas",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/AbstractMetaLab",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "113",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractMetaLab",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "114",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MetaLab",
+        "eSuperTypes": "/1/AbstractMetaLab"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "116",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AffiliationType"
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "institution",
+        "ordered": "false",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "prive",
+        "ordered": "false",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "119",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ecole",
+        "ordered": "false",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "120",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "universite",
+        "ordered": "false",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TamponType"
+      }
+    },
+    {
+      "id": "122",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "123",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "DateVisibleEnum"
+      }
+    },
+    {
+      "id": "124",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "15J",
+        "value": "1"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "1M",
+        "value": "2"
+      }
+    },
+    {
+      "id": "126",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "3M",
+        "value": "3"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "1A",
+        "value": "4"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "2A",
+        "value": "5"
+      }
+    },
+    {
+      "id": "129",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "JAMAIS",
+        "value": "6"
+      }
+    },
+    {
+      "id": "130",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractDepot",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "nom",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Depot",
+        "eSuperTypes": "/1/AbstractDepot"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "format",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/1/FormatEnum"
+      }
+    },
+    {
+      "id": "134",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "FormatEnum"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "PDF",
+        "value": "1"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "TEX",
+        "value": "2"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "DOC",
+        "value": "3"
+      }
+    },
+    {
+      "id": "138",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "RTF",
+        "value": "4"
+      }
+    },
+    {
+      "id": "139",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "TXT",
+        "value": "5"
+      }
+    },
+    {
+      "id": "140",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "PS",
+        "value": "6"
+      }
+    },
+    {
+      "id": "141",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "ANNEX",
+        "value": "7"
+      }
+    },
+    {
+      "id": "142",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DepotWeb",
+        "eSuperTypes": "/1/AbstractDepot"
+      }
+    },
+    {
+      "id": "143",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "format",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/1/FormatWebEnum"
+      }
+    },
+    {
+      "id": "144",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "FormatWebEnum"
+      }
+    },
+    {
+      "id": "145",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "XML",
+        "value": "1"
+      }
+    },
+    {
+      "id": "146",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "HTML",
+        "value": "2"
+      }
+    },
+    {
+      "id": "147",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "HTM",
+        "value": "3"
+      }
+    },
+    {
+      "id": "148",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractDepotType",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "149",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DepotsType",
+        "eSuperTypes": "/1/AbstractDepotType"
+      }
+    },
+    {
+      "id": "150",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "depots",
+        "ordered": "false",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "/1/AbstractDepot",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "151",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "WebLink",
+        "eSuperTypes": "/1/AbstractDepotType"
+      }
+    },
+    {
+      "id": "152",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "identifiant",
+        "ordered": "false",
+        "unique": "false",
+        "lowerBound": "1",
+        "eType": "/0/String"
+      }
+    },
+    {
+      "id": "153",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "server",
+        "ordered": "false",
+        "lowerBound": "1",
+        "eType": "/1/Server",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "154",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Server"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "EPackage"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "EPackage"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "48",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "53",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "59",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "64",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "68",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "69",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "70",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "71",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "72",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "73",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "74",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "75",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "76",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "77",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "78",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "92",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "96",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "100",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "103",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "110",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "113",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "114",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "116",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "121",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "123",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "130",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "132",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "134",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "142",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "144",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "148",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "149",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "151",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "5",
+      "target": "154",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "43",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "44",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "46",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "41",
+      "target": "47",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "50",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "48",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "55",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "57",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "53",
+      "target": "58",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "59",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "59",
+      "target": "61",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "59",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "59",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "67",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "79",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "81",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "84",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "86",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "87",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "89",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "92",
+      "target": "94",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "92",
+      "target": "95",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "96",
+      "target": "97",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "96",
+      "target": "98",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "96",
+      "target": "99",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "100",
+      "target": "101",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "100",
+      "target": "102",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "104",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "105",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "106",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "107",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "108",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "103",
+      "target": "109",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "110",
+      "target": "111",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "110",
+      "target": "112",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "114",
+      "target": "115",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "116",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "116",
+      "target": "118",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "116",
+      "target": "119",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "116",
+      "target": "120",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "121",
+      "target": "122",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "123",
+      "target": "124",
+      "type": "eLiterals"
+    },
+    {
+      "source": "123",
+      "target": "125",
+      "type": "eLiterals"
+    },
+    {
+      "source": "123",
+      "target": "126",
+      "type": "eLiterals"
+    },
+    {
+      "source": "123",
+      "target": "127",
+      "type": "eLiterals"
+    },
+    {
+      "source": "123",
+      "target": "128",
+      "type": "eLiterals"
+    },
+    {
+      "source": "123",
+      "target": "129",
+      "type": "eLiterals"
+    },
+    {
+      "source": "130",
+      "target": "131",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "134",
+      "target": "135",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "136",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "137",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "138",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "139",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "140",
+      "type": "eLiterals"
+    },
+    {
+      "source": "134",
+      "target": "141",
+      "type": "eLiterals"
+    },
+    {
+      "source": "142",
+      "target": "143",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "144",
+      "target": "145",
+      "type": "eLiterals"
+    },
+    {
+      "source": "144",
+      "target": "146",
+      "type": "eLiterals"
+    },
+    {
+      "source": "144",
+      "target": "147",
+      "type": "eLiterals"
+    },
+    {
+      "source": "149",
+      "target": "150",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "151",
+      "target": "152",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "151",
+      "target": "153",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 155,
+    "edge_count": 154,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

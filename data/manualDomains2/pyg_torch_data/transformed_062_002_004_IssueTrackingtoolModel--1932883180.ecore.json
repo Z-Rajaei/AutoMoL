@@ -1,0 +1,1293 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "itm",
+        "nsURI": "http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0",
+        "nsPrefix": "itm"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IssueTrackingDatabase"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase contenedora de todos los proyectos software gestionados en la herramienta."
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "projects",
+        "upperBound": "-1",
+        "eType": "#//Project",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "trackers",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Tracker",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "roles",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Role",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "users",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//User",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Project"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "10",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase que representa a un proyecto software controlado desde la herramienta."
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "versions",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Version",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "issueCategories",
+        "upperBound": "-1",
+        "eType": "#//IssueCategory",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "members",
+        "upperBound": "-1",
+        "eType": "#//Member",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Version"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "18",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase que describe cada una de las versiones del software objeto del proyecto gestionado en la herramienta."
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "status",
+        "eType": "#//VersionStatus"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "completedDate",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "issues",
+        "upperBound": "-1",
+        "eType": "#//Issue",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Issue"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "26",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase para describir una tarea o unidad concreta de trabajo, necesaria para evolucionar un sistema informático, como añadir una nueva característica, arreglo de un fallo, etc."
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "doneRatio",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "estimatedHours",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "elapsedHours",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "tracker",
+        "lowerBound": "1",
+        "eType": "#//Tracker"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "status",
+        "eType": "#//IssueStatus"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dependencies",
+        "upperBound": "-1",
+        "eType": "#//IssueDependency",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "category",
+        "eType": "#//IssueCategory"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "priority",
+        "eType": "#//IssuePriority"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "dueDate",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "completedDate",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "owner",
+        "lowerBound": "1",
+        "eType": "#//Member"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "responsible",
+        "lowerBound": "1",
+        "eType": "#//Member"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Tracker"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "43",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase utilizada para identificar el listado de issues o tareas de un determinado tipo, típicamente bugs, features, o patchs."
+      }
+    },
+    {
+      "id": "44",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "IssueStatus"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "47",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Enumeración con los diferentes estados por lo que puede pasar una determinada tarea."
+      }
+    },
+    {
+      "id": "48",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "OPEN"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CLOSED",
+        "value": "1"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "ASSIGNED",
+        "value": "2"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "RESOLVED",
+        "value": "3"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "VersionStatus"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "54",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Enumeración con los diferentes estados por lo que puede pasar una determinada versión."
+      }
+    },
+    {
+      "id": "55",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "CLOSED",
+        "value": "1"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "OPEN"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "INPROGRESS",
+        "value": "2"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IssueDependency"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "eType": "#//DependencyType"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dependentTask",
+        "lowerBound": "1",
+        "eType": "#//Issue"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "DependencyType"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "63",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Enumeración con los diferentes tipos de dependencia entre issues."
+      }
+    },
+    {
+      "id": "64",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "START_START"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "START_END",
+        "value": "1"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "END_START",
+        "value": "2"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "END_END",
+        "value": "3"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IssueCategory"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "70",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase que permite realizar una clasificación específica de los issues de un determinado proyecto."
+      }
+    },
+    {
+      "id": "71",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Member"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "74",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase utilizada para asociar un determinado usuario a un proyecto, haciendo uso de un rol determinado."
+      }
+    },
+    {
+      "id": "75",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "user",
+        "lowerBound": "1",
+        "eType": "#//User"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "role",
+        "lowerBound": "1",
+        "eType": "#//Role"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "User"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "79",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase que representa a un usuario registrado en la herramienta."
+      }
+    },
+    {
+      "id": "80",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "login",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "language",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Role"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "84",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Clase que representa el rol que juega un usuario en los proyectos."
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "permissions",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "IssuePriority"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "comment"
+      }
+    },
+    {
+      "id": "89",
+      "type": "details",
+      "attributes": {
+        "key": "comment",
+        "value": "Enumeración con los diferentes niveles de prioridad que puede tomar un issue."
+      }
+    },
+    {
+      "id": "90",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "HIGHER"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "HIGH",
+        "value": "1"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NORMAL",
+        "value": "2"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "LOW",
+        "value": "3"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "LOWER",
+        "value": "4"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "45",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "52",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "58",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "61",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "68",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "72",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "77",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "82",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "87",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "24",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "29",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "31",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "32",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "38",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "24",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "details"
+    },
+    {
+      "source": "41",
+      "target": "42",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "41",
+      "target": "44",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "details"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "48",
+      "type": "eLiterals"
+    },
+    {
+      "source": "45",
+      "target": "49",
+      "type": "eLiterals"
+    },
+    {
+      "source": "45",
+      "target": "50",
+      "type": "eLiterals"
+    },
+    {
+      "source": "45",
+      "target": "51",
+      "type": "eLiterals"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "details"
+    },
+    {
+      "source": "52",
+      "target": "53",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "52",
+      "target": "55",
+      "type": "eLiterals"
+    },
+    {
+      "source": "52",
+      "target": "56",
+      "type": "eLiterals"
+    },
+    {
+      "source": "52",
+      "target": "57",
+      "type": "eLiterals"
+    },
+    {
+      "source": "53",
+      "target": "54",
+      "type": "details"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "58",
+      "target": "60",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "61",
+      "target": "62",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "61",
+      "target": "64",
+      "type": "eLiterals"
+    },
+    {
+      "source": "61",
+      "target": "65",
+      "type": "eLiterals"
+    },
+    {
+      "source": "61",
+      "target": "66",
+      "type": "eLiterals"
+    },
+    {
+      "source": "61",
+      "target": "67",
+      "type": "eLiterals"
+    },
+    {
+      "source": "62",
+      "target": "63",
+      "type": "details"
+    },
+    {
+      "source": "68",
+      "target": "69",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "68",
+      "target": "71",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "72",
+      "target": "75",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "72",
+      "target": "76",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "details"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "77",
+      "target": "80",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "77",
+      "target": "81",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "78",
+      "target": "79",
+      "type": "details"
+    },
+    {
+      "source": "82",
+      "target": "83",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "82",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "82",
+      "target": "86",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "details"
+    },
+    {
+      "source": "87",
+      "target": "88",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "87",
+      "target": "90",
+      "type": "eLiterals"
+    },
+    {
+      "source": "87",
+      "target": "91",
+      "type": "eLiterals"
+    },
+    {
+      "source": "87",
+      "target": "92",
+      "type": "eLiterals"
+    },
+    {
+      "source": "87",
+      "target": "93",
+      "type": "eLiterals"
+    },
+    {
+      "source": "87",
+      "target": "94",
+      "type": "eLiterals"
+    },
+    {
+      "source": "88",
+      "target": "89",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 95,
+    "edge_count": 94,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

@@ -1,0 +1,1843 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "story",
+        "nsURI": "urn:org.nasdanika.story",
+        "nsPrefix": "org.nasdanika.story"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Story model allows to capture agile (user) stories in the form of a model which can reference the domain model and be linked to the domain model, e.g. route operations may reference user stories they are used by. The story model can be used for documentation, to link test results to acceptance criteria (also as part of online documentation), and for story-based entitlements - operations reference stories, and users are granted entitlements execute stories, or users are granted roles, which in turn are linked to stories.\r\n\r\n![Class diagram](bundle:org.nasdanika.story/doc/story.png)"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Catalog",
+        "eSuperTypes": "#//CatalogElement"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Generic container for [[Story|Stories]], [[Actor|Actors]], [[Role|Roles]], [[Epic|Epics]], [[Theme|Themes]], ..."
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "elements",
+        "upperBound": "-1",
+        "eType": "#//CatalogElement",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "8",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Catalog elements."
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CatalogElement",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Base interface for model elements which can be added to a catalog."
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "id",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "iD": "true"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "14",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Unique, in the containing resource, catalog element identifier. Identifiers are automatically generated when an element is added to a catalog."
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "17",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Element name."
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Element description. Supports markdown. Some catalog elements may hide description attribute."
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StoryBase",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "#//CatalogElement"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "23",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Base interface for stories and epics"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StoryContainer",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "#//CatalogElement"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "26",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Container of stories."
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "stories",
+        "upperBound": "-1",
+        "eType": "#//StoryBase",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "29",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Story container may contain zero or more stories or epics."
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Protagonist",
+        "abstract": "true",
+        "eSuperTypes": "#//StoryContainer"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "32",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Base interface representing the main character of a story. Protagonists may contain stories, in this case the containing protagonist becomes an implicit protagonist of the contained stories."
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "linkTo",
+        "eType": "ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "35",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Protagonist can be linked to EClass. In this case protagonist documentation is displayed as a tab in the EClass documentation and \r\nuser stories are mounted under the target EClass in the documentation tree."
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Role",
+        "eSuperTypes": "#//Protagonist"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "38",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Actor role."
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subRoles",
+        "upperBound": "-1",
+        "eType": "#//Role",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A role may contain zero or more sub-roles. Sub-roles inherit super-role stories."
+      }
+    },
+    {
+      "id": "42",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "superRoles",
+        "upperBound": "-1",
+        "eType": "#//Role"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "44",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A role may reference zero or more roles as its super-roles. \r\nThe role inherits super-role stories."
+      }
+    },
+    {
+      "id": "45",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Actor",
+        "abstract": "true",
+        "eSuperTypes": "#//Protagonist"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "47",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Base interface for actors."
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "roles",
+        "upperBound": "-1",
+        "eType": "#//Role"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Actor can play zero or more roles."
+      }
+    },
+    {
+      "id": "51",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subActors",
+        "upperBound": "-1",
+        "eType": "#//Actor",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "53",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Sub-actors may be contained by the super-actor to form a single-inheritance hierarchy. Multiple inheritance can be set up with superActors reference."
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "superActors",
+        "upperBound": "-1",
+        "eType": "#//Actor"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "56",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Actors form a multiple inheritance hierarcy and may have zero or more super-actors. All stories and roles played by by a super-actor are also played by its sub-actors."
+      }
+    },
+    {
+      "id": "57",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "User",
+        "eSuperTypes": "#//Actor"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "59",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A human actor."
+      }
+    },
+    {
+      "id": "60",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "System",
+        "eSuperTypes": "#//Actor"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "62",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A system actor."
+      }
+    },
+    {
+      "id": "63",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Persona",
+        "eSuperTypes": "#//User"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "65",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Agile persona."
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "picture",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "68",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "URL of the picture relative to the containing resource."
+      }
+    },
+    {
+      "id": "69",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "goals",
+        "upperBound": "-1",
+        "eType": "#//Goal",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "71",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A persona may have zero or more goals."
+      }
+    },
+    {
+      "id": "72",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Epic",
+        "eSuperTypes": "#//StoryContainer #//StoryBase"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "74",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Epic is used to group stories."
+      }
+    },
+    {
+      "id": "75",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Theme",
+        "eSuperTypes": "#//CatalogElement"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "77",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Theme is a cross-cutting concern, e.g. performance."
+      }
+    },
+    {
+      "id": "78",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "children",
+        "upperBound": "-1",
+        "eType": "#//Theme",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "80",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Themes can be organized into a hierarchy."
+      }
+    },
+    {
+      "id": "81",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Story",
+        "eSuperTypes": "#//StoryBase"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "scenarios",
+        "upperBound": "-1",
+        "eType": "#//Scenario",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "84",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A story may contain zero or more acceptance criteria."
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "depends",
+        "upperBound": "-1",
+        "eType": "#//Story"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "87",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A story may depend (include, use) other user stories. E.g. ``edit`` user story may depend on ``view`` user story, \r\ni.e. a user need to view something first in order to edit it."
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "themes",
+        "upperBound": "-1",
+        "eType": "#//Theme"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "90",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "User story may be associated with zero or more themes."
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "protagonists",
+        "upperBound": "-1",
+        "eType": "#//Protagonist"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "93",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A story shall have at least one protagonist. If a story is played by multiple types of protagonists, more than one protagonist can be set for the story to obviate artificial generalization relationships between protagonists."
+      }
+    },
+    {
+      "id": "94",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "conditionalprotagonists",
+        "upperBound": "-1",
+        "eType": "#//ConditionalProtagonist",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "96",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Some story protagonists may be defined as conditional. For example ``Approve credit application``\r\nstory may have a conditional protagonist with credit amount used in the condition."
+      }
+    },
+    {
+      "id": "97",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "goal",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "99",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Story goal (I want)."
+      }
+    },
+    {
+      "id": "100",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "benefit",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "102",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Story benefit (So that)."
+      }
+    },
+    {
+      "id": "103",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parameters",
+        "upperBound": "-1",
+        "eType": "#//Parameter",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "104",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "105",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "A story may have parameters, e.g. ``Approve credit application`` story may have parameter ``creditAmount``."
+      }
+    },
+    {
+      "id": "106",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "completed",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "107",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "108",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Completed flag."
+      }
+    },
+    {
+      "id": "109",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "realizes",
+        "upperBound": "-1",
+        "eType": "#//Goal"
+      }
+    },
+    {
+      "id": "110",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Scenario",
+        "eSuperTypes": "#//CatalogElement"
+      }
+    },
+    {
+      "id": "111",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "context",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "112",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "113",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Context (Given)."
+      }
+    },
+    {
+      "id": "114",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "action",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "115",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "116",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Action (when)."
+      }
+    },
+    {
+      "id": "117",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "outcome",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "118",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "119",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Outcome (then)."
+      }
+    },
+    {
+      "id": "120",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ConditionalProtagonist"
+      }
+    },
+    {
+      "id": "121",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "protagonist",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Protagonist"
+      }
+    },
+    {
+      "id": "122",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "123",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "References one or more protagonists."
+      }
+    },
+    {
+      "id": "124",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "condition",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "125",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "126",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Condition in JavaScript, e.g. amount<5000.00\r\n"
+      }
+    },
+    {
+      "id": "127",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Goal"
+      }
+    },
+    {
+      "id": "128",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "129",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Persona's goal."
+      }
+    },
+    {
+      "id": "130",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "131",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "details",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "132",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Parameter"
+      }
+    },
+    {
+      "id": "133",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "134",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Story parameter"
+      }
+    },
+    {
+      "id": "135",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "136",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "type",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "137",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "eType": "ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "45",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "57",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "60",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "63",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "72",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "75",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "81",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "110",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "120",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "127",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "132",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "3",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "details"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "details"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "details"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "21",
+      "target": "22",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "details"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "24",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "details"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "30",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "details"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "details"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "36",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "36",
+      "target": "42",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "37",
+      "target": "38",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "details"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "45",
+      "target": "51",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "45",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "51",
+      "target": "52",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "52",
+      "target": "53",
+      "type": "details"
+    },
+    {
+      "source": "54",
+      "target": "55",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "55",
+      "target": "56",
+      "type": "details"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "details"
+    },
+    {
+      "source": "60",
+      "target": "61",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "61",
+      "target": "62",
+      "type": "details"
+    },
+    {
+      "source": "63",
+      "target": "64",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "63",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "63",
+      "target": "69",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "details"
+    },
+    {
+      "source": "66",
+      "target": "67",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "67",
+      "target": "68",
+      "type": "details"
+    },
+    {
+      "source": "69",
+      "target": "70",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "70",
+      "target": "71",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "73",
+      "target": "74",
+      "type": "details"
+    },
+    {
+      "source": "75",
+      "target": "76",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "75",
+      "target": "78",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "details"
+    },
+    {
+      "source": "78",
+      "target": "79",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "79",
+      "target": "80",
+      "type": "details"
+    },
+    {
+      "source": "81",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "94",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "97",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "100",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "103",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "106",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "109",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "82",
+      "target": "83",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "details"
+    },
+    {
+      "source": "85",
+      "target": "86",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "86",
+      "target": "87",
+      "type": "details"
+    },
+    {
+      "source": "88",
+      "target": "89",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "89",
+      "target": "90",
+      "type": "details"
+    },
+    {
+      "source": "91",
+      "target": "92",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "details"
+    },
+    {
+      "source": "94",
+      "target": "95",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "95",
+      "target": "96",
+      "type": "details"
+    },
+    {
+      "source": "97",
+      "target": "98",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "98",
+      "target": "99",
+      "type": "details"
+    },
+    {
+      "source": "100",
+      "target": "101",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "101",
+      "target": "102",
+      "type": "details"
+    },
+    {
+      "source": "103",
+      "target": "104",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "104",
+      "target": "105",
+      "type": "details"
+    },
+    {
+      "source": "106",
+      "target": "107",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "107",
+      "target": "108",
+      "type": "details"
+    },
+    {
+      "source": "110",
+      "target": "111",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "110",
+      "target": "114",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "110",
+      "target": "117",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "111",
+      "target": "112",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "112",
+      "target": "113",
+      "type": "details"
+    },
+    {
+      "source": "114",
+      "target": "115",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "115",
+      "target": "116",
+      "type": "details"
+    },
+    {
+      "source": "117",
+      "target": "118",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "118",
+      "target": "119",
+      "type": "details"
+    },
+    {
+      "source": "120",
+      "target": "121",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "120",
+      "target": "124",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "121",
+      "target": "122",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "122",
+      "target": "123",
+      "type": "details"
+    },
+    {
+      "source": "124",
+      "target": "125",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "125",
+      "target": "126",
+      "type": "details"
+    },
+    {
+      "source": "127",
+      "target": "128",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "127",
+      "target": "130",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "127",
+      "target": "131",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "128",
+      "target": "129",
+      "type": "details"
+    },
+    {
+      "source": "132",
+      "target": "133",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "132",
+      "target": "135",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "136",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "132",
+      "target": "137",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "133",
+      "target": "134",
+      "type": "details"
+    }
+  ],
+  "stats": {
+    "node_count": 138,
+    "edge_count": 137,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

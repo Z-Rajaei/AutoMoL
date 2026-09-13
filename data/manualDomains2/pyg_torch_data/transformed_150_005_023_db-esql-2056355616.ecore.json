@@ -1,0 +1,787 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "esql",
+        "nsURI": "http://www.smeup.org/asup/db/esql",
+        "nsPrefix": "db-esql"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CommunicationArea",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "../../org.smeup.sys.il.core/model/il-data.ecore#//DataStruct"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Cursor",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "#//ESqlObject"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eOperations",
+      "attributes": {
+        "name": "next"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eParameters",
+      "attributes": {
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.smeup.sys.il.core/model/il-data.ecore#//BufferedData"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eOperations",
+      "attributes": {
+        "name": "next"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eParameters",
+      "attributes": {
+        "name": "target",
+        "lowerBound": "1",
+        "eType": "#//CursorRecord"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eOperations",
+      "attributes": {
+        "name": "open"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eOperations",
+      "attributes": {
+        "name": "openUsingDescriptor"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eParameters",
+      "attributes": {
+        "name": "descriptorName",
+        "eType": "ecore:EClass ../../org.smeup.sys.il.core/model/il-data.ecore#//String"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eOperations",
+      "attributes": {
+        "name": "openUsingVariable"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eParameters",
+      "attributes": {
+        "name": "variable",
+        "eType": "ecore:EClass ../../org.smeup.sys.il.core/model/il-data.ecore#//String"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eOperations",
+      "attributes": {
+        "name": "close"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "CursorRecord",
+        "instanceClassName": "org.smeup.sys.il.data.QBufferedData[]"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CursorTerm",
+        "eSuperTypes": "#//ESqlTerm"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "cursorType",
+        "eType": "#//CursorType"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "hold",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "sql",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "statementName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "CursorType"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "NotScrollable",
+        "value": "10",
+        "literal": "NOTSCROLL"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Scrollable",
+        "value": "20",
+        "literal": "SCROLL"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "DynamicScroll",
+        "value": "30",
+        "literal": "DYNSCROLL"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "DescriptorArea",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "../../org.smeup.sys.il.core/model/il-data.ecore#//DataStruct"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ESqlObject",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getCommunicationArea",
+        "lowerBound": "1",
+        "eType": "#//CommunicationArea"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ESqlTerm",
+        "abstract": "true",
+        "eSuperTypes": "../../org.smeup.sys.il.core/model/il-core.ecore#//term/Term"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Statement",
+        "abstract": "true",
+        "interface": "true",
+        "eSuperTypes": "#//ESqlObject"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eOperations",
+      "attributes": {
+        "name": "prepare"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eParameters",
+      "attributes": {
+        "name": "from",
+        "eType": "ecore:EClass ../../org.smeup.sys.il.core/model/il-data.ecore#//String"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eOperations",
+      "attributes": {
+        "name": "execute"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StatementTerm",
+        "eSuperTypes": "#//ESqlTerm"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ESqlManager",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createFactory",
+        "lowerBound": "1",
+        "eType": "#//ESqlFactory"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eParameters",
+      "attributes": {
+        "name": "contextProvider",
+        "lowerBound": "1",
+        "eType": "ecore:EClass ../../org.smeup.sys.il.core/model/il-core.ecore#//ctx/ContextProvider"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ESqlFactory",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createCursor",
+        "lowerBound": "1",
+        "eType": "#//Cursor"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eParameters",
+      "attributes": {
+        "name": "cursorTerm",
+        "lowerBound": "1",
+        "eType": "#//CursorTerm"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createCursorTerm",
+        "lowerBound": "1",
+        "eType": "#//CursorTerm"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eParameters",
+      "attributes": {
+        "name": "type",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.smeup.sys.mi.core/model/mi-core.ecore#//JavaType"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eParameters",
+      "attributes": {
+        "name": "annotations",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType ../../org.smeup.sys.mi.core/model/mi-core.ecore#//JavaAnnotation"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createStatement",
+        "lowerBound": "1",
+        "eType": "#//Statement"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eParameters",
+      "attributes": {
+        "name": "statementTerm",
+        "lowerBound": "1",
+        "eType": "#//StatementTerm"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createStatementTerm",
+        "lowerBound": "1",
+        "eType": "#//StatementTerm"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eParameters",
+      "attributes": {
+        "name": "type",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType ../../org.smeup.sys.mi.core/model/mi-core.ecore#//JavaType"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eParameters",
+      "attributes": {
+        "name": "annotations",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType ../../org.smeup.sys.mi.core/model/mi-core.ecore#//JavaAnnotation"
+      }
+    },
+    {
+      "id": "47",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "FetchPositioning"
+      }
+    },
+    {
+      "id": "48",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Next",
+        "value": "10",
+        "literal": "NEXT"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Prior",
+        "value": "20",
+        "literal": "PRIOR"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "First",
+        "value": "30",
+        "literal": "FIRST"
+      }
+    },
+    {
+      "id": "51",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Last",
+        "value": "40",
+        "literal": "LAST"
+      }
+    },
+    {
+      "id": "52",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Before",
+        "value": "50",
+        "literal": "BEFORE"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "After",
+        "value": "60",
+        "literal": "AFTER"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Current",
+        "value": "70",
+        "literal": "CURRENT"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "Relative",
+        "value": "80",
+        "literal": "RELATIVE"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "2",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "23",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "28",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "47",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "eOperations"
+    },
+    {
+      "source": "2",
+      "target": "5",
+      "type": "eOperations"
+    },
+    {
+      "source": "2",
+      "target": "7",
+      "type": "eOperations"
+    },
+    {
+      "source": "2",
+      "target": "8",
+      "type": "eOperations"
+    },
+    {
+      "source": "2",
+      "target": "10",
+      "type": "eOperations"
+    },
+    {
+      "source": "2",
+      "target": "12",
+      "type": "eOperations"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "type": "eParameters"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eParameters"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eParameters"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "eParameters"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "14",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eLiterals"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "type": "eLiterals"
+    },
+    {
+      "source": "19",
+      "target": "22",
+      "type": "eLiterals"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eOperations"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "eOperations"
+    },
+    {
+      "source": "28",
+      "target": "31",
+      "type": "eOperations"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eParameters"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eOperations"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "eParameters"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eOperations"
+    },
+    {
+      "source": "36",
+      "target": "39",
+      "type": "eOperations"
+    },
+    {
+      "source": "36",
+      "target": "42",
+      "type": "eOperations"
+    },
+    {
+      "source": "36",
+      "target": "44",
+      "type": "eOperations"
+    },
+    {
+      "source": "37",
+      "target": "38",
+      "type": "eParameters"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eParameters"
+    },
+    {
+      "source": "39",
+      "target": "41",
+      "type": "eParameters"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "eParameters"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eParameters"
+    },
+    {
+      "source": "44",
+      "target": "46",
+      "type": "eParameters"
+    },
+    {
+      "source": "47",
+      "target": "48",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "49",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "50",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "51",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "52",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "53",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "54",
+      "type": "eLiterals"
+    },
+    {
+      "source": "47",
+      "target": "55",
+      "type": "eLiterals"
+    }
+  ],
+  "stats": {
+    "node_count": 56,
+    "edge_count": 55,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

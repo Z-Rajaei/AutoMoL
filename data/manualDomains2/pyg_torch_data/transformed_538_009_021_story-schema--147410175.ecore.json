@@ -1,0 +1,1353 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "schema",
+        "nsURI": "http://www.soluvas.com/schema/story.schema/1.0",
+        "nsPrefix": "story-schema"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StoryType"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "name = name of the Story entity Class (including package, if any), relative to the bundle symbolic name."
+      }
+    },
+    {
+      "id": "4",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//ResourceAware"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NameContainer"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//JavaClassLinked"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//Story"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//EClassLinked"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StorySchemaCatalog",
+        "eSuperTypes": "../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//ResourceAware ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//BundleAware ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NsPrefixable"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "The loader will load two files for each catalog:\n\n1. <catalogName>.StorySchemaCatalog.xmi, declaring the action/target/aggregation/story types, but not the structure.\n2. <catalogName>.ecore. This defines the structure of the types.\n\nThe loader will resolve eClass names mentioned in the StorySchemaCatalog inside the related ecore file.\n\nnsPrefix = Used to resolve a TargetType subject types inside ActionType."
+      }
+    },
+    {
+      "id": "12",
+      "type": "eOperations",
+      "attributes": {
+        "name": "createAction"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "14",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Helper method to create an {@link Action}."
+      }
+    },
+    {
+      "id": "15",
+      "type": "eGenericType",
+      "attributes": {
+        "eTypeParameter": "#//StorySchemaCatalog/createAction/T"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eTypeParameters",
+      "attributes": {
+        "name": "T"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eBounds",
+      "attributes": {
+        "eClassifier": "#//Action"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eParameters",
+      "attributes": {
+        "name": "targetClass"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eGenericType",
+      "attributes": {
+        "eClassifier": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eTypeParameter": "#//StorySchemaCatalog/createAction/T"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "storyTypes",
+        "upperBound": "-1",
+        "eType": "#//StoryType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "actionTypes",
+        "upperBound": "-1",
+        "eType": "#//ActionType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "aggregationTypes",
+        "upperBound": "-1",
+        "eType": "#//AggregationType",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "generatedPackageName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "26",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Used to lookup the Java class. e.g. \"id.co.bippo.person.story\"."
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "xmiUrl",
+        "eType": "ecore:EDataType ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//URL",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "29",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Only used at runtime by XmiTracker."
+      }
+    },
+    {
+      "id": "30",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "ecoreUrl",
+        "eType": "ecore:EDataType ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//URL",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "32",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Only used at runtime by XmiTracker."
+      }
+    },
+    {
+      "id": "33",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ePackage",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EPackage",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "35",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Only used by XmiTracker."
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "eFactory",
+        "eType": "ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EFactory",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "38",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Only used by XmiTracker."
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ActionType"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "41",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Before your application can publish actions, you must first define and register Action Types through the Open Graph Tool within the App Dashboard.\n\n    Define Action Types for your app\n    Utilize Built-In Action Types in your app\n    Configure Custom Action Types with default properties\n    Define Custom Properties for Custom Action Types\n    Utilize Custom Action Types with Built-In Object Types in your app\n\nDefine Action Types\n\nTo define an Action Type, click on the \"Create New Action Type\" button in the Dashboard view and enter an action which describes a high-level social action users can do in your app.\n\n\nStart typing the action into the action dialog to get started:\n\nConfigure Custom Action Types\n\nOnce you have defined the name of a custom action type, you are ready to configure its properties:\nDefine Action Type\n\n\n    Basic:\n        Name field is pre-filled with the action you defined in the initial step. For example: read, bake, run.\n        Connected Object Types indicates the object types that this action can act upon. If you have previously defined custom object types for this app, you can add these here. You may also add Built-In Object Types to this list.\n    Properties: These are the instance specific properties you can set when you publish an action.\n        Any object types that are connected to this action type will be listed first. These are required when publishing an action.\n        start_time an optional field specifies a start time for a published action. This is used to control the tense of of the action displayed in the News Feed story. string containing ISO-8601 date-time\n        end_time an optional field specifies an end time for a published action. This is used to control the tense of of the action displayed in the News Feed story. string containing ISO-8601 date-time\n        expires_in an optional field specifies when a published action will expire. This is used to control the tense of of the action displayed in the News Feed story.\n        place an optional field specifies a place for a published action. This is used to set additional location information displayed the News Feed story. Location is an important part of a story that helps convey rich information about the action or event taking place. Open Graph stories that include the place field will be considered for additional News Feed and Timeline distribution. See the Location Tagging documentation for more information.\n        tags an optional field specifies one or more Facebook users to tag in a published action. This is used to set additional tagging information displayed in the News Feed story. The information entered should be a comma-separated list of one or more Facebook user ids. Read more information about how to use this field.\n        image an optional field specifies the image for a published action. This is used to control the image that is displayed in News Feed and Timeline stories. If no image is specified the image corresponding to the object is displayed. Images that are 200x200px or higher tend to get more distribution through News Feed and Timeline as the stories generated leverage deeper story formats.\n        ref an optional field specifies a reference for a published action. This parameter will be associated with your published action and can then be used to track analytics in App Insights.\n        message an optional field specifies the message that will be attached to the action when it is displayed in the News Feed story. Read more information about how to use this field.\n        Add Custom Property as needed. This allows you to add additional action type properties, allowing you to specify the property type and property rules.\n\nConfigure Story Text\n\n\n    Tenses Supported: Allows you to select the tenses that will be used in News Feed stories. For example, you may wish to always display stories in present tense, in which case you would select the ''only the present tense'' option.\n    Configure Tenses: Configure how the stories will appear in the News Feed. By default, all actions are displayed in the past tense form, unless specified for a period of time in the present tense.\n        Past Tense field is pre-filled with an initial past tense action corresponding to your initial action type. You can edit this field. You can also edit the preposition that defines how the News Feed story is displayed. You can preview the various sentences that may be generated using the Sentence Previews box.\n        Plural Past Tense field is pre-filled with an initial past tense action corresponding to your initial action when more than one friend is involved. Similar to the Past Tense field, you can make changes and preview them using the 'Sentence Previews` box.\n        Present Tense field is pre-filled with an initial present tense action corresponding to your initial action type. You can edit this field. You can also edit the preposition that defines how the News Feed story is displayed. You can preview the various sentences that may be generated using the Sentence Previews box.\n        Plural Present Tense field is pre-filled with an initial present tense action corresponding to your initial action when more than one friend is involved. Similar to the Past Tense field, you can make changes and preview them using the Sentence Previews box.\n        Imperative Tense field is pre-filled with an initial present tense action corresponding to your initial action type. This field controls the display for action links. You can edit this field. You can preview the various sentences that may be generated using the Sentence Previews box.\n    Sentence Previews: The preview box displays the various stories that can be generated for the different tenses. This enables you to see how your stories will appear in News Feed, notifications, Timeline headers, etc. Use this to help you define your tenses. You may have to save the action type at least once for the sentence previews to display.\n        Singular Present displays the various stories for an individual actor and a present tense action.\n        Plural Present displays the various stories for an multiple actors and a present tense action.\n        Singular Past displays the various stories for an individual actor and a past tense action.\n        Singular Past displays the various stories for an multiple actors and a past tense action.\n        Imperative displays the various stories for an action link.\n\nConfigure Story Attachment\n\n\n    Attachment Layout: Configure the way the action attachment renders in the News Feed, Ticker (when a user clicks on the one line story), and in Timeline.\n        Item select this option for caption next to an image\n        Numberselect this option for displaying a number with caption underneath\n        Map select this option for map view of your action\n    Caption: Create a caption for your story with a combination of text, action and object property values and a simple text template syntax for formatting these property values. See Using Text Templates for details.\n    Note: Do not repeat text of the form [user] [action] [object] in the captions, as this will be automatically generated and added to each published Open Graph story.\n    Advanced:\n        Graph API URL field allows you to set the endpoint URL you will use to call your action. You can only change the action part of this URL. The action is pre-filled with the one you set initially.\n        Unique Action field allows you to select whether you will support unique actions or not. By default you will support multiple actions. Only select this option if there can only be one instance of the action -> object pair. For example, a valid use case of this is if a user can only vote once for an entry.\n        Requires App Access Token to Publish field specifies if the app secret is required to publish activity. For example, some games want enforce that actions like score or achieve can only be written from the app's servers and can't be written by trapping a normal access token and writing to the graph. To do this, do Graph writes using /{user-id}/{action}?access_token={token} where token is an app access token and the user id is a #. By default an app access_token is not required.\n        Geographic Restrictions field allows you to list countries where you either want to show or hide published actions.\n        Linked Action field allows you to tie an existing action type to this action type as part of configuring action links.\n        Action Link Preview box allows you to view how an action link will be displayed in News Feed or Timeline. This preview is only visible when a Linked Action has been specified.\n        Action Link URL field specifies the end point that Facebook will call when a user clicks on an action link. This must be a secure link.\n\nPreview\n\n\nThis preview box allows you to see how your action instance story will appear in the News Feed and Timeline.\n\nDefine Custom Properties\n\nCustom properties are additional attributes used to describe a custom action instance. Actions, by default, are only visible to a user's friends. Apps can specify a broader (everyone) or narrower (user only) visibility setting for actions generated by the app. Additionally, a user can also edit the action visibility settings on her Timeline. More details on app permissions and settings here.\n\nCustom properties of a custom action are used to store personal and instance-specific data. Examples of custom action instance properties include: Duration for a run action, Score for a game-play action, or Rating for a review action.\n\nA custom property can also be defined to refer to other objects. For example, when a user reviewed a dish, \"review\" is the action and \"dish\" is the object. A \"restaurant\" object can be a custom property associated with the \"review\" action.\n\nIf an image was specified when publishing an action, News Feed will prioritize the action image over the object image.\nNext Steps\n\n    Define Objects\n    Define Timeline Aggregations\n    Publish Actions\n    Configure Action Links\n\nReference: https://developers.facebook.com/docs/technical-guides/opengraph/defining-an-action-type/#define"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eOperations",
+      "attributes": {
+        "name": "create",
+        "eType": "#//Action"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "44",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Create Action with proper nsPrefix and actionType attributes."
+      }
+    },
+    {
+      "id": "45",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "resolvedSubjectTypes",
+        "upperBound": "-1",
+        "eType": "ecore:EClass ../../../../../../../org.soluvas.social/src/main/resources/org/soluvas/social/schema.ecore#//TargetType"
+      }
+    },
+    {
+      "id": "46",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "47",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Connected Object Types indicates the object types that this action can act upon. If you have previously defined custom object types for this app, you can add these here. You may also add Built-In Object Types to this list."
+      }
+    },
+    {
+      "id": "48",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "status",
+        "eType": "#//ActionTypeStatus"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "subjectTypes",
+        "upperBound": "-1",
+        "eType": "#//TargetTypeRef",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "50",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "51",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Connected Object Types indicates the object types that this action can act upon. If you have previously defined custom object types for this app, you can add these here. You may also add Built-In Object Types to this list."
+      }
+    },
+    {
+      "id": "52",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NameContainer"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//BundleAware"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//ResourceAware"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//JavaClassLinked"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//Action"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//EClassLinked"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//EFactoryLinked"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "#//ActionLike"
+      }
+    },
+    {
+      "id": "60",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NsPrefixable"
+      }
+    },
+    {
+      "id": "61",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Story",
+        "instanceClassName": "com.soluvas.story.Story"
+      }
+    },
+    {
+      "id": "62",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Action",
+        "instanceClassName": "com.soluvas.story.Action"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AggregationType"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "65",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Timeline Aggregations are aggregated stories that are defined by an application to showcase actions and objects on a user's Timeline in a structured and interesting way.\n\nWhen a user installs an application that publishes back to Open Graph, an Aggregation defined by the application will appear on the user's Timeline based on two key factors:\n\n    Data availability - Sufficient actions and objects were published to generate an Aggregation in a given time period.\n    Feedback - Calculated based on how engaged users are with the Aggregation on their Timelines, covering both positive actions (liking, commenting, pinning) and negative ones (removing/hiding the aggregation, removing the application that generated the aggregation).\n\nWhen an application defines multiple aggregations, these may appear on Timeline as Reports. Reports are collections of aggregations and are shown for each time period in which a user has published activity back to the Open Graph. This provides a consistent viewing experience and makes it easier for a user to digest data from an application. When configuring multiple aggregations for an application through the Facebook App Dashboard, ensure that these aggregations are ordered by priority - with the most important aggregation first. When a report is generated for your app, the primary aggregation is in the top position, and the other aggregations (if sufficient data is available to generate these aggregations) are displayed in their respective order in the report.\n\nHere is an example of a Report for a recipe app with 2 aggregated stories with 'Recipes I've Made' as the primary story.\n\nOverview\n\nWithin the App Dashboard under Open Graph > Dashboard tab, click on \"Create New Aggregation\" to get started.\n\nAn Aggregation can be configured by the following fields:\n\n    Data to Display - Specify whether an Aggregation should surface a user's actions or objects.\n    Layout Style - The style of the Aggregation display.\n    Sort By - Chooses how the ''Data to Display'' will be ordered in the Aggregation. The current choices are ''Most Recent'', ''Favorite'', and a ''Custom'' selection.\n    Aggregation Title - Sets the user-facing title of an Aggregation. Preview any changes through the Timeline Preview box.\n    Caption Lines - Sets the caption shown in an Aggregation. A combination of text and syntax from the in-built Text Template language can be used to create the caption.\n    Advanced - Provides additional optional aggregation parameters: Group By (not available for Aggregations showing actions) and Filters.\n\nData to Display\n\nAn Aggregation can display any action type or object type that your application has configured.\n\nObject Type\nTo configure an Aggregation to show \"Most [Action Type] [Object Types]\", such as: \"Most Ran Routes\", or \"Restaurants Visited Most\", choose the object type (e.g. Route) as the ''Data to Display''. Then, select a connected action type (e.g. Run) as the ''Action Type''.\n\nSuch an aggregation in effect does a group by on the Route object and accesses its in-built {count} property, which is the number of times a user has taken the connected action on the object, in this case, the number of times the user has ran on the route.\n\nAction Type\nTo configure an Aggregation to show \"Most Recent [Action Type]\", such as: \"Most Recent Runs\" or \"Most Recent Books Read\", choose the action type (e.g. Read) as the ''Data to Display''. This aggregation will be able to access individual instances of the chosen action, such as all \"Read\" actions of the current user published by the app back to Open Graph. The {count} for action-based aggregations will always be 1.\n\nExamples\nConsider a Cookbook app that has the Actions: \"Cook\", \"Plan to Make\" and the Objects: \"Recipe\", \"Meal\"\n\n    Configure an aggregation grouped by the \"Recipe\" object, this gives access to the number of times a connected action occurred for the object. For example, to create a Most Cooked Recipes aggregation, select the \"Recipe\" object as the ''Data to Display'' and \"Cook\" as the connected ''Action Type''.\n    Configure an aggregation with an action as the ''Data to Display''. For example, setting the \"Plan to Make\" action as the ''Data to Display'' helps create the Latest Planning to Make aggregation that shows the most recent recipes that the user has taken the \"Plan to Make\" action on. The configured aggregation could also focus on particular properties of an action. For example, if the \"Cook\" action had a custom property called \"Duration\" that tracks how long it takes to cook each time, and if a Longest Cooking aggregation was created, then the \"Cook\" action is the ''Data to Display'', with a custom ''Sort By'' on the action property called \"Duration\". The aggregation will have access to action instance-specific information and properties, which would not be available had the \"Recipe\" object been the ''Data to Display''.\n\nLayout Style\n\nLayout styles define how your aggregation looks on the user’s Timeline.\n\nThe following layout templates, including suggested use-cases, are available for you to choose from:\n\n    List: Help highlight a user's recent activity or favorite objects. Lists also have an associated histogram, shaded grey, that will automatically appear for each row displayed in the list.\n    Gallery: Help when Object images are meaningful. Example, the cover art for my favorite albums or the course photos from my runs.\n    Table: Help highlight a mixture of interesting statistical and qualitative attributes of a user's actions or objects.\n    Item: Help highlight a single, interesting action or object with a compelling visual representation. Image size will be 90x90px in Timeline, and 379x284px on App Tabs (if a larger image is provided). To get larger images, you should specify multiply images with your objects and include the height and width attributes. Images with larger sizes will be chosen for the larger format.\n    Number: Help highlight a single, meaningful number from a macro view. For example, a user's total miles ran in a time period or the number of restaurant reviews a user has posted.\n    Map: Help highlight geolocation attributes of a user's actions and objects. For example, use the Map layout to plot the geo-coordinates of a user's \"longest run\" or \"path travelled\" from a lifestyle app.\n\nMap Layout Style\n\nTo take advantage of the Map layout, your objects need to have at least one GeoPoint property. GeoPoint is a complex type that can be described with latitude, longitude, and altitude; altitude being optional here.\n\nThere are two styles of maps to choose from, and each have their own set of parameters:\n\nSingle Action: this style renders one action or object only (using the highest or lowest rank depending on the configured sort order), but can highlight multiple pins on the map and trace a route between several points. One example would be to display a travel action with multiple stops, or a run action that follows multiple paths.\n\nThe parameters the Single Action map takes are:\n\n    Numbers: Specify number values that will be highlighted in the header of this aggregation.\n    Highlighted Points: Specify object or action properties of type GeoPoint that will be rendered as pins on the map. You can specify multiple properties.\n    Route: Specify an array property of type GeoPoint. These points will be rendered on the map as a route.\n\nMultiple Actions: this style renders multiple objects or actions, except that each item is rendered as a point of the map instead of a caption text with a picture within a gallery layout.\n\nThis map style accepts one parameter only:\n\n    Contributing points: Specify an object or action property of type GeoPoint. Only one property is accepted here.\n\nSort By\n\nConfigures the ordering and display for the Aggregation. You have the ability to choose from the following:\n\n    Most Recent: Displays actions ordered by the action's start_time property\n    Favorite: Displays objects ordered by the number of times a user has taken a specific action against an object. For example, a \"favorite songs\" Aggregation shows song objects that I'm connected to via listen actions ordered by the number of listen actions per song.\n    Custom: Sort by properties on an action or object, such as the end time of an action, the number of counts or the highest or lowest numerical value of a property. Examples: Distance or Pace of a run action, the Rating of a movie object.\n\nAggregation Title\n\nUsers will see the title for every aggregation on their Timeline. Avoid using a title that could confuse the another viewer of a user's Timeline about the ownership of the actions and objects in the aggregation such as \"My Most Visited Places\" or \"Routes I Ran\". Instead, use identity-agnostic titles such as \"Most Visited Places\" or titles which explicitly articulate ownership such as \"Routes Diana Ran\".\n\nThe title should also honestly reflect the content being displayed. For example, if an application defines a \"Favorite Runs\" aggregation, the application should provide runs that were explicitly made \"favorites\" by the user, versus the most popular runs, which should be titled as \"Most Popular Runs\".\n\nCaption Lines\n\nAggregations support a simple text template syntax for formatting Open Graph action / object properties into strings that a user sees. This template syntax supports formatters for different data types such as dates, times, currencies, etc., pluralization of display text and operators for simple mathematical computations. Text templates are specified between the “{...}” characters.\n\nExample:\nA Run action connects to a Course object via a “course” custom property. To show the run’s distance and pace, use:\nRan {course.distance} miles in {time | duration}\nwhich would be formatted into: “Ran 7.48 miles in 42:37”.\n\nSee Using Text Templates to take full advantage of its capabilities.\n\nAdvanced\n\nFilters - Option allows the aggregation to only display if this is true. For example, you can filter by the type of movie (type is a custom property on movie object).\n\nGroup by - Option is only available if your Aggregation is displaying Objects. This option allows the aggregation to group by a property of the object. For example, you can group by Movie object's type, to show how many times you've watched a certain type of movie.\n\nEffects when Updating the Definition of Existing Aggregations\n\nWhen making changes to the definition of of an existing aggregation definition, you should be aware that some types of changes may wipe out (destructive) aggregation and stories for previously published actions.\n\nDestructive changes (ie: previously published actions will not appear):\n\n    Changing the \"group by\" property\n    Changing the \"action type\" property (if grouping by an object)\n    Changing the \"sort-by\" property\n    Adding a new, previously unused selector to a caption to use / display a property from an action or object\n    Adding a function (sum, max, avg) on an existing selector. Note: we are planning to fix this behavior soon.\n    Adding a filter that uses a function (sum, max, avg).\n\nNon-destructive changes (ie: previously published actions continue to appear):\n\n    Changing the title\n    Changing the layout\n    Changing a caption without adding a new selector or function. i.e. it's okay to rearrange text and selectors, just not to add ones that read new properties from an action / object\n    Using a formatter on an existing selector i.e. formatting a date or a number\n    Starting or stopping use of {count}in a filter, selector, etc [fixed week of 12/12]\n    Using an existing selector as a filter\n\nReference: https://developers.facebook.com/docs/technical-guides/opengraph/defining-an-aggregation/"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eOperations",
+      "attributes": {
+        "name": "create",
+        "eType": "#//Aggregation"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "68",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Create Target with proper nsPrefix and aggregationType attributes."
+      }
+    },
+    {
+      "id": "69",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//ResourceAware"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NameContainer"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//BundleAware"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//JavaClassLinked"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eTypeArguments",
+      "attributes": {
+        "eClassifier": "#//Aggregation"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eGenericSuperTypes",
+      "attributes": {
+        "eClassifier": "ecore:EClass ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//EClassLinked"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "Aggregation",
+        "instanceClassName": "com.soluvas.story.Aggregation"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "Tenses"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "78",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Allows you to select the tenses that will be used in News Feed stories. For example, you may wish to always display stories in present tense, in which case you would select the ''only the present tense'' option.\n\n<p>Reference: http://developers.facebook.com/docs/technical-guides/opengraph/defining-an-action-type/"
+      }
+    },
+    {
+      "id": "79",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "both"
+      }
+    },
+    {
+      "id": "80",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "present",
+        "value": "1"
+      }
+    },
+    {
+      "id": "81",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ActionLike",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "tenses",
+        "lowerBound": "1",
+        "eType": "#//Tenses"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "84",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Allows you to select the tenses that will be used in News Feed stories. For example, you may wish to always display stories in present tense, in which case you would select the ''only the present tense'' option.\n\n<p>Reference: http://developers.facebook.com/docs/technical-guides/opengraph/defining-an-action-type/"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pastTense",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "87",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Past Tense field is pre-filled with an initial past tense action corresponding to your initial action type. You can edit this field. You can also edit the preposition that defines how the News Feed story is displayed. You can preview the various sentences that may be generated using the Sentence Previews box.\n\ne.g. cooked"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pluralPastTense",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "90",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Plural Past Tense field is pre-filled with an initial past tense action corresponding to your initial action when more than one friend is involved. Similar to the Past Tense field, you can make changes and preview them using the 'Sentence Previews` box.\n\ne.g. cooked"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "presentTense",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "93",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Present Tense field is pre-filled with an initial present tense action corresponding to your initial action type. You can edit this field. You can also edit the preposition that defines how the News Feed story is displayed. You can preview the various sentences that may be generated using the Sentence Previews box.\n\ne.g. cook"
+      }
+    },
+    {
+      "id": "94",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "pluralPresentTense",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "95",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "96",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Plural Present Tense field is pre-filled with an initial present tense action corresponding to your initial action when more than one friend is involved. Similar to the Past Tense field, you can make changes and preview them using the Sentence Previews box.\n\ne.g. are cooking"
+      }
+    },
+    {
+      "id": "97",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "imperativeTense",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "98",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "99",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": "Imperative Tense field is pre-filled with an initial present tense action corresponding to your initial action type. This field controls the display for action links. You can edit this field. You can preview the various sentences that may be generated using the Sentence Previews box.\n\ne.g. cook"
+      }
+    },
+    {
+      "id": "100",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EEnum",
+        "name": "ActionTypeStatus"
+      }
+    },
+    {
+      "id": "101",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "unresolved"
+      }
+    },
+    {
+      "id": "102",
+      "type": "eLiterals",
+      "attributes": {
+        "name": "resolved",
+        "value": "1"
+      }
+    },
+    {
+      "id": "103",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TargetTypeRef",
+        "eSuperTypes": "../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NsPrefixable ../../../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore#//NameContainer"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "61",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "62",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "63",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "75",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "76",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "81",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "100",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "103",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "1",
+      "target": "5",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "1",
+      "target": "6",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "1",
+      "target": "8",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "9",
+      "target": "12",
+      "type": "eOperations"
+    },
+    {
+      "source": "9",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "22",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "30",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "33",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "12",
+      "target": "15",
+      "type": "eGenericType"
+    },
+    {
+      "source": "12",
+      "target": "16",
+      "type": "eTypeParameters"
+    },
+    {
+      "source": "12",
+      "target": "18",
+      "type": "eParameters"
+    },
+    {
+      "source": "13",
+      "target": "14",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eBounds"
+    },
+    {
+      "source": "18",
+      "target": "19",
+      "type": "eGenericType"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "24",
+      "target": "25",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "details"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "28",
+      "target": "29",
+      "type": "details"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "31",
+      "target": "32",
+      "type": "details"
+    },
+    {
+      "source": "33",
+      "target": "34",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "34",
+      "target": "35",
+      "type": "details"
+    },
+    {
+      "source": "36",
+      "target": "37",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "37",
+      "target": "38",
+      "type": "details"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "39",
+      "target": "42",
+      "type": "eOperations"
+    },
+    {
+      "source": "39",
+      "target": "45",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "48",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "49",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "52",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "53",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "54",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "55",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "57",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "58",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "59",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "39",
+      "target": "60",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "40",
+      "target": "41",
+      "type": "details"
+    },
+    {
+      "source": "42",
+      "target": "43",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "details"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "46",
+      "target": "47",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "50",
+      "target": "51",
+      "type": "details"
+    },
+    {
+      "source": "55",
+      "target": "56",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "63",
+      "target": "64",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "63",
+      "target": "66",
+      "type": "eOperations"
+    },
+    {
+      "source": "63",
+      "target": "69",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "63",
+      "target": "70",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "63",
+      "target": "71",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "63",
+      "target": "72",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "63",
+      "target": "74",
+      "type": "eGenericSuperTypes"
+    },
+    {
+      "source": "64",
+      "target": "65",
+      "type": "details"
+    },
+    {
+      "source": "66",
+      "target": "67",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "67",
+      "target": "68",
+      "type": "details"
+    },
+    {
+      "source": "72",
+      "target": "73",
+      "type": "eTypeArguments"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "76",
+      "target": "79",
+      "type": "eLiterals"
+    },
+    {
+      "source": "76",
+      "target": "80",
+      "type": "eLiterals"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "details"
+    },
+    {
+      "source": "81",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "94",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "81",
+      "target": "97",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "82",
+      "target": "83",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "83",
+      "target": "84",
+      "type": "details"
+    },
+    {
+      "source": "85",
+      "target": "86",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "86",
+      "target": "87",
+      "type": "details"
+    },
+    {
+      "source": "88",
+      "target": "89",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "89",
+      "target": "90",
+      "type": "details"
+    },
+    {
+      "source": "91",
+      "target": "92",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "details"
+    },
+    {
+      "source": "94",
+      "target": "95",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "95",
+      "target": "96",
+      "type": "details"
+    },
+    {
+      "source": "97",
+      "target": "98",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "98",
+      "target": "99",
+      "type": "details"
+    },
+    {
+      "source": "100",
+      "target": "101",
+      "type": "eLiterals"
+    },
+    {
+      "source": "100",
+      "target": "102",
+      "type": "eLiterals"
+    }
+  ],
+  "stats": {
+    "node_count": 104,
+    "edge_count": 103,
+    "node_type_count": 13,
+    "edge_type_count": 12
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "build",
+        "nsURI": "http://www.mybuild.org/myfile/Build",
+        "nsPrefix": ""
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Build"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "configuration",
+        "eType": "ecore:EClass configfile.ecore#//Configuration"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "modules",
+        "upperBound": "-1",
+        "eType": "#//ModuleInstance",
+        "containment": "true",
+        "eOpposite": "#//ModuleInstance/build"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ModuleInstance",
+        "eSuperTypes": "myfile.ecore#//Instance"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "build",
+        "eType": "#//Build",
+        "eOpposite": "#//Build/modules"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "type",
+        "eType": "ecore:EClass myfile.ecore#//ModuleType",
+        "resolveProxies": "false"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "allTypes",
+        "upperBound": "-1",
+        "eType": "ecore:EClass myfile.ecore#//ModuleType",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "dependent",
+        "upperBound": "-1",
+        "eType": "#//ModuleInstance",
+        "resolveProxies": "false",
+        "eOpposite": "#//ModuleInstance/depends"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "depends",
+        "upperBound": "-1",
+        "eType": "#//ModuleInstance",
+        "resolveProxies": "false",
+        "eOpposite": "#//ModuleInstance/dependent"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "contents",
+        "upperBound": "-1",
+        "eType": "#//ModuleInstance",
+        "resolveProxies": "false",
+        "eOpposite": "#//ModuleInstance/container"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "container",
+        "eType": "#//ModuleInstance",
+        "resolveProxies": "false",
+        "eOpposite": "#//ModuleInstance/contents"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "options",
+        "upperBound": "-1",
+        "eType": "#//OptionInstance",
+        "containment": "true",
+        "eOpposite": "#//OptionInstance/module"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "afterDepends",
+        "upperBound": "-1",
+        "eType": "#//ModuleInstance"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "includeMember",
+        "eType": "ecore:EClass configfile.ecore#//Include",
+        "unsettable": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "sources",
+        "upperBound": "-1",
+        "eType": "ecore:EClass myfile.ecore#//FileName",
+        "changeable": "false",
+        "volatile": "true",
+        "transient": "true",
+        "derived": "true"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OptionInstance",
+        "eSuperTypes": "myfile.ecore#//OptionBinding"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "module",
+        "eType": "#//ModuleInstance",
+        "eOpposite": "#//ModuleInstance/options"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "11",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "4",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 18,
+    "edge_count": 17,
+    "node_type_count": 3,
+    "edge_type_count": 2
+  }
+}

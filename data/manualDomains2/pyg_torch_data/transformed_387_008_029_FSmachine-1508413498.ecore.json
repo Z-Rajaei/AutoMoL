@@ -1,0 +1,431 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "FSmachine",
+        "nsURI": "FSmachine",
+        "nsPrefix": "FSmachine"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Root"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "FSmachineName",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "objects",
+        "upperBound": "-1",
+        "eType": "#//AbstractObject",
+        "containment": "true",
+        "resolveProxies": "false",
+        "eOpposite": "#//AbstractObject/parent"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "connections",
+        "upperBound": "-1",
+        "eType": "#//AbstractConection",
+        "containment": "true",
+        "resolveProxies": "false",
+        "eOpposite": "#//AbstractConection/par"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractObject"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eOperations",
+      "attributes": {
+        "name": "checkStatussen",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "8",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": ""
+      }
+    },
+    {
+      "id": "9",
+      "type": "eOperations",
+      "attributes": {
+        "name": "makeMeActive",
+        "unique": "false"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "11",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": ""
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "active",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EBoolean"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "parent",
+        "eType": "#//Root",
+        "eOpposite": "#//Root/objects"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "conChild",
+        "eType": "#//AbstractConection",
+        "eOpposite": "#//AbstractConection/next"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "conParent",
+        "eType": "#//AbstractConection",
+        "containment": "true",
+        "resolveProxies": "false",
+        "eOpposite": "#//AbstractConection/prev"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractConection"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "par",
+        "eType": "#//Root",
+        "eOpposite": "#//Root/connections"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "next",
+        "eType": "#//AbstractObject",
+        "containment": "true",
+        "resolveProxies": "false",
+        "eOpposite": "#//AbstractObject/conChild"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "prev",
+        "eType": "#//AbstractObject",
+        "eOpposite": "#//AbstractObject/conParent"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "#//AbstractObject"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "description",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "data",
+        "unique": "false",
+        "upperBound": "-1",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EJavaObject"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ReasonConnection",
+        "eSuperTypes": "#//AbstractConection"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "reason",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TimeConnection",
+        "eSuperTypes": "#//AbstractConection"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "when",
+        "unique": "false",
+        "eType": "ecore:EDataType archive:file:/home/ego/programming/modeling/eclipse/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar!/model/Ecore.ecore#//EString"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "type": "eOperations"
+    },
+    {
+      "source": "5",
+      "target": "9",
+      "type": "eOperations"
+    },
+    {
+      "source": "5",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "5",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "details"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "10",
+      "target": "11",
+      "type": "details"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "19",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "21",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "25",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "27",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 29,
+    "edge_count": 28,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

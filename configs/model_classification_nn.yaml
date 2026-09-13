@@ -1,0 +1,67 @@
+ensemble:
+  name: voting
+  size: 3
+hpo:
+  max_evals: 30
+  name: anneal
+models:
+- hp_space:
+  - feasiblePoints: 3,4,5
+    parameterName: num_layers
+    type: DISCRETE
+  - length: 5
+    maxValue:
+    - 128
+    - 256
+    - 128
+    - 64
+    - 32
+    minValue:
+    - 32
+    - 64
+    - 32
+    - 16
+    - 8
+    numericalType: INTEGER
+    parameterName: hidden
+    scalingType: LOG
+    type: NUMERICAL_LIST
+  - maxValue: 0.3
+    minValue: 0.1
+    parameterName: dropout
+    scalingType: LINEAR
+    type: DOUBLE
+  - feasiblePoints:
+    - relu
+    - elu
+    - gelu
+    parameterName: act
+    type: CATEGORICAL
+  name: gin-model
+trainer:
+  hp_space:
+  - maxValue: 500
+    minValue: 200
+    parameterName: max_epoch
+    scalingType: LINEAR
+    type: INTEGER
+  - maxValue: 128
+    minValue: 32
+    parameterName: batch_size
+    scalingType: LOG
+    type: INTEGER
+  - maxValue: 50
+    minValue: 20
+    parameterName: early_stopping_round
+    scalingType: LINEAR
+    type: INTEGER
+  - maxValue: 0.01
+    minValue: 0.0001
+    parameterName: lr
+    scalingType: LOG
+    type: DOUBLE
+  - maxValue: 0.01
+    minValue: 1.0e-06
+    parameterName: weight_decay
+    scalingType: LOG
+    type: DOUBLE

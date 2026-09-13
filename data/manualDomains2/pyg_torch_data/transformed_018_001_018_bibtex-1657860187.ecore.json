@@ -1,0 +1,1366 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "bibtex",
+        "nsURI": "http://www.emftext.org/language/bibtex",
+        "nsPrefix": "bibtex"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Person",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "firstName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "secondName",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "lastName",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Author",
+        "eSuperTypes": "#//Person"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Editor",
+        "eSuperTypes": "#//Person"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "StringValue",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "YearValue",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "IntValue",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "value",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Page",
+        "eSuperTypes": "#//IntValue"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Field",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AuthorField",
+        "eSuperTypes": "#//Field"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "authors",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Author",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EditorField",
+        "eSuperTypes": "#//Field"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "editors",
+        "lowerBound": "1",
+        "upperBound": "-1",
+        "eType": "#//Editor",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "TitleField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BookTitleField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NumberField",
+        "eSuperTypes": "#//IntValue #//Field"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "YearField",
+        "eSuperTypes": "#//Field #//YearValue"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "BibtexKeyField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "JournalField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "VolumeField",
+        "eSuperTypes": "#//Field #//IntValue"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PageField",
+        "eSuperTypes": "#//Field"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "fromPage",
+        "lowerBound": "1",
+        "eType": "#//Page",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "toPage",
+        "eType": "#//Page",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "SeriesField",
+        "eSuperTypes": "#//StringValue #//Field"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AddressField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "31",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "MonthField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OrganizationField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "33",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "NoteField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PublisherField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PartField",
+        "eSuperTypes": "#//IntValue #//Field"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "EidField",
+        "eSuperTypes": "#//Field #//StringValue"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "UrlField",
+        "eSuperTypes": "#//StringValue #//Field"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Keyword",
+        "eSuperTypes": "#//StringValue"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "KeywordField",
+        "eSuperTypes": "#//Field"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "keywords",
+        "upperBound": "-1",
+        "eType": "#//Keyword",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "41",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "AbstractField",
+        "eSuperTypes": "#//StringValue #//Field"
+      }
+    },
+    {
+      "id": "42",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ReviewField",
+        "eSuperTypes": "#//StringValue #//Field"
+      }
+    },
+    {
+      "id": "43",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Entry",
+        "abstract": "true"
+      }
+    },
+    {
+      "id": "44",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getGeneralFields",
+        "upperBound": "-1",
+        "eType": "#//Field"
+      }
+    },
+    {
+      "id": "45",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "46",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "\r\n\t\t org.eclipse.emf.common.util.EList< org.emftext.language.bibtex.Field> result = new  org.eclipse.emf.common.util.BasicEList< org.emftext.language.bibtex.Field>();\r\n\r\n\t\t org.emftext.language.bibtex.BibtexKeyField bibtexKeyField = getBibtexKey();\r\n\r\n\t\t org.emftext.language.bibtex.AbstractField abstractField = getAbstract();\r\n\r\n\t\t org.emftext.language.bibtex.KeywordField keywordField = getKeyword();\r\n\r\n\t\t org.emftext.language.bibtex.UrlField urlField = getUrl();\r\n\r\n\t\t org.emftext.language.bibtex.ReviewField reviewField = getReview();\r\n\r\n\t\t\r\n\t\tresult.add(bibtexKeyField);\r\n\r\n\t\tresult.add(abstractField);\r\n\r\n\t\tresult.add(keywordField);\r\n\r\n\t\tresult.add(urlField);\r\n\r\n\t\tresult.add(reviewField);\r\n\r\n\t\treturn result;\r\n"
+      }
+    },
+    {
+      "id": "47",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": ""
+      }
+    },
+    {
+      "id": "48",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getFields",
+        "upperBound": "-1",
+        "eType": "#//Field"
+      }
+    },
+    {
+      "id": "49",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "50",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "\r\n\t\treturn getGeneralFields();\r\n"
+      }
+    },
+    {
+      "id": "51",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": ""
+      }
+    },
+    {
+      "id": "52",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "bibtexKey",
+        "lowerBound": "1",
+        "eType": "#//BibtexKeyField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "53",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "abstract",
+        "eType": "#//AbstractField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "54",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "url",
+        "eType": "#//UrlField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "55",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "keyword",
+        "eType": "#//KeywordField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "56",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "review",
+        "eType": "#//ReviewField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "57",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "InProceedingsEntry",
+        "eSuperTypes": "#//Entry"
+      }
+    },
+    {
+      "id": "58",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getFields",
+        "upperBound": "-1",
+        "eType": "#//Field"
+      }
+    },
+    {
+      "id": "59",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "60",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "\t\t org.eclipse.emf.common.util.EList< org.emftext.language.bibtex.Field> result = new  org.eclipse.emf.common.util.BasicEList< org.emftext.language.bibtex.Field>();\r\n\r\n\t\t\r\n\t\t org.emftext.language.bibtex.TitleField titleField = getTitle();\r\n\r\n\t\t org.emftext.language.bibtex.AuthorField authorField = getAuthor();\r\n\r\n\t\t org.emftext.language.bibtex.YearField yearField = getYear();\r\n\r\n\t\t org.emftext.language.bibtex.BookTitleField bookTitleField = getBookTitle();\r\n\r\n\t\t\r\n\t\tresult.add(titleField);\r\n\r\n\t\tresult.add(authorField);\r\n\r\n\t\tresult.add(yearField);\r\n\r\n\t\tresult.add(bookTitleField);\r\n\r\n\t\t\r\n\t\treturn result;"
+      }
+    },
+    {
+      "id": "61",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": ""
+      }
+    },
+    {
+      "id": "62",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "author",
+        "lowerBound": "1",
+        "eType": "#//AuthorField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "63",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "title",
+        "lowerBound": "1",
+        "eType": "#//TitleField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "64",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "bookTitle",
+        "lowerBound": "1",
+        "eType": "#//BookTitleField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "65",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "year",
+        "lowerBound": "1",
+        "eType": "#//YearField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "66",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "editor",
+        "eType": "#//EditorField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "67",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "pages",
+        "eType": "#//PageField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "68",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "volume",
+        "eType": "#//VolumeField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "69",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "number",
+        "eType": "#//NumberField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "70",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "series",
+        "eType": "#//SeriesField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "71",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "address",
+        "eType": "#//AddressField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "72",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "month",
+        "eType": "#//MonthField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "73",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "organization",
+        "eType": "#//OrganizationField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "74",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "note",
+        "eType": "#//NoteField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "75",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "publisher",
+        "eType": "#//PublisherField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "76",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "ArticleEntry",
+        "eSuperTypes": "#//Entry"
+      }
+    },
+    {
+      "id": "77",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getFields",
+        "upperBound": "-1",
+        "eType": "#//Field"
+      }
+    },
+    {
+      "id": "78",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/GenModel"
+      }
+    },
+    {
+      "id": "79",
+      "type": "details",
+      "attributes": {
+        "key": "body",
+        "value": "\t\t org.eclipse.emf.common.util.EList< org.emftext.language.bibtex.Field> result = new  org.eclipse.emf.common.util.BasicEList< org.emftext.language.bibtex.Field>();\r\n\r\n\t\t\t\t\r\n\t\t org.emftext.language.bibtex.TitleField titleField = getTitle();\r\n\r\n\t\t org.emftext.language.bibtex.AuthorField authorField = getAuthor();\r\n\r\n\t\t org.emftext.language.bibtex.YearField yearField = getYear();\r\n\r\n\t\t org.emftext.language.bibtex.JournalField journalField = getJournal();\r\n\r\n\t\t org.emftext.language.bibtex.VolumeField volumeField = getVolume();\r\n\r\n\t\t org.emftext.language.bibtex.PageField pageField = getPages();\r\n\r\n\t\t\r\n\t\tresult.add(titleField);\r\n\r\n\t\tresult.add(authorField);\r\n\r\n\t\tresult.add(yearField);\r\n\r\n\t\tresult.add(journalField);\r\n\r\n\t\tresult.add(volumeField);\r\n\r\n\t\tresult.add(pageField);\r\n\r\n\t\t\r\n\t\treturn result;"
+      }
+    },
+    {
+      "id": "80",
+      "type": "details",
+      "attributes": {
+        "key": "documentation",
+        "value": ""
+      }
+    },
+    {
+      "id": "81",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "author",
+        "lowerBound": "1",
+        "eType": "#//AuthorField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "82",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "title",
+        "lowerBound": "1",
+        "eType": "#//TitleField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "83",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "year",
+        "lowerBound": "1",
+        "eType": "#//YearField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "84",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "journal",
+        "lowerBound": "1",
+        "eType": "#//JournalField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "85",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "pages",
+        "lowerBound": "1",
+        "eType": "#//PageField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "86",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "volume",
+        "lowerBound": "1",
+        "eType": "#//VolumeField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "87",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "number",
+        "eType": "#//NumberField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "88",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "month",
+        "eType": "#//MonthField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "89",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "note",
+        "eType": "#//NoteField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "90",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "part",
+        "eType": "#//PartField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "91",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "eid",
+        "eType": "#//EidField",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "92",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Bibliography"
+      }
+    },
+    {
+      "id": "93",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "entries",
+        "upperBound": "-1",
+        "eType": "#//Entry",
+        "containment": "true"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "5",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "9",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "13",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "14",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "15",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "17",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "20",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "23",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "24",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "30",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "31",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "32",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "33",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "34",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "35",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "36",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "37",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "39",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "41",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "42",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "43",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "57",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "76",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "92",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "15",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "26",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "39",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "44",
+      "type": "eOperations"
+    },
+    {
+      "source": "43",
+      "target": "48",
+      "type": "eOperations"
+    },
+    {
+      "source": "43",
+      "target": "52",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "53",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "54",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "55",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "43",
+      "target": "56",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "44",
+      "target": "45",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "45",
+      "target": "46",
+      "type": "details"
+    },
+    {
+      "source": "45",
+      "target": "47",
+      "type": "details"
+    },
+    {
+      "source": "48",
+      "target": "49",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "49",
+      "target": "50",
+      "type": "details"
+    },
+    {
+      "source": "49",
+      "target": "51",
+      "type": "details"
+    },
+    {
+      "source": "57",
+      "target": "58",
+      "type": "eOperations"
+    },
+    {
+      "source": "57",
+      "target": "62",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "63",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "64",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "65",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "66",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "67",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "68",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "69",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "70",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "71",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "72",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "73",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "74",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "57",
+      "target": "75",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "58",
+      "target": "59",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "59",
+      "target": "60",
+      "type": "details"
+    },
+    {
+      "source": "59",
+      "target": "61",
+      "type": "details"
+    },
+    {
+      "source": "76",
+      "target": "77",
+      "type": "eOperations"
+    },
+    {
+      "source": "76",
+      "target": "81",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "82",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "83",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "84",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "85",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "86",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "87",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "88",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "89",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "90",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "76",
+      "target": "91",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "77",
+      "target": "78",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "78",
+      "target": "79",
+      "type": "details"
+    },
+    {
+      "source": "78",
+      "target": "80",
+      "type": "details"
+    },
+    {
+      "source": "92",
+      "target": "93",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 94,
+    "edge_count": 93,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

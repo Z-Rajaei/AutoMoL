@@ -1,0 +1,578 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "ctmc",
+        "nsURI": "http://ctmc/1.0",
+        "nsPrefix": "ctmc"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/OCL/Import"
+      }
+    },
+    {
+      "id": "2",
+      "type": "details",
+      "attributes": {
+        "key": "commonBase",
+        "value": "../../de.uni_stuttgart.iste.cowolf.model/model/CommonBase.ecore#/"
+      }
+    },
+    {
+      "id": "3",
+      "type": "details",
+      "attributes": {
+        "key": "ecore",
+        "value": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "5",
+      "type": "details",
+      "attributes": {
+        "key": "invocationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "6",
+      "type": "details",
+      "attributes": {
+        "key": "settingDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "7",
+      "type": "details",
+      "attributes": {
+        "key": "validationDelegates",
+        "value": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "CTMC",
+        "eSuperTypes": "../../de.uni_stuttgart.iste.cowolf.model/model/CommonBase.ecore#//IDBase"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "10",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "initalStateRequired"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "12",
+      "type": "details",
+      "attributes": {
+        "key": "initalStateRequired",
+        "value": "self.initialState -> size() >0"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "14",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "States",
+        "upperBound": "-1",
+        "eType": "#//State",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "initialState",
+        "eType": "#//State"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "State",
+        "eSuperTypes": "../../de.uni_stuttgart.iste.cowolf.model/model/CommonBase.ecore#//IDBase"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "18",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "OutgoingDontAddUpToOne NonDeterministic NoDuplicateLabels ExitRateGreaterZero"
+      }
+    },
+    {
+      "id": "19",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "20",
+      "type": "details",
+      "attributes": {
+        "key": "OutgoingDontAddUpToOne",
+        "value": "Tuple {\n\tmessage : String = 'Probability of all outgoing transitions must be 1.0.',\n\tstatus : Boolean = \n            self.outgoing->size() = 0 or (self.outgoing.prob->sum() - 1.0).abs()  < 0.000001\n}.status"
+      }
+    },
+    {
+      "id": "21",
+      "type": "details",
+      "attributes": {
+        "key": "NonDeterministic",
+        "value": "Tuple {\n\tmessage : String = 'There must not be any nondeterminism. Please union transitions to the same target.',\n\tstatus : Boolean = \n\t\t\tself.outgoing.to->asSet()->size() = self.outgoing->size()\n}.status"
+      }
+    },
+    {
+      "id": "22",
+      "type": "details",
+      "attributes": {
+        "key": "NoDuplicateLabels",
+        "value": "Tuple {\n\tmessage : String = 'Labels must be unique per state.',\n\tstatus : Boolean = \n\t\t\tself.labels.name->asSet()->size() = self.labels->size()\n}.status"
+      }
+    },
+    {
+      "id": "23",
+      "type": "details",
+      "attributes": {
+        "key": "ExitRateGreaterZero",
+        "value": "Tuple {\n\tmessage : String = 'Exit rate must be greater than 0.',\n\tstatus : Boolean = \n\t\t    exitRate > 0.0 or self.outgoing->size() = 0\n}.status"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "incoming",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "eOpposite": "#//Transition/to"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "outgoing",
+        "ordered": "false",
+        "upperBound": "-1",
+        "eType": "#//Transition",
+        "containment": "true",
+        "eOpposite": "#//Transition/from"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "labels",
+        "upperBound": "-1",
+        "eType": "#//Label",
+        "containment": "true",
+        "eOpposite": "#//Label/state"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "exitRate",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat",
+        "defaultValueLiteral": "0.0"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "../../de.uni_stuttgart.iste.cowolf.model/model/CommonBase.ecore#//IDBase"
+      }
+    },
+    {
+      "id": "30",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore"
+      }
+    },
+    {
+      "id": "31",
+      "type": "details",
+      "attributes": {
+        "key": "constraints",
+        "value": "ProbBetween0and1"
+      }
+    },
+    {
+      "id": "32",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "http://www.eclipse.org/emf/2002/Ecore/OCL"
+      }
+    },
+    {
+      "id": "33",
+      "type": "details",
+      "attributes": {
+        "key": "ProbBetween0and1",
+        "value": "Tuple {\n\tmessage : String = 'Probability must be between 0 and 1.',\n\tstatus : Boolean = \n            prob >= 0.0 and prob <= 1.0\n}.status"
+      }
+    },
+    {
+      "id": "34",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "from",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/outgoing"
+      }
+    },
+    {
+      "id": "35",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "to",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/incoming"
+      }
+    },
+    {
+      "id": "36",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "prob",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+      }
+    },
+    {
+      "id": "37",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "rate",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat",
+        "volatile": "true",
+        "transient": "true"
+      }
+    },
+    {
+      "id": "38",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Label",
+        "eSuperTypes": "../../de.uni_stuttgart.iste.cowolf.model/model/CommonBase.ecore#//IDBase"
+      }
+    },
+    {
+      "id": "39",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "name",
+        "lowerBound": "1",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "40",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "state",
+        "lowerBound": "1",
+        "eType": "#//State",
+        "eOpposite": "#//State/labels"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "4",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "0",
+      "target": "8",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "16",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "38",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "details"
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "type": "details"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "details"
+    },
+    {
+      "source": "4",
+      "target": "6",
+      "type": "details"
+    },
+    {
+      "source": "4",
+      "target": "7",
+      "type": "details"
+    },
+    {
+      "source": "8",
+      "target": "9",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "8",
+      "target": "11",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "8",
+      "target": "13",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "14",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "8",
+      "target": "15",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "9",
+      "target": "10",
+      "type": "details"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "details"
+    },
+    {
+      "source": "16",
+      "target": "17",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "19",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "16",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "25",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "26",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "27",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "16",
+      "target": "28",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "17",
+      "target": "18",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "21",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "22",
+      "type": "details"
+    },
+    {
+      "source": "19",
+      "target": "23",
+      "type": "details"
+    },
+    {
+      "source": "29",
+      "target": "30",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "29",
+      "target": "32",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "29",
+      "target": "34",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "35",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "36",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "29",
+      "target": "37",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "30",
+      "target": "31",
+      "type": "details"
+    },
+    {
+      "source": "32",
+      "target": "33",
+      "type": "details"
+    },
+    {
+      "source": "38",
+      "target": "39",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "38",
+      "target": "40",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 41,
+    "edge_count": 40,
+    "node_type_count": 5,
+    "edge_type_count": 4
+  }
+}

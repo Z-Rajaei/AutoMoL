@@ -1,0 +1,435 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "EPackage",
+      "attributes": {
+        "version": "2.0",
+        "name": "pragmacpndefinition",
+        "nsURI": "http://pragmacpndefinition/1.0",
+        "nsPrefix": "pragmacpndefinition"
+      }
+    },
+    {
+      "id": "1",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PragmaCPN",
+        "eSuperTypes": "../../ePNK%20CPN%20Type/model/CPNDefinition.ecore#//CPN"
+      }
+    },
+    {
+      "id": "2",
+      "type": "eAnnotations",
+      "attributes": {
+        "source": "EAnnotation0"
+      }
+    },
+    {
+      "id": "3",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Place",
+        "eSuperTypes": "../../ePNK%20CPN%20Type/model/CPNDefinition.ecore#//Place #//OntologyMember"
+      }
+    },
+    {
+      "id": "4",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Pragma",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Label"
+      }
+    },
+    {
+      "id": "5",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "text",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "6",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "OntologyFile",
+        "instanceClassName": "org.eclipse.core.resources.IFile",
+        "serializable": "false"
+      }
+    },
+    {
+      "id": "7",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OntologyDocument"
+      }
+    },
+    {
+      "id": "8",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "iri",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "9",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "path",
+        "eType": "ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      }
+    },
+    {
+      "id": "10",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ontology",
+        "eType": "#//PragmaticsOntology",
+        "eOpposite": "#//PragmaticsOntology/documents"
+      }
+    },
+    {
+      "id": "11",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PragmaticsOntology",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//Label"
+      }
+    },
+    {
+      "id": "12",
+      "type": "eOperations",
+      "attributes": {
+        "name": "addOntologyFromFile"
+      }
+    },
+    {
+      "id": "13",
+      "type": "eParameters",
+      "attributes": {
+        "name": "file",
+        "eType": "#//OntologyFile"
+      }
+    },
+    {
+      "id": "14",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getValidPragmatics",
+        "eType": "#//OWLClassSet"
+      }
+    },
+    {
+      "id": "15",
+      "type": "eParameters",
+      "attributes": {
+        "name": "object",
+        "eType": "#//OntologyMember"
+      }
+    },
+    {
+      "id": "16",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "documents",
+        "upperBound": "-1",
+        "eType": "#//OntologyDocument",
+        "containment": "true",
+        "eOpposite": "#//OntologyDocument/ontology"
+      }
+    },
+    {
+      "id": "17",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "net",
+        "eType": "#//PetriNet",
+        "eOpposite": "#//PetriNet/ontology"
+      }
+    },
+    {
+      "id": "18",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EAttribute",
+        "name": "manager",
+        "eType": "#//OntologyManager",
+        "changeable": "false",
+        "transient": "true",
+        "defaultValueLiteral": ""
+      }
+    },
+    {
+      "id": "19",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "PetriNet",
+        "eSuperTypes": "platform:/plugin/org.pnml.tools.epnk/model/PNMLCoreModel.ecore#//PetriNet"
+      }
+    },
+    {
+      "id": "20",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "ontology",
+        "eType": "#//PragmaticsOntology",
+        "containment": "true",
+        "eOpposite": "#//PragmaticsOntology/net"
+      }
+    },
+    {
+      "id": "21",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "OntologyManager",
+        "instanceClassName": "org.semanticweb.owlapi.model.OWLOntologyManager",
+        "serializable": "false"
+      }
+    },
+    {
+      "id": "22",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "OntologyMember",
+        "abstract": "true",
+        "interface": "true"
+      }
+    },
+    {
+      "id": "23",
+      "type": "eOperations",
+      "attributes": {
+        "name": "getOWLClass",
+        "eType": "#//OWLClass"
+      }
+    },
+    {
+      "id": "24",
+      "type": "eStructuralFeatures",
+      "attributes": {
+        "type": "ecore:EReference",
+        "name": "Annotation",
+        "upperBound": "-1",
+        "eType": "#//Pragma",
+        "containment": "true"
+      }
+    },
+    {
+      "id": "25",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "OWLClassSet",
+        "instanceTypeName": "java.util.Set<org.semanticweb.owlapi.model.OWLClass>",
+        "serializable": "false"
+      }
+    },
+    {
+      "id": "26",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EDataType",
+        "name": "OWLClass",
+        "instanceClassName": "org.semanticweb.owlapi.model.OWLClass"
+      }
+    },
+    {
+      "id": "27",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Transition",
+        "eSuperTypes": "../../ePNK%20CPN%20Type/model/CPNDefinition.ecore#//Transition #//OntologyMember"
+      }
+    },
+    {
+      "id": "28",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Arc",
+        "eSuperTypes": "../../ePNK%20CPN%20Type/model/CPNDefinition.ecore#//Arc #//OntologyMember"
+      }
+    },
+    {
+      "id": "29",
+      "type": "eClassifiers",
+      "attributes": {
+        "type": "ecore:EClass",
+        "name": "Page",
+        "eSuperTypes": "../../ePNK%20CPN%20Type/model/CPNDefinition.ecore#//Page #//OntologyMember"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "4",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "6",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "7",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "11",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "19",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "21",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "22",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "25",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "26",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "27",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "28",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "0",
+      "target": "29",
+      "type": "eClassifiers"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "type": "eAnnotations"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "type": "eOperations"
+    },
+    {
+      "source": "11",
+      "target": "14",
+      "type": "eOperations"
+    },
+    {
+      "source": "11",
+      "target": "16",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "17",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "11",
+      "target": "18",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "12",
+      "target": "13",
+      "type": "eParameters"
+    },
+    {
+      "source": "14",
+      "target": "15",
+      "type": "eParameters"
+    },
+    {
+      "source": "19",
+      "target": "20",
+      "type": "eStructuralFeatures"
+    },
+    {
+      "source": "22",
+      "target": "23",
+      "type": "eOperations"
+    },
+    {
+      "source": "22",
+      "target": "24",
+      "type": "eStructuralFeatures"
+    }
+  ],
+  "stats": {
+    "node_count": 30,
+    "edge_count": 29,
+    "node_type_count": 6,
+    "edge_type_count": 5
+  }
+}

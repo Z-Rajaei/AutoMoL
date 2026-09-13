@@ -1,0 +1,46 @@
+input:
+  format: "xmi"
+  metamodelpath: "Movies/Metamodel/UserMovies.ecore"
+  modelspath: "Movies"
+
+output:
+  format: "PyG"
+  path: "Movies/pyg_torch_data"  # مسیر متفاوت برای خروجی
+
+
+configuration:
+  adaptations:
+    metamodels:
+      - uri: "http://paper"
+        name: "UserMovies"
+        packages:
+          - package: "UserMovies"
+            classes:
+              - class: "Movie"
+                includeAllAttributes: false
+                include: ["title", "year", "genres"]
+                exclude: ["ratings"]
+                renaming: ""
+                features:
+                  - feature: "title"
+                    encoding: "word2vec"
+                  - feature: "movieName"
+                    encoding: "word2vec"   # duplicate of title on some Movie/Film nodes
+                  - feature: "genres"
+                    encoding: "word2vec"   # multi-token reference lists ("/10 /8"); mean-of-tokens encodes genre overlap, oneHot would be exact-match only
+                  - feature: "year"
+                    encoding: "numerical"  # declared; absent in the current JSONs -> zero block
+                  - feature: "id"
+                    encoding: "numerical"
+              - class: "User"
+                includeAllAttributes: false
+                include: ["name", "age"]
+                exclude: []
+                renaming: ""
+                features:
+                  - feature: "name"
+                    encoding: "word2vec"
+                  - feature: "userName"
+                    encoding: "word2vec"   # present on Person/User nodes alongside name
+                  - feature: "age"
+                    encoding: "numerical"  # declared; absent in the current JSONs -> zero block
