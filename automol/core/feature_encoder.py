@@ -62,14 +62,24 @@ class FeatureEncoder:
         ``PYTHONHASHSEED`` for full determinism).
     """
 
+    SUPPORTED_ENCODINGS = ("word2vec", "oneHot", "numerical")
+
     def __init__(self, feature_specs, w2v_dim=64, seed=42):
         self.feature_specs = list(feature_specs or [])
+        for s in self.feature_specs:
+            enc = s.get("encoding")
+            if enc not in self.SUPPORTED_ENCODINGS:
+                raise ValueError(
+                    f"Unknown encoding '{enc}' for feature '{s.get('feature')}'; "
+                    f"supported: {', '.join(self.SUPPORTED_ENCODINGS)}"
+                )
         self.w2v_dim = w2v_dim
         self.seed = seed
         self.node_type_vocab = []
         self.edge_type_vocab = []
         self.onehot_vocabs = {}
         self.w2v = None
+        self.attribute_coverage = {}
         self._fitted = False
 
     # ------------------------------------------------------------------ fit
@@ -93,19 +103,51 @@ class FeatureEncoder:
         w2v_feats = [
             s["feature"] for s in self.feature_specs if s.get("encoding") == "word2vec"
         ]
+        coverage = {s["feature"]: 0 for s in self.feature_specs}
+        numerical_bad = {
+            s["feature"]: 0
+            for s in self.feature_specs
+            if s.get("encoding") == "numerical"
+        }
 
         for model in self._iter_models(json_paths):
             for node in model.get("nodes", []):
                 node_types.add(node.get("type", "Unknown"))
                 attrs = node.get("attributes", {})
+                for feat in coverage:
+                    if feat in attrs:
+                        coverage[feat] += 1
                 for feat in onehot_values:
                     if feat in attrs:
                         onehot_values[feat].add(str(attrs[feat]))
                 for feat in w2v_feats:
                     if feat in attrs:
                         sentences.append(tokenize(attrs[feat]))
+                for feat in numerical_bad:
+                    if feat in attrs:
+                        try:
+                            float(str(attrs[feat]).strip())
+                        except (TypeError, ValueError):
+                            if str(attrs[feat]).strip().lower() not in ("true", "false"):
+                                numerical_bad[feat] += 1
             for edge in model.get("edges", []):
                 edge_types.add(edge.get("type", "Unknown"))
+
+        self.attribute_coverage = coverage
+        n_models = len(json_paths)
+        for s in self.feature_specs:
+            feat, enc = s["feature"], s.get("encoding")
+            if coverage[feat] == 0:
+                logger.warning(
+                    "Feature '%s' (%s) is declared in the configuration but never "
+                    "occurs in the %d models", feat, enc, n_models,
+                )
+            elif enc == "numerical" and numerical_bad.get(feat, 0) > coverage[feat] / 2:
+                logger.warning(
+                    "Feature '%s' (numerical): %d of %d observed values could not "
+                    "be parsed as numbers and were encoded as 0",
+                    feat, numerical_bad[feat], coverage[feat],
+                )
 
         self.node_type_vocab = sorted(node_types)
         self.edge_type_vocab = sorted(edge_types)
@@ -236,6 +278,7 @@ class FeatureEncoder:
             "node_type_vocab": self.node_type_vocab,
             "edge_type_vocab": self.edge_type_vocab,
             "onehot_vocabs": self.onehot_vocabs,
+            "attribute_coverage": self.attribute_coverage,
             "has_w2v": self.w2v is not None,
         }
         with open(os.path.join(dir_path, "encoder_state.pkl"), "wb") as f:
@@ -251,6 +294,7 @@ class FeatureEncoder:
         enc.node_type_vocab = state["node_type_vocab"]
         enc.edge_type_vocab = state["edge_type_vocab"]
         enc.onehot_vocabs = state["onehot_vocabs"]
+        enc.attribute_coverage = state.get("attribute_coverage", {})
         if state["has_w2v"]:
             from gensim.models import Word2Vec
 

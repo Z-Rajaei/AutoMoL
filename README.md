@@ -30,6 +30,8 @@ scripts/
   regenerate_features.py   encode transformed models into PyG graphs (pass 1: fit vocabularies
                            and word2vec; pass 2: write graphs; the encoder is saved for inference)
   replicate_experiments.py run the three experiments and append results to results/*.jsonl
+  diag_link_baselines.py  no-learning link-prediction baselines (type-pair prior etc.)
+  baseline_autogl_cora.py plain-AutoGL Cora baseline (same config and seeds)
 data/
   manualDomains2/        555 Ecore metamodels (Nguyen et al.), transformed JSON and domain labels
   Movies/                movie-domain XMI models (Miranda et al.) and their transformed JSON
@@ -72,6 +74,13 @@ Each run appends one JSON record (test metric, metric after save/load round-trip
 elapsed time, AutoGL leaderboard, configuration) to `results/replication_results.jsonl`
 and writes a full log to `results/<task>_evals<E>_seed<S>.log`. The Cora dataset used for
 element classification is downloaded automatically by PyTorch Geometric.
+
+Two helper scripts reproduce the additional baselines reported in the paper:
+
+- `python scripts/diag_link_baselines.py` — no-learning link-prediction baselines
+  (feature cosine, common neighbours, and the type-pair prior of Section 5.5).
+- `python scripts/baseline_autogl_cora.py` — plain-AutoGL Cora baseline with the same
+  configuration and seeds as the AutoMol element-classification runs.
 
 ## Using a trained component
 
