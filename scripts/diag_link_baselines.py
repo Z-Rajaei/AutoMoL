@@ -7,8 +7,8 @@ type-pair prior reported in the paper (the probability that a pair of
 node types is connected in the training edges).
 
 Usage:
-    python scripts/diag_link_baselines.py [link_dir] [max_graphs]
-    # defaults: data/Movies/pyg_torch_data_v2, all graphs
+    python scripts/diag_link_baselines.py [link_dir] [max_graphs] [seed]
+    # defaults: data/Movies/pyg_torch_data_v2, all graphs, seed 42
 """
 import os, sys, glob
 os.environ["AUTOGL_BACKEND"] = "pyg"
@@ -26,6 +26,9 @@ import networkx as nx
 link_dir = sys.argv[1] if len(sys.argv) > 1 else "data/Movies/pyg_torch_data_v2"
 print("link_dir:", link_dir)
 max_g = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+seed = int(sys.argv[3]) if len(sys.argv) > 3 else 42
+print("seed:", seed)
+torch.manual_seed(seed); np.random.seed(seed)
 files = sorted(glob.glob(os.path.join(link_dir, "*.pt")))[:max_g or None]
 graphs = [torch.load(f, weights_only=False) for f in files]
 graphs = [g for g in graphs if hasattr(g, "x") and g.x is not None]
